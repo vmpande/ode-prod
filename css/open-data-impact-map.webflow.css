@@ -655,8 +655,9 @@ li {
 .button.download {
   display: inline-block;
   width: 221px;
-  padding-right: 0px;
-  padding-left: 0px;
+  margin-top: auto;
+  margin-bottom: 5px;
+  padding: auto 0px;
 }
 
 .button.contact-button {
@@ -725,6 +726,7 @@ li {
   margin-bottom: 0px;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
+  text-align: center;
 }
 
 .large-chart.last-large-chart {
@@ -1305,7 +1307,7 @@ li {
   justify-content: space-around;
   background-image: url('../images/latin-america-icon-dark@2x.png'), url('../images/region-detail-dots@2x-min.png'), url('../images/region-detail-gradient.jpg');
   background-position: 50% 50%, 50% 0px, 50% 0px;
-  background-size: 126px, 100%, 100% 225px;
+  background-size: 126px, 100%, cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
@@ -1761,62 +1763,166 @@ li {
 }
 
 .europe {
-  width: 700px;
-  height: 400px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  display: block;
+  width: 550px;
+  height: 325px;
+  margin: 40px auto;
 }
 
 .latinamerica {
   position: static;
   left: 0px;
   top: 0px;
+  display: block;
   width: 350px;
   height: 375px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 100px;
+  margin: 40px auto;
   float: none;
   clear: none;
 }
 
 .mideast {
+  display: block;
   width: 700px;
   height: 400px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px auto;
 }
 
 .northamerica {
+  display: block;
   width: 425px;
   height: 400px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 100px;
+  margin: 40px auto;
 }
 
 .eastasia {
+  display: block;
   width: 410px;
-  height: 410px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 100px;
+  height: 375px;
+  margin: 40px auto;
 }
 
 .subsahara {
+  display: block;
   width: 400px;
   height: 400px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 100px;
+  margin: 40px auto;
 }
 
 .southasia {
+  display: block;
   width: 500px;
   height: 500px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 50px;
+  margin: 40px auto;
+}
+
+.anchor {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: none;
+  clear: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.anchor.w--current {
+  color: #fff;
+}
+
+.anchor.w--current:hover {
+  color: #5cb5a7;
+}
+
+.sidenav {
+  position: fixed;
+  left: 0px;
+  top: 65px;
+  display: block;
+  overflow: auto;
+  width: 113px;
+  height: 220px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: -13px;
+  padding-bottom: 0px;
+  float: left;
+  clear: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  background-color: #1e2c3b;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  color: #fff;
+  text-align: center;
+}
+
+.toanchor {
+  padding-top: 5px;
+  padding-left: 10px;
+  color: #1e2c3b;
+  font-size: 12px;
+}
+
+.hovertrigger {
+  position: fixed;
+  top: 65px;
+  display: block;
+  width: 1px;
+  height: 220px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: transparent;
+}
+
+.hoverouttrigger {
+  position: fixed;
+  top: 65px;
+  width: 113px;
+  height: 230px;
+}
+
+.sectorranklist {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin-top: auto;
+  padding-top: auto;
+  float: none;
+}
+
+.sectorbar {
+  display: inline-block;
+}
+
+.vizheading {
+  font-size: 18px;
+}
+
+html.w-mod-js *[data-ix="initial-hide"] {
+  -webkit-transform: translate(-100%, 0px);
+  -ms-transform: translate(-100%, 0px);
+  transform: translate(-100%, 0px);
 }
 
 @media (max-width: 991px) {

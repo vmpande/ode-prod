@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost:3306';
 $username = 'root';
-$password = '1892kop';
+$password = 'Sep@2016';
 $database = 'opendata_db';
 
     $server = mysql_connect($host, $username, $password);
