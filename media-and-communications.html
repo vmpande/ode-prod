@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Thu Aug 18 2016 19:06:37 GMT+0000 (UTC) -->
+<!-- Last Published: Fri Aug 19 2016 02:40:21 GMT+0000 (UTC) -->
 <html data-wf-page="57b5d97ff0e4b32e12c7ce99" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -59,11 +59,15 @@
       <br>a similar way, <a href="#">REConnect Energy</a> in India builds innovative tools for wind and solar
       <br>power forecasting and scheduling. By predicting power output for each source of energy, the company helps utilities anticipate changes to power generation, balance energy supply with demand, and reduce the overall costs of integrating renewable energy sources onto the grid.</p>
     <p class="body-copy">While renewable energy sources are being developed, <strong>open data is helping utilities and consumers manage existing power sources more efficiently</strong>. The <a href="#">Korea Energy Management Corporation</a> (KEMCO) in South Korea uses energy open data to estimate energy use patterns and increase efficiency in industrial and buildings sector. <a href="#">DemandLogic</a> in the UK offers energy-saving and performance improvement initiatives for commercial buildings. And in the U.S., PlotWatt (US) - monitors home energy use and gives consumers customized recommendations.</p>
-    <div class="large-chart">
-      <div class="sectorbar" id="barChart"></div>
-      <div class="sectorranklist"></div>
+    <div class="large-chart" id="dataTypeBar">
+      <h1 class="vizheading">Breakdown by Data Type</h1>
     </div>
-    <div class="large-chart" id="threePie"></div><img class="section-heading-topper" src="images/section-header-topper-2@2x.png">
+    <div class="large-chart" id="appBar">
+      <h1 class="vizheading">Breakdown by Application</h1>
+    </div>
+    <div class="large-chart" id="threePie">
+      <h1 class="vizheading">Ring Chart Breakdowns</h1>
+    </div><img class="section-heading-topper" src="images/section-header-topper-2@2x.png">
     <h2 class="section-header">Case Studies</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
     <div class="case-study-1">
       <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/nestfinder-nz-thumbnail@2x.png">
@@ -161,8 +165,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-  <!-- Noah - two pieces of code for two charts -->
-  <script type="text/javascript" src="js-custom/viz/sectorViz/viz-BRC-bar.js"></script>
-  <script type="text/javascript" src="js-custom/viz/sectorViz/viz-BRC-pie.js"></script>
+  <!-- Noah - code for two charts -->
+  <script type="text/javascript" src="js-custom/viz/sectorViz/MC/viz-MC-appBar.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/MC/viz-MC-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/MC/viz-MC-dataTypeBar.js"></script>
 </body>
 </html>

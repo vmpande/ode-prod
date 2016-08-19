@@ -1,8 +1,12 @@
+		/*window.onLoad =  'dbconnect.php';*/
 
+		/*<?php include 'dbconnect.php';?>
+*/		<?php 
+		$mapreg = 'Latin America & Caribbean';
+		include('dbconnect.php');
+		?>
 
-		window.onLoad =  'dbconnect.php';
-
-	/*	<?php include 'php/dbconnect.php';?>*/
+	/*	<?php include 'dbconnect.php';?>*/
        
        // var maplayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', 
         var maplayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', 
@@ -19,7 +23,7 @@
         var map = L.map('map', 
 		{
 			zoomControl:false,
-			maxZoom: 4, minZoom: 4,
+			maxZoom: 2, minZoom: 2,
           	layers: [maplayer]
           	/*,//\, heatmapLayer]
         maxBounds: 
@@ -29,11 +33,11 @@
         //north east
         [78, 173]
         ]*/
+		}).setView([-22.0, -60.0], 2);
 
-		}).setView([24.0, 80.0], 4);
 
 		map.dragging.disable();
-
+		map.doubleClickZoom.disable(); 
 		//control that shows state info on hover
 		var info = L.control({position: 'topright'});
 
@@ -44,9 +48,9 @@
 		};
 
 		info.update = function (props) {
-		this._div.innerHTML = '<h5>Number of Organizations</h5>' +  (props ?
-				'<b>' + props.NAME + '</b><br />' + props.UN + ' Organizations'
-				: 'Hover over a country');
+		this._div.innerHTML = (props ?
+				'<b>' + props.NAME + '</b><br />' + props.AREA + ' Organizations'
+				: '<b>Number of Organizations</b><br> Hover over a country');
 		};
 
 		info.addTo(map);
@@ -55,7 +59,7 @@
         maplayer.setOpacity(1.0);
 
 
-       	var rlabel = function (props){
+       	/*var rlabel = function (props){
 		var textLatLng = [props.LAT, props.LON];  
         var myTextLabel = L.marker(textLatLng, {
             icon: L.divIcon({
@@ -64,14 +68,14 @@
             	iconAnchor:   [35, 75],
             	//popupAnchor:  [-3, -76],
                 className: 'text-labels',   // Set class for CSS styling
-                html: '<B>' + props.NAME + '</B></br>' + props.UN + " Organizations"
+                html: '<B>' + props.NAME + '</B></br>' + props.AREA + " Organizations"
             }),
            // draggable: true,       // Allow label dragging...?
            zIndexOffset: 1000     // Make appear above other map features
             
         });
         return myTextLabel;
-		}
+		}*/
 
 		// get color depending on population density value
 		//map colors are
@@ -82,8 +86,8 @@
 /*			return d > 600 ? '#d98472' :
 				   d > 304 ? '#e4b76e' :
 			                  '#bcc64d';*/
-			return d > 600 ? '#ca6554' :
-				   d > 304 ? '#d6877a' :
+			return d > 100 ? '#c55441': //'#ca6554' :
+				   d > 10 ? '#d6877a' :
 			                  '#e7bab3';
 		}
 
@@ -96,7 +100,8 @@
 				color: '#2b3d51',
 				dashArray: '',
 				fillOpacity: 1.0,
-				fillColor: getColor(feature.properties.UN)
+				//fillColor: getColor(feature.properties.UN)
+				fillColor: getColor(feature.properties.AREA)
 			};
 			//}
 		}
@@ -106,7 +111,7 @@
 			//map.removeLayer(heatmapLayer);
 			maplayer.bringToFront();
 			var layer = e.target;
-		info.update(layer.feature.properties);
+			info.update(layer.feature.properties);
 
 			geojson.setStyle({
 				weight: 1,
@@ -139,9 +144,9 @@
 
 		function resetHighlight(e) {
 			//To remove the Region name Layer 
-			console.log("inside resetHighlight");
+			//console.log("inside resetHighlight");
 			var layer = e.target;
-info.update();
+			info.update();
 /*			geojson.setStyle({
 				weight: 1,
 				opacity: 1.0,
@@ -192,14 +197,57 @@ info.update();
 		
 		//console.log(regions.features.length);
 
-		/*for (var i=0; i<regions.features.length; i++) {
+/*		for (var i=0; i<regions.features.length; i++) {
 
 			console.log('regions.features[i].properties.NAME',i + regions.features[i].properties.NAME);
   			if (regions.features[i].properties.NAME == "Russia") {
     		regions.features[i].properties.NAME = "Russsiiaaaaaaa";
    		 //break;
   			}
-		}*/		
+		}*/
+
+			var num = <?php echo $count;?>
+
+			//console.log('num', num);
+
+			var d = <?php echo json_encode($data);?>
+
+			//console.log(d);
+
+		for (var i=0; i<regions.features.length; i++) {
+			for (var x = 0; x < num; x++) {
+				//console.log('regions.features[i].properties.NAME',regions.features[i].properties.NAME);
+				//console.log('regions.features[i].properties.ISO2' + regions.features[i].properties.ISO2);
+				//console.log('$data[$x]iso2' + d[x]['iso2']);
+
+				d[x]['iso2'] = d[x]['iso2'].trim();
+
+				//console.log('$data[$x]iso2' + d[x]['iso2']);
+
+  			if (regions.features[i].properties.ISO2 == d[x]['iso2']) {
+    		regions.features[i].properties.NAME = d[x]['org_hq_country'];
+    		regions.features[i].properties.AREA = d[x]['orgcount'];
+
+    		//console.log('regions.features[i].properties.NAME',regions.features[i].properties.NAME);
+    		//console.log('regions.features[i].properties.AREA',regions.features[i].properties.AREA);
+    		//console.log('---------------');
+				break;
+  			}
+  		  }
+		}
+
+/*	<?php echo json_encode($data); ?>*/
+
+
+
+
+/*
+	for ($x = 0; $x < num; $x++) {
+        $data[$x]['iso2']
+		}
+*/
+
+	/*	<?php echo json_encode($data); ?>	*/	
 
 		geojson = L.geoJson(regions, {
 			style: style,
@@ -211,9 +259,9 @@ info.update();
 		legend.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'info legend'),
-				grades = [0, 304, 600],
-				labels = [],
-				from, to;
+				//grades = [0, 304, 600],
+				labels = [];//,
+				//from, to;
 
 			/* for (var i = 0; i < grades.length; i++) {
 				from = grades[i];
@@ -231,11 +279,11 @@ info.update();
 			0 + '&ndash;' + 10);
 
 			labels.push(
-			'<i style="background:' + '#d6877a' + '"></i> ' +
+			'<i style="background:' + '#c55441' + '"></i> ' +
 			11 + '&ndash;' + 100);
 
 			labels.push(
-			'<i style="background:' + '#ca6554' + '"></i> ' +
+			'<i style="background:' + '#c51c00' + '"></i> ' +
 			100 + '+');
 
 			div.innerHTML = labels.join('<br>');
