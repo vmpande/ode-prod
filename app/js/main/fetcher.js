@@ -78,11 +78,11 @@ define([
                 var sql = [query.fieldName,query.operator,query.value].join(' ');
                 exceptionSQL.push(sql);
             } else {
-                                console.log("query.valueType", query.valueType); //Vinayak
+                                //console.log("query.valueType", query.valueType); //Vinayak
                 var value = query.valueType === 'number' ? query.value : "'{}'".replace('{}',query.value);
                 var sql = [query.fieldName,query.operator,query.value].join(' ');
-                                console.log("value", value); //Vinayak
-                                console.log("sql", sql); //Vinayak
+                                //console.log("value", value); //Vinayak
+                                //console.log("sql", sql); //Vinayak
                 queryStrings.push(sql);
             }
 

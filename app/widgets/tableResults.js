@@ -13,7 +13,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 		//Added by Vinayak to download data without filtering
 		getInitialState: function() {
-			console.log('this.props', this.props);
+			//console.log('this.props', this.props);
 		   	rawData2 = this.props;
 		   	return null
 		},
@@ -410,8 +410,8 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 			var rawData = this.props;
 
-			console.log('rawData', rawData);
-			console.log('rawData2', rawData2);
+			//console.log('rawData', rawData);
+			//console.log('rawData2', rawData2);
 
 			var popupData;
 			Data = [];
@@ -439,7 +439,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				"visible": true,
 				"cssClassName": 'description-column'
 			},{
-				"columnName": "Data Use",
+				"columnName": "Type of Data Used",
 				"visible": true
 			}
 			]
@@ -447,7 +447,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			//Change by Vinayak 07.08.2016
 			//To Change Company Name label to Organization Name label and Insutry Category to Sectors
 			//var columns = ["Company Name", "Region", "Country", "Organization Type", "Industry Category", "Description", "Data Use"];
-			var columns = ["Organization Name", "Region", "Country", "Organization Type", "Sectors", "Description", "Data Use"];
+			var columns = ["Organization Name", "Region", "Country", "Organization Type", "Sectors", "Description", "Type of Data Used"];
 
 			//debugger; Commented by Vinayak
 
@@ -460,7 +460,10 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			var uniqueList=datause.split(', ').filter(function(item,i,allItems){
     		return i==allItems.indexOf(item);
 			}).join(', ');
-			uniqueList = uniqueList.slice(0, -2);
+			if(uniqueList.endsWith(", "))
+			{
+				uniqueList = uniqueList.slice(0, -2);
+			}
 			attr.dataCell = uniqueList;
 			//End of Addition
 
@@ -483,7 +486,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					"State/Region": attr.org_hq_st_prov,
 					'Founding Year': attr.org_year_founded,
 					'Size': attr.org_size_id,
-					"Data Use": attr.dataCell,
+					"Type of Data Used": attr.dataCell,
 					//'profileID': attr.profile_id,
 					'profileID': attr.profile_id, //Uncommented by Vinayak
 					
@@ -517,7 +520,10 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			var uniqueList2=datause2.split(', ').filter(function(item,i,allItems){
     		return i==allItems.indexOf(item);
 			}).join(', ');
-			uniqueList2 = uniqueList2.slice(0, -2);
+						if(uniqueList2.endsWith(", "))
+			{
+				uniqueList2 = uniqueList2.slice(0, -2);
+			}
 			attr2.dataCell = uniqueList2;
 			//End of Addition
 
@@ -540,7 +546,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					"State/Region": attr2.org_hq_st_prov,
 					'Founding Year': attr2.org_year_founded,
 					'Size': attr2.org_size_id,
-					"Data Use": attr2.dataCell,
+					"Type of Data Used": attr2.dataCell,
 					//'profileID': attr.profile_id,
 					'profileID': attr2.profile_id, //Uncommented by Vinayak
 					

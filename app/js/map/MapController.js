@@ -50,7 +50,7 @@ define([/*"esri/map",*/
     }
     var mapEventHandlers = function(){
         var filterFeatures = function(){
-            console.log('filter clusters')
+            //console.log('filter clusters')
             control.filterFeatures(control.getFilters());
         }
         brmap.filterFeatures = function(){
@@ -202,24 +202,16 @@ define([/*"esri/map",*/
         // brmap.setBasemap(obj.target.id);
     }
     control.getMap = function(){
-        console.log('inside brmap', brmap);
+        //console.log('inside brmap', brmap);
 
         return brmap;
-    }
-
-//Added by Vinayak
-    control.addMaclayer = function(){
-    console.log('inside mapcontroller addlayer');   
-/*         var geojson;
-        geojson = L.geoJson(regions).addTo(brmap);
-*/
     }
 
 //End of Addition
 
     control.init = function(mapDiv){
 
-          console.log('inside init');
+          //console.log('inside init');
 
         var lat = 30.89009754221236;
         var lng = 15.03990936279297;

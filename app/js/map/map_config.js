@@ -160,7 +160,7 @@ define([],function(){
                     },
                     items: []
                 },
-                  {
+/*                  {
                     label: 'Machine Readabilty Project',
                     value: 'machineread',
                     selected: false,
@@ -169,7 +169,7 @@ define([],function(){
                       field:'machine_read'
                     },
                     items: []
-                },
+                },*/
              //Start of Comment by Vinayak 07.12.16
             //To remove Data Source from filters
                 /*{

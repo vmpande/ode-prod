@@ -64,7 +64,7 @@ define([
 
         set_LeftPannelToggle: function(){
 
-            console.log('inside set_LeftPannelToggle');
+            //console.log('inside set_LeftPannelToggle');
             $('#PanelToggle').click(function(){
                 $('#PanelToggle').css('display','none');
                 var pannel = $('#leftPanel');

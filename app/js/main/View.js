@@ -87,7 +87,7 @@ function(
 
     var initLeftPanelComponent = function(){
 
-        console.log("inside initLeftPanelComponent");//Vinayak
+        //console.log("inside initLeftPanelComponent");//Vinayak
 
     	var props = {id:'leftPanelComponent'}
 

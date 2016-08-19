@@ -44,9 +44,10 @@ function(
 					// {field: 'org_', label: 'Data Use'},
 					{field: 'org_url', label: 'URL'},
 					{field: 'org_description', label: 'Description'},
+					//{field: 'machine_read', label: 'Evidence of machine-readable data use'},
 					//{field: 'data_type', label: 'Type of data used'}, //Added by Vinayak 07.12.16
 					//{field: 'industry_id', label: 'Category'}, //Commented by Vinayak 07.12.16
-					{field: 'org_profile_category', label: 'Entry Based On'}, //Commented by Vinayak 07.12.16
+					//{field: 'org_profile_category', label: 'Entry Based On'}, //Commented by Vinayak 07.12.16
 				],
 				idField: 'profile_id'
 			}
@@ -115,22 +116,40 @@ function(
 			// To get only data tyoe in data use
 			if(marker.attributes.dataCell)
 			{
-			console.log('before marker.attributes.dataCell', marker.attributes.dataCell);
+			//console.log('before marker.attributes', marker.attributes);
+
 			var datause = marker.attributes.dataCell;
 			var uniqueList=datause.split(', ').filter(function(item,i,allItems){
     		return i==allItems.indexOf(item);
 			}).join(', ');
 
-			//uniqueList = uniqueList.slice(0, -2);
+			//console.log('uniqueList before if', uniqueList);
+			//if(uniqueList.substring(uniqueList.length - 1) != '.')
+			if(uniqueList.endsWith(", "))
+			{
+				uniqueList = uniqueList.slice(0, -2);
+			}
+			//console.log('uniqueList after if', uniqueList);
 
 			marker.attributes.dataCell = uniqueList;
 
 			//console.log('uniqueList: ',uniqueList);
-				console.log('marker.attributes.dataCell', marker.attributes.dataCell);
+			//console.log('marker.attributes.dataCell', marker.attributes.dataCell);
 			items.push({
-				label: "Data Use",
+				label: "Type of Data Used",
 				value: "" + marker.attributes.dataCell
 			})
+
+			//console.log(marker.attributes.machine_read);
+			if(marker.attributes.machine_read == "NA" || marker.attributes.machine_read == null)
+			{
+				marker.attributes.machine_read = "Information not available";
+			}
+			items.push({
+				label: "Evidence of machine-readable data use",
+				value: marker.attributes.machine_read
+			})
+
 			}
 			//End of Addition
 
@@ -281,6 +300,7 @@ function(
 						return false;
 					}
 				})
+
 			}
 				//console.log("filteredMarkers", filteredMarkers); //Vinayak
 			control.statistics = getStatistics(filteredMarkers);

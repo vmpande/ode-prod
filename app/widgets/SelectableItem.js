@@ -46,7 +46,7 @@ define([
 		    	props.selected = selected;
 		    	this.props.keys.changed && this.props.keys.changed(this.props.keys);
 		    	
-		    	console.log('handleClick_mac props',props);				
+		    	//console.log('handleClick_mac props',props);				
 		 },
 		 //End of Addition by Vinayak
 
@@ -123,7 +123,7 @@ define([
 
 			if (this.props.keys.label == 'Yes')// || this.props.keys.value === 'machineread')//test
 			{
-			console.log('inside Yes');
+			//console.log('inside Yes');
 /*			return (	
 				React.createElement("div", {className: null},
 
@@ -141,7 +141,7 @@ define([
 
 			else if (this.props.keys.value === 'machineread')
 			{
-							console.log('inside machineread');
+							//console.log('inside machineread');
 					return (
 						React.createElement("div", {onClick: handleClick, className: classString}, 
 								React.createElement("span", {className: "company-title-label"}, props.label))
@@ -153,7 +153,7 @@ define([
 			//else if (this.props.keys.label == 'Yes' || this.props.keys.label == 'No')
 			else if (this.props.keys.label == 'No' || this.props.keys.label == 'NA')
 			{
-							console.log('inside yes and no');
+							//console.log('inside yes and no');
 				return null
 			}
 			else

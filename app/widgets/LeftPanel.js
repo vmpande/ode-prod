@@ -33,7 +33,7 @@ define([
 		},
 
 		selectAccordian: function(index){
-			console.log('inside select accordian');
+			//console.log('inside select accordian');
 			var filters = this.props.keys.accordian.items;
 			var selected = filters[index].selected ? index: -1;
 			this.setState({selectedAccordian:selected});
@@ -45,11 +45,11 @@ define([
 
 		selectFilter: function(filterGroup){
 
-			console.log('inside selectfilter');
-			console.log('filterGroup', filterGroup);
+			//console.log('inside selectfilter');
+			//console.log('filterGroup', filterGroup);
 
 			var me = this;
-			console.log('me', me);
+			//console.log('me', me);
 			//have to determine if application lost a value
 			if(filterGroup.value == 'dataApplication'){
 
@@ -141,7 +141,7 @@ define([
 					return true;
 				}
 
-			console.log('curSelected',curSelected);
+			//console.log('curSelected',curSelected);
 
 			});
 			if(filterGroup.source){
@@ -327,11 +327,11 @@ define([
 
 					filterItem.selected = false;
 				});
-							console.log('filterOptions',filterOptions);
+							//console.log('filterOptions',filterOptions);
 			});
 
 			//console.log('accordian',accordian);
-			console.log('accordianItems',accordianItems);
+			//console.log('accordianItems',accordianItems);
 
 
 			this.props.keys.clearFilter();
@@ -348,7 +348,7 @@ define([
 
 		render:function(){
 
-			console.log(props);
+			//console.log(props);
 
 			var props = this.props.keys;
 			var handleClick = this.handleClick;
@@ -409,7 +409,7 @@ define([
 							subitem.selected = false;
 						}
 						subitem.changed = function(args){
-							console.log('inside leftpanel render before calling self.selectFilter(item)',self);
+							//console.log('inside leftpanel render before calling self.selectFilter(item)',self);
 							self.selectFilter(item);
 						}
 					});
@@ -421,8 +421,8 @@ define([
 				//Added by Vinayak 07.18.16
 			var accordianItems_mac = this.renderAccordian_mac(props.accordian,state);
 
-			console.log("accordianItems", accordianItems);
-			console.log("accordianItems_mac", accordianItems_mac);
+			//console.log("accordianItems", accordianItems);
+			//console.log("accordianItems_mac", accordianItems_mac);
 
 			//Changed by Vinayak 07.13.16 to Remove Statistics
 			//var accordianDisplay = props.tabs.items[1].value == this.state.selectedTab ? {}:{display:'none'};
@@ -431,12 +431,12 @@ define([
 			//var accordianDisplay = props.tabs.items[0].value == this.state.selectedTab ? {}:{display:'none'};
 			var accordianDisplay = {};
 
-			console.log('accordianDisplay', accordianDisplay);
+			//console.log('accordianDisplay', accordianDisplay);
 			//Commented by Vinayak 07.13.16 to Remove Statistics
 			//var statsDisplay = props.tabs.items[0].value == this.state.selectedTab ? {}:{display:'none'};
 			//props.tabs.changed = this.switchTabs;
 
-			console.log("before return accordianItems",accordianItems);
+			//console.log("before return accordianItems",accordianItems);
 
 			
 			return (
@@ -445,7 +445,7 @@ define([
 						//React.createElement(SelectableGroup, {keys: props.tabs}), 			//Related to Statistics Tab
 						React.createElement("div", {className: 'tab-content'}, 
 							React.createElement("div", {className: 'input-container'}, 
-								React.createElement("input", {id: "search-box", placeholder: 'Search for Organization', onChange: _.debounce(this.submitSearch, 500)})
+								React.createElement("input", {id: "search-box", placeholder: 'Search', onChange: _.debounce(this.submitSearch, 500)})
 							), 
 							React.createElement("div", {className: 'accordian-container', style: accordianDisplay}, 
 								accordianItems
