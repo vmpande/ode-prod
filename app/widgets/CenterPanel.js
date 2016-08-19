@@ -14,6 +14,7 @@ define([
 		getInitialState: function() {
 		    return {
 		    	selectedTab: 'map',
+		    	//selectedTab: 'Table',
 		    };
 		},
 
@@ -44,6 +45,9 @@ define([
 			var mapDisplay = props.tabs.items[0].value == this.state.selectedTab ? {}:{display:'none'};
 
 			var tableDisplay = props.tabs.items[1].value == this.state.selectedTab ? {}:{display:'none'};
+
+			console.log('mapDisplay',mapDisplay);
+			console.log('tableDisplay',tableDisplay);
 
 			props.tabs.changed = this.switchTabs;
 			

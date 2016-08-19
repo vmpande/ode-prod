@@ -101,7 +101,7 @@ define([],function(){
                 },
                 //Start of Change Vinayak 07.07.16
                 //Adding Country income level
-/*                {
+                {
                     label: 'Country Income Level',
                     value: 'country_income',
                     selected: false,
@@ -112,7 +112,7 @@ define([],function(){
                     // source: {url:features,field:'Region'}
                     items: [
                         ]
-                },*/
+                },
                 //End of Change Vinayak 07.07.16
                 {
                     label: 'Organization Type',

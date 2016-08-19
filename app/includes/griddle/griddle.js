@@ -1338,7 +1338,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    // If we have a fixed header, split into two tables.
 	    if (this.props.useFixedHeader) {
-	    	console.log('inside useFixedHeader'); //VInayak
+	    	//console.log('inside useFixedHeader'); //VInayak
 	      if (this.props.useGriddleStyles) {
 	        tableStyle.tableLayout = "fixed";
 	      }
@@ -1901,7 +1901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var that = this;
 
 	    if (typeof that.props.customComponent !== "function") {
-	      console.log("Couldn't find valid template.");
+	      //console.log("Couldn't find valid template.");
 	      return React.createElement("div", { className: this.props.className });
 	    }
 
