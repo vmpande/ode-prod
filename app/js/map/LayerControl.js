@@ -23,7 +23,7 @@ function(
 		var features = L.esri.Layers.featureLayer(featureURL, {});
 		var countryURL = MapConfig.countries;
 		var countries = L.esri.Layers.featureLayer(countryURL, {});
-		var clusterLayer = new L.MarkerClusterGroup({singleMarkerMode: true, showCoverageOnHover: false, maxClusterRadius: 50});
+		var clusterLayer = new L.MarkerClusterGroup({singleMarkerMode: true, showCoverageOnHover: false, maxClusterRadius: 50, spiderfyOnMaxZoom: false});
 		var popups = {
 			'cluster': {
 				obj: L.popup(),
@@ -140,6 +140,8 @@ function(
 				value: "" + marker.attributes.dataCell
 			})
 
+			}
+
 			//console.log(marker.attributes.machine_read);
 			if(marker.attributes.machine_read == "NA" || marker.attributes.machine_read == null)
 			{
@@ -150,7 +152,6 @@ function(
 				value: marker.attributes.machine_read
 			})
 
-			}
 			//End of Addition
 
 			//Start of comment Vinayak Pande 07.08.2016
@@ -229,6 +230,7 @@ function(
 				//Change by Vinayak
 				//if(map.getZoom() >= 9){ //popups only open once at low zoom lvl
 				if(map.getZoom() >= 3){ //popups only open once at low zoom lvl
+					//console.log('a.latlng',a.latlng);
 					openPopup(popupObj,a.latlng,{constructor:WidgetFactory.ClusterPopup,props:props});
 				}
 			    // a.layer.zoomToBounds();
