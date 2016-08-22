@@ -209,6 +209,8 @@ function(
 			var html = "<div id='markerPopup'></div>"
 			var popupObj = popups.marker;
 			var props = getCompanyPopupProps(marker,false,true);
+
+			console.log('marker',marker);
 			
 			openPopup(popupObj,marker.getLatLng(),{constructor:WidgetFactory.CompanyPopup,props:props});
 		}
@@ -260,12 +262,14 @@ function(
 
 			clusterLayer.clearLayers();
 			control.markers = featureCollection.features.map(function(feature){
+				//console.log('feature',feature);
 				var geom = feature.geometry;
 				var marker = new L.marker([geom.coordinates[1],geom.coordinates[0]]);
 				//org year requires additional formatting
 				feature.properties.org_year_founded = feature.properties.org_year_founded ? parseInt(feature.properties.org_year_founded) : '';
 				marker.attributes = feature.properties;
 				marker.on('click',function(e){
+					//console.log('marker',marker);
 					getCompanyPopup(marker);
 				});
 
