@@ -1,7 +1,7 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
-var marginBar = {top: 15, right: 0, bottom: 40, left: 50},
-    widthBar = 900 - marginBar.left - marginBar.right,
+var marginBar = {top: 15, right: 0, bottom: 45, left: 50},
+    widthBar = 1160 - marginBar.left - marginBar.right,
     heightBar = 400 - marginBar.top - marginBar.bottom;
 // Define scale for x axis
 var x = d3.scale.ordinal()
