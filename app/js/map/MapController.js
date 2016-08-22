@@ -227,7 +227,7 @@ define([/*"esri/map",*/
         //south west
         [-47, 200],
         //north east
-        [75, -169]
+        [68, -169]
         ]
         })
                     .setView([lat, lng], zoom);
