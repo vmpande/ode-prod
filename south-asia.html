@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Aug 19 2016 02:40:21 GMT+0000 (UTC) -->
+<!-- Last Published: Mon Aug 22 2016 13:52:37 GMT+0000 (UTC) -->
 <html data-wf-page="579778e3a36d1be947c4d268" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -33,6 +33,10 @@
   <style>
     * {z-index: 1;}
   </style>
+  <!-- added by Noah - stylesheet for viz and pageNav-->
+  <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
+  <!-- added by Noah - load D3 -->
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 </head>
 <body>
   <div class="navigation">
@@ -42,10 +46,27 @@
     <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="backup_full/map.html"><span class="fontawesome-icon"></span>&nbsp;Map</a><a class="current-navigation navigation-link" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="last-left navigation-link" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
   </div>
+  <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#findings">
+        <div class="leftnavlinktext">FINDINGS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#visualizations">
+        <div class="leftnavlinktext">VISUALIZATIONS</div>
+      </a>
+    </li>
+    <li class="leftnavlistitem">
+      <a class="lefnavlink w-inline-block" href="#caseStudies">
+        <div class="leftnavlinktext">CASE STUDIES</div>
+      </a>
+    </li>
+  </ol>
   <div class="navigation-space-fix"></div>
   <div class="mobile-menu"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="backup_full/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
-  <div class="region-detail-header-background south-asia-header">
+  <div class="region-detail-header-background south-asia-header" id="findings">
     <h1 class="region-detail-header">South Asia</h1>
   </div>
   <div class="text-container w-clearfix">
@@ -55,7 +76,7 @@
           <div class="stat">125</div>
           <div class="stat-description">Organizations in this Region</div>
         </div>
-      </div><a class="button download w-button" href="#">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a>
+      </div><a class="button download w-button" href="#">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" href="#">Download THE DATA &nbsp;<span class="fontawesome-icon"></span></a>
     </div>
     <p class="callout-text">Open data is being used to guide decisions on where and how to invest in energy infrastructure, to help utilities and consumers manage existing power sources more efficiently, and for environmental monitoring around the world.</p>
     <p class="body-copy">Open data is being used to <strong>guide decisions on where and how to invest in energy infrastructure</strong>, providing information that can also be critical to the success of renewable energy. From the <a href="#">U.S. Climate Data Initiative</a> to the UN’s <a href="#">Data for Climate</a> Action program, international experts are turning to open data as part of the providing energy solutions and approaches to mitigate climate change. Across Europe, <a href="#">3Tier</a> uses data to predict how weather will impact wind, solar,
@@ -63,11 +84,16 @@
       <br>a similar way, <a href="#">REConnect Energy</a> in India builds innovative tools for wind and solar
       <br>power forecasting and scheduling. By predicting power output for each source of energy, the company helps utilities anticipate changes to power generation, balance energy supply with demand, and reduce the overall costs of integrating renewable energy sources onto the grid.</p>
     <p class="body-copy">While renewable energy sources are being developed, <strong>open data is helping utilities and consumers manage existing power sources more efficiently</strong>. The <a href="#">Korea Energy Management Corporation</a> (KEMCO) in South Korea uses energy open data to estimate energy use patterns and increase efficiency in industrial and buildings sector. <a href="#">DemandLogic</a> in the UK offers energy-saving and performance improvement initiatives for commercial buildings. And in the U.S., PlotWatt (US) - monitors home energy use and gives consumers customized recommendations.</p>
-    <div class="large-chart">
+    <div class="large-chart" id="visualizations">
+      <h3 class="viztitle">Region Map</h3>
       <div class="southasia" id="map"></div>
     </div>
-    <div class="large-chart"></div>
-    <div class="large-chart last-large-chart"></div><img class="section-heading-topper" src="images/section-header-topper-2@2x.png">
+    <div class="large-chart" id="threePie">
+      <h3 class="viztitle">Ring Chart Breakdowns</h3>
+    </div>
+    <div class="large-chart last-large-chart" id="bar">
+      <h3 class="viztitle">Breakdown by Sector</h3>
+    </div><img class="section-heading-topper" id="caseStudies" src="images/section-header-topper-2@2x.png">
     <h2 class="section-header">Case Studies</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
     <div class="case-study-1">
       <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/nestfinder-nz-thumbnail@2x.png">
@@ -167,5 +193,10 @@
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   <script type="text/javascript" src="http://54.210.82.88/ode-prod/js-custom/SouthAsia.js"></script>
   <script type="text/javascript" src="http://54.210.82.88/ode-prod/js-custom/SouthAsiaMap.php"></script>
+  <!-- Noah - two pieces of code for two charts-->
+  <script type="text/javascript" src="js-custom/viz/regionViz/SA/viz-SA-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/regionViz/SA/viz-SA-bar.js"></script>
+  <!-- Noah - code for stat number counting up animation -->
+  <script type="text/javascript" src="js-custom/countUp/countIndiNumber.js"></script>
 </body>
 </html>

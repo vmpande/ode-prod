@@ -1,7 +1,7 @@
 $(function() {
     function count1($this){
         var current = parseInt($this.html(), 10);
-        current = current + 1; // set the interval
+        current = current + 15; // set the interval
 
     $this.html(++current);
       if(current > $this.data('count1')){
@@ -13,7 +13,7 @@ $(function() {
 
      function count2($this){
         var current = parseInt($this.html(), 10);
-        current = current + 35; // set the interval
+        current = current + 100; // set the interval
 
     $this.html(++current);
       if(current > $this.data('count2')){
@@ -23,13 +23,13 @@ $(function() {
       }
     }        
 
-$(".country-stat").each(function() {
+$("#country-stat").each(function() {
   $(this).data('count1', parseInt($(this).html(), 10));
   $(this).html('0');
   count1($(this));
  });
 
-$(".case-stat").each(function() {
+$("#case-stat").each(function() {
   $(this).data('count2', parseInt($(this).html(), 10));
   $(this).html('0');
   count2($(this));

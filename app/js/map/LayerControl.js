@@ -219,7 +219,7 @@ function(
 				// });
 				// new StatisticsPane({stats:cluster_stats},popup.id);
 				// popup.obj.setLatLng(a.latlng).setContent(popup.content.replace('{}',popup.id)).openOn(map);
-
+				
 				var companies = markers.map(function(marker){
 					return getCompanyPopupProps(marker,true,false);
 				})
