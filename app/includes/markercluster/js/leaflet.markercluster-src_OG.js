@@ -595,21 +595,21 @@ L.MarkerClusterGroup = L.FeatureGroup.extend({
 		var r = 0;
 		if (childCount < 10) {
 			c += 'small';
-		/*	r = 30;*/
-		r = 27;
+			r = 30;
+		/*r = Math.log(childCount)*20;*/
 
 		} else if (childCount < 100) {
 			c += 'medium';
-	/*		r = 40;*/
-			r = 35;
+			r = 40;
+			/*r = Math.log(childCount)*10;*/
 		} else {
 			c += 'large';
-/*			r = 50;*/
-			r = 45;
+			r = 50;
+			/*r = Math.log(childCount)*10;*/
 		}
 		//to change size of circles, need to update css
-		//return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
-		return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(r, r)});
+		return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
+		//return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(r, r)});
 	},
 
 	_bindEvents: function () {

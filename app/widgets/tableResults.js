@@ -29,6 +29,8 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 			var itemData = rowProps.props.data;
 
+			console.log('itemData',itemData);
+
 			companyData.name = itemData['Company Name'];
 			companyData.country = itemData['Country'];
 			companyData.profileID = itemData['profileID'];

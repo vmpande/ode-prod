@@ -417,9 +417,9 @@ define([
 
 			var accordianItems = this.renderAccordian(props.accordian,state);
 			//Added csv json
-			var accordianItems2 = this.renderAccordian(props.accordian2,state);
+			//var accordianItems2 = this.renderAccordian(props.accordian2,state);
 				//Added by Vinayak 07.18.16
-			var accordianItems_mac = this.renderAccordian_mac(props.accordian,state);
+			//var accordianItems_mac = this.renderAccordian_mac(props.accordian,state);
 
 			//console.log("accordianItems", accordianItems);
 			//console.log("accordianItems_mac", accordianItems_mac);
