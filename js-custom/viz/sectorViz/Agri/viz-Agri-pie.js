@@ -28,7 +28,7 @@ var svg = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie1.csv", type, function(error, data) {
+d3.csv("viz-data/sectorViz/Agri/data-Agri-pie1.csv", type, function(error, data) {
   if (error) throw error;
 
   total = 0;
@@ -109,7 +109,7 @@ var svg2 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie2.csv", type, function(error, data) {
+d3.csv("viz-data/sectorViz/Agri/data-Agri-pie2.csv", type, function(error, data) {
   if (error) throw error;
 
   total = 0;
@@ -190,7 +190,7 @@ var svg3 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie3.csv", type, function(error, data) {
+d3.csv("viz-data/sectorViz/Agri/data-Agri-pie3.csv", type, function(error, data) {
   if (error) throw error;
 
   total = 0;

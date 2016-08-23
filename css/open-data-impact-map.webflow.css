@@ -323,14 +323,14 @@ li {
 }
 
 .sector-link-block {
-  display: block;
+  display: inline-block;
   width: 20%;
-  margin-right: 0px;
-  margin-bottom: 40px;
+  margin-right: auto;
   margin-left: auto;
-  float: left;
+  direction: ltr;
   text-align: center;
   text-decoration: none;
+  text-transform: none;
 }
 
 .sector-link-block:hover {
@@ -1210,6 +1210,7 @@ li {
 }
 
 .region-spacer {
+  display: inline-block;
   width: 12%;
 }
 
@@ -1818,7 +1819,7 @@ li {
   display: inline-block;
   width: 550px;
   height: 325px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .latinamerica {
@@ -1828,7 +1829,7 @@ li {
   display: block;
   width: 350px;
   height: 350px;
-  margin: auto auto 20px;
+  margin: 20px auto;
   float: none;
   clear: none;
 }
@@ -1837,35 +1838,35 @@ li {
   display: block;
   width: 475px;
   height: 375px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .northamerica {
   display: block;
   width: 425px;
   height: 325px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .eastasia {
   display: block;
   width: 410px;
   height: 375px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .subsahara {
   display: block;
   width: 300px;
   height: 300px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .southasia {
   display: block;
   width: 300px;
   height: 300px;
-  margin: auto auto 20px;
+  margin: 20px auto;
 }
 
 .anchor {
@@ -2009,7 +2010,14 @@ li {
 }
 
 .viztitle {
+  font-size: 20px;
+  line-height: 42px;
   font-weight: 400;
+}
+
+.viztitle.high-level-pages {
+  color: #fff;
+  text-align: center;
 }
 
 .leftnav {
@@ -2076,6 +2084,36 @@ li {
 
 .sector-spacing {
   width: 1px;
+}
+
+.section-header.chart-titles {
+  color: #fff;
+}
+
+.section-header.chart-title.individual-pages {
+  font-size: 20px;
+}
+
+.explore-sector-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-left: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
