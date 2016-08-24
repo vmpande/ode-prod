@@ -34,7 +34,7 @@ define([
 		 },
 		
 		//Added by Vinayak 07.19.16 to handle machine readable part
-		handleClick_mac: function() {
+/*		handleClick_mac: function() {
 
 				console.log('handleClick_mac props',this.props);
 
@@ -47,7 +47,7 @@ define([
 		    	this.props.keys.changed && this.props.keys.changed(this.props.keys);
 		    	
 		    	//console.log('handleClick_mac props',props);				
-		 },
+		 },*/
 		 //End of Addition by Vinayak
 
 		//  componentWillReceiveProps: function(nextProps) {

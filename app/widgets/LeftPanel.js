@@ -357,27 +357,38 @@ define([
 			var self = this;
 
 			//commented as unctionality not required
-/*			if (state.selectedAccordian == 4){
+			if (state.selectedAccordian == 1){
 				props.accordian.items.forEach(function(item,index){
 					//Myeong -- for now, the framework does not allow openning two filters.
 					// console.log(item);
 					// if (item.value == "country_income"){
 					// 	self.selectAccordian(index);
-					// }
+					// }					
+					if(item.value == 'country_income'){
+						if (item.items[3].value == 'Upper middle income') 
+						{
+						var temp = item.items[1];
+						item.items[1] = item.items[3];
+						item.items[3] = temp;
+						}
+					}
+
 					item.changed = function(args){
 						self.selectAccordian(index);
 					}
+
 					item.items.forEach(function(subitem){
 						if (state.cleared){
 							subitem.selected = false;
 						}
 
+					//console.log('subitem',subitem);
 						// myeong, 7/25
-						if (subitem.value == "Low income" || subitem.value == "Low middle income" || subitem.value == "Lower middle income"){
+/*						if (subitem.value == "Low income" || subitem.value == "Low middle income" || subitem.value == "Lower middle income"){
 						//if (subitem.value == "Yes"){
 							subitem.selected = true;
 							self.selectFilter(item);
-						}
+						}*/
 						subitem.changed = function(args){
 							self.selectFilter(item);
 						}
@@ -398,8 +409,9 @@ define([
 						}
 					});
 				});
-			}*/
+			}
 
+/*
 			props.accordian.items.forEach(function(item,index){
 					item.changed = function(args){
 						self.selectAccordian(index);
@@ -414,7 +426,7 @@ define([
 						}
 					});
 				});
-
+*/
 			var accordianItems = this.renderAccordian(props.accordian,state);
 			//Added csv json
 			//var accordianItems2 = this.renderAccordian(props.accordian2,state);

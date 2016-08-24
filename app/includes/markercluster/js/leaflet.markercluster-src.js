@@ -590,7 +590,7 @@ L.MarkerClusterGroup = L.FeatureGroup.extend({
 	//Default functionality
 	_defaultIconCreateFunction: function (cluster) {
 		var childCount = cluster.getChildCount();
-		console.log('childCount',childCount);
+		//console.log('childCount',childCount);
 		var c = ' marker-cluster-';
 		var r = 0;
 		if (childCount < 10) {
