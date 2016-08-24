@@ -331,6 +331,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				data2.push([
 					company['Region'],
 					company['Country'],
+					company['Country Income Level'],
 					company['Company Name'],
 					company['Organization Type'],					
 					company['Industry Category'],
@@ -431,6 +432,9 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				"columnName": "Country",
 				"visible": true
 			},{
+				"columnName": "Country Income Level",
+				"visible": true
+			},{
 				"columnName": "Organization Type",
 				"visible": true
 			},{
@@ -449,7 +453,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			//Change by Vinayak 07.08.2016
 			//To Change Company Name label to Organization Name label and Insutry Category to Sectors
 			//var columns = ["Company Name", "Region", "Country", "Organization Type", "Industry Category", "Description", "Data Use"];
-			var columns = ["Organization Name", "Region", "Country", "Organization Type", "Sectors", "Description", "Type of Data Used"];
+			var columns = ["Organization Name", "Region", "Country", "Country Income Level", "Organization Type", "Sectors", "Description", "Type of Data Used"];
 
 			//debugger; Commented by Vinayak
 
@@ -474,6 +478,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				var data = {					
 					"Region": attr.org_hq_country_region,
 					"Country": attr.org_hq_country,
+					"Country Income Level": attr.org_hq_country_income,
 			//Change by Vinayak 07.08.2016
 			//To Change Company Name label to Organization Name label
 			//		"Company Name": attr.org_name,
@@ -529,11 +534,12 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			attr2.dataCell = uniqueList2;
 			//End of Addition
 
-				//console.log("attr", attr); //Vinayak
+				console.log("attr2", attr2); //Vinayak
 
 				var data2 = {					
 					"Region": attr2.org_hq_country_region,
 					"Country": attr2.org_hq_country,
+					"Country Income Level": attr2.org_hq_country_income,
 			//Change by Vinayak 07.08.2016
 			//To Change Company Name label to Organization Name label
 			//		"Company Name": attr.org_name,

@@ -356,14 +356,60 @@ define([
 			var setState = this.setState;
 			var self = this;
 
-			//commented as unctionality not required
+			//commented as functionality not required
+			/*if (state.selectedAccordian == 4){
+				props.accordian.items.forEach(function(item,index){
+					//Myeong -- for now, the framework does not allow openning two filters.
+					// console.log(item);
+					// if (item.value == "country_income"){
+					// 	self.selectAccordian(index);
+					// }
+					item.changed = function(args){
+						self.selectAccordian(index);
+					}
+
+					item.items.forEach(function(subitem){
+						if (state.cleared){
+							subitem.selected = false;
+						}
+
+					//console.log('subitem',subitem);
+						// myeong, 7/25
+						if (subitem.value == "Low income" || subitem.value == "Low middle income" || subitem.value == "Lower middle income"){
+						//if (subitem.value == "Yes"){
+							subitem.selected = true;
+							self.selectFilter(item);
+						}
+						subitem.changed = function(args){
+							self.selectFilter(item);
+						}
+					});
+				});
+			} else {
+				props.accordian.items.forEach(function(item,index){
+					item.changed = function(args){
+						self.selectAccordian(index);
+					}
+					item.items.forEach(function(subitem){
+						if (state.cleared){
+							subitem.selected = false;
+						}
+						subitem.changed = function(args){
+							//console.log('inside leftpanel render before calling self.selectFilter(item)',self);
+							self.selectFilter(item);
+						}
+					});
+				});
+			}*/
+
 			if (state.selectedAccordian == 1){
 				props.accordian.items.forEach(function(item,index){
 					//Myeong -- for now, the framework does not allow openning two filters.
 					// console.log(item);
 					// if (item.value == "country_income"){
 					// 	self.selectAccordian(index);
-					// }					
+					// }
+					//To reorder the country income level values from high income to low income by Vinayak					
 					if(item.value == 'country_income'){
 						if (item.items[3].value == 'Upper middle income') 
 						{
@@ -404,7 +450,7 @@ define([
 							subitem.selected = false;
 						}
 						subitem.changed = function(args){
-							console.log('inside leftpanel render before calling self.selectFilter(item)',self);
+							//console.log('inside leftpanel render before calling self.selectFilter(item)',self);
 							self.selectFilter(item);
 						}
 					});
