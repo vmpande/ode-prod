@@ -332,7 +332,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					company['Region'],
 					company['Country'],
 					company['Country Income Level'],
-					company['Company Name'],
+					company['Organizational Name'],
 					company['Organization Type'],					
 					company['Industry Category'],
 					company['Description'],
@@ -423,7 +423,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 			columnMetaData = [
 			{
-				"columnName": "Company Name",
+				"columnName": "Organization Name",
 				"visible": true
 			},{
 				"columnName": "Region",
@@ -471,6 +471,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				uniqueList = uniqueList.slice(0, -2);
 			}
 			attr.dataCell = uniqueList;
+
 			//End of Addition
 
 				//console.log("attr", attr); //Vinayak
@@ -534,7 +535,14 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			attr2.dataCell = uniqueList2;
 			//End of Addition
 
-				console.log("attr2", attr2); //Vinayak
+			//To prevent excel from converting size range to date Vinayak
+			if (attr2.org_size_id) {
+			//console.log('attr.org_size_id',attr.org_size_id);			
+			attr2.org_size_id = attr2.org_size_id.replace("-", " to ");
+			//console.log('attr.org_size_id',attr.org_size_id);
+			}	
+
+				//console.log("attr2", attr2); //Vinayak
 
 				var data2 = {					
 					"Region": attr2.org_hq_country_region,

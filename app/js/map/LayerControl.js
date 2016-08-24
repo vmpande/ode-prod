@@ -381,7 +381,7 @@ function(
 		}
 
 		control.exportTableData = function(){
-			console.log('tableResults',tableResults)
+			//console.log('tableResults',tableResults)
 			tableResults.exportTableData();
 			
 		}
