@@ -1,5 +1,5 @@
 <?php  
-	include_once("../db_config.php");
+	include_once("../../../db_config.php");
 	
 	$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 

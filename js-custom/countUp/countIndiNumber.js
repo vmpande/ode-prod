@@ -1,4 +1,4 @@
-$(function() {
+$.when( $.ajax( "js-custom/countUp/home_country_ticker.php" ), $.ajax( "js-custom/countUp/home_case_ticker.php" ) ).done(function() {
     function count1($this){
         var current = parseInt($this.html(), 10);
         current = current + 1; // set the interval

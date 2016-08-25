@@ -9,12 +9,12 @@ function insertCaseStat() {
 
         xmlhttp1.onreadystatechange = function() {
             if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
-                document.getElementsByClassName('stat').innerHTML = xmlhttp1.responseText;
+                document.getElementById('stattss').innerHTML = xmlhttp1.responseText;
                 // console.log(xmlhttp.responseText);
             }
         };
 
-        xmlhttp1.open("GET", "js-custom/countUp/region/EAP/getEAPStat.php", true);
+        xmlhttp1.open("GET", "js-custom/countUp/region/EAP/EAP_ticker.php", true);
         xmlhttp1.send();
     }
 

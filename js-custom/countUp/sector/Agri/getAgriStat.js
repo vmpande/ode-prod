@@ -9,7 +9,8 @@ function insertCaseStat() {
 
         xmlhttp1.onreadystatechange = function() {
             if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
-                document.getElementsByClassName('stat').innerHTML = xmlhttp1.responseText;
+                var hello = "hello";
+                document.getElementById('stattss').innerHTML = xmlhttp1.responseText;
                 // console.log(xmlhttp.responseText);
             }
         };

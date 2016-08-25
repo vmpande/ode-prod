@@ -1,5 +1,5 @@
 <?php  
-	include_once("../db_config.php");
+	include_once("../../../db_config.php");
 	
 	$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 
@@ -24,6 +24,7 @@
 	// $num = $stirng + 5;
 	// echo $row;
 	echo $string;
+	// echo "777";
 	// echo $num?;
 	// $eval = is_string($isString);
 

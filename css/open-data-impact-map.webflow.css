@@ -702,7 +702,42 @@ li {
   width: 221px;
   margin-top: auto;
   margin-bottom: 5px;
-  padding: auto 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.button.download.data-format-button {
+  width: 110px;
+  margin-right: 6px;
+  margin-left: 6px;
+  background-color: #34546d;
+  opacity: 1;
+}
+
+.button.download.data-format-button:hover {
+  background-color: #5cb5a7;
+}
+
+.button.download.data-format-button.left {
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+}
+
+.button.download.data-format-button.left_data {
+  width: 108px;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+  background-color: #7c9fb0;
+}
+
+.button.download.data-format-button.right_data {
+  width: 108px;
+  margin-right: auto;
+  margin-left: auto;
+  float: right;
+  background-color: #7c9fb0;
 }
 
 .button.contact-button {
@@ -2114,6 +2149,19 @@ li {
   -ms-flex-item-align: start;
   align-self: flex-start;
   text-align: center;
+}
+
+.data_buttons {
+  display: block;
+  width: 221px;
+  margin-right: auto;
+  margin-left: auto;
+  float: left;
+  text-align: center;
+}
+
+html.w-mod-js *[data-ix="display-none-on-load"] {
+  display: none;
 }
 
 @media (max-width: 991px) {

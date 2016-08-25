@@ -1,5 +1,7 @@
 <?php  
-	$db = new mysqli('localhost:8889', 'root', '19880518', 'opendata_db');
+	include_once("../../../db_config.php");
+	
+	$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 
 	if($db->connect_errno > 0){
     	die('Unable to connect to database [' . $db->connect_error . ']');
