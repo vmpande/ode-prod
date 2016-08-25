@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue Aug 23 2016 16:28:16 GMT+0000 (UTC) -->
+<!-- Last Published: Thu Aug 25 2016 15:33:34 GMT+0000 (UTC) -->
 <html data-wf-page="577440f9dee5efd30ed38e5a" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -24,6 +24,8 @@
   <style>
     li { display: list-item; }
   </style>
+  <!-- Noah - code for getting stat number from database to homepage -->
+  <script type="text/javascript" src="js-custom/countUp/getHomepageStat.js"></script>
 </head>
 <body>
   <div class="navigation">
@@ -70,7 +72,7 @@
       <div class="homepage-stat-box">
         <div class="homepage-stat-circle">
           <div class="homepage-stat-inner-cirlce">
-            <div class="homepage-stat" id="country-stat">86</div>
+            <div class="homepage-stat" id="country-stat"></div>
             <div class="homepage-stat-description">Countries</div>
           </div>
         </div>
@@ -78,7 +80,7 @@
       <div class="homepage-stat-box">
         <div class="homepage-stat-circle">
           <div class="homepage-stat-inner-cirlce">
-            <div class="homepage-stat" id="case-stat">1658</div>
+            <div class="homepage-stat" id="case-stat"></div>
             <div class="homepage-stat-description">Use Cases</div>
           </div>
         </div>
