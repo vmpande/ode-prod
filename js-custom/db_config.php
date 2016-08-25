@@ -1,6 +1,6 @@
 <?php
-	define("DBHOST", "localhost:8888");
+	define("DBHOST", "localhost");
 	define("DBNAME", "opendata_db");
 	define("DBUSER", "root");
-	define("DBPASS", "19880518");
+	define("DBPASS", "Sep@2016");
 ?>
