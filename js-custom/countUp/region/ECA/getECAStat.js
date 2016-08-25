@@ -14,7 +14,7 @@ function insertCaseStat() {
             }
         };
 
-        xmlhttp1.open("GET", "js-custom/countUp/region/ECA/getECAStat.php", true);
+        xmlhttp1.open("GET", "js-custom/countUp/region/ECA/ECA_ticker.php", true);
         xmlhttp1.send();
     }
 
