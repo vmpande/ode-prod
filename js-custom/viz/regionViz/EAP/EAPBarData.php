@@ -7,7 +7,7 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
-// IT and Geospatial
+//  1 IT and Geospatial
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -47,7 +47,7 @@
 
 	// echo $string;
 
-// agriculture
+// 2 agriculture
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -73,7 +73,7 @@
 
 	// echo $string;
 
-// Business research and consulting
+// 3 Business research and consulting
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -113,7 +113,7 @@
 
 	// echo $string;
 
-// Energy and Climate
+// 4 Energy and Climate
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -183,7 +183,7 @@
 
 	// echo $string;
 
-// Finance investment and insurance
+// 5 Finance investment and insurance
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -223,7 +223,7 @@
 
 	// echo $string;
 
-// Governance
+// 6 Governance
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -263,7 +263,7 @@
 
 	// echo $string;
 
-// Health
+// 7 Health
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -318,7 +318,7 @@
 
 	// echo $string;
 
-// Housing construction and real estate
+// 8 Housing construction and real estate
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -344,7 +344,7 @@
 
 	// echo $string;
 
-	// media and communications
+	// 9 media and communications
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -384,7 +384,7 @@
 
 	// echo $string;
 
-	// Housing construction and real estate
+	// 10 Housing construction and real estate
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -410,7 +410,7 @@
 
 	// echo $string;
 
-	// media and communications
+	// 11 media and communications
 	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
 			where org_loc_id = org_locations_info.object_id
 			and org_locations_info.country_id = org_country_info.country_id
@@ -447,6 +447,58 @@
 		$obj->sector = "Arts, Culture & Tourism";
 		$obj->orgs = $num;
 		$data[] = $obj;
+
+	// echo $string;
+
+	// 12 consumer
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+			where org_loc_id = org_locations_info.object_id
+			and org_locations_info.country_id = org_country_info.country_id
+			and org_hq_country_region = "East Asia & Pacific"
+			and industry_id = "Consumer services"
+			and org_profile_status = "publish";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		// $string = $row["count(distinct(org_name))"];
+		$obj = new stdClass();
+		$obj->sector = "Consumer";
+		$obj->orgs = (int)$row["count(distinct(org_name))"];
+		$data[] = $obj;
+		// var_dump($row);
+		// $row->{'count(distinct(org_name))'} = $row->{'East Asia & Pacific'};
+		// unset($row->{'count(distinct(org_name))'});
+		// var_dump($row);
+	}
+
+	// echo $string;
+
+	// 12 consumer
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+			where org_loc_id = org_locations_info.object_id
+			and org_locations_info.country_id = org_country_info.country_id
+			and org_hq_country_region = "East Asia & Pacific"
+			and industry_id = "Education"
+			and org_profile_status = "publish";';
+
+	if(!$result = $db->query($sql)){
+	    die('There was an error running the query [' . $db->error . ']');
+	}
+
+	while($row = $result->fetch_assoc()){
+		// $string = $row["count(distinct(org_name))"];
+		$obj = new stdClass();
+		$obj->sector = "Education";
+		$obj->orgs = (int)$row["count(distinct(org_name))"];
+		$data[] = $obj;
+		// var_dump($row);
+		// $row->{'count(distinct(org_name))'} = $row->{'East Asia & Pacific'};
+		// unset($row->{'count(distinct(org_name))'});
+		// var_dump($row);
+	}
 
 	// echo $string;
 
