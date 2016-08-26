@@ -89,7 +89,7 @@
 			return d > 100 ? '#c55441': //'#ca6554' :
 				   d > 10 ? '#d6877a' :
 				   d > 0 ?  '#e7bab3':
-			                '#a4a8a9';
+			                '#b8bdbe';
 		}
 
 		function style(feature) 
@@ -277,7 +277,7 @@
 
 			labels.push(
 			'<i style="background:' + '#e7bab3' + '"></i> ' +
-			0 + '&ndash;' + 10);
+			1 + '&ndash;' + 10);
 
 			labels.push(
 			'<i style="background:' + '#c55441' + '"></i> ' +
