@@ -13,8 +13,8 @@ define([
 	var CenterPanel = React.createClass({displayName: "CenterPanel",
 		getInitialState: function() {
 		    return {
-		    	selectedTab: 'map',
-		    	//selectedTab: 'Table',
+		    	selectedTab: 'map', //vintab
+		    	//selectedTab: 'Table', //vintab
 		    };
 		},
 

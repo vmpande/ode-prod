@@ -332,7 +332,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 					company['Region'],
 					company['Country'],
 					company['Country Income Level'],
-					company['Organizational Name'],
+					company['Organization Name'],
 					company['Organization Type'],					
 					company['Industry Category'],
 					company['Description'],
@@ -427,19 +427,24 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				"visible": true
 			},{
 				"columnName": "Region",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth"
 			}, {
 				"columnName": "Country",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth"
 			},{
 				"columnName": "Country Income Level",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth4"
 			},{
 				"columnName": "Organization Type",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth3"
 			},{
-				"columnName": "Industry Category",
-				"visible": true
+				"columnName": "Sectors",
+				"visible": true,
+				"cssClassName": "ColWidth2"
 			},{
 				"columnName": "Description",
 				"visible": true,
@@ -583,14 +588,14 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 				//Data.push(data);
 				/* This is for inserting each element in a sorted order. */
 				Data2.splice(sortedIndex(Data2, data2), 0, data2);
-
 			});
 			
 
 			return (
 				React.createElement("div", {id: "results-ontainer", className: 'results-container'},
+					React.createElement("div", {className: "table-count"}, "Total : ", Data.length),
 					React.createElement("div", {id: "table-area", className: "table-area"},
-						React.createElement(Griddle, {results: Data, columnMetadata: columnMetaData, columns: columns, onRowClick: this.showPopup, tableClassName: "table", enableInfiniteScroll: false, resultsPerPage: 9, useFixedHeader: true, initialSort: "Organization Name"}),
+						React.createElement(Griddle, {results: Data, columnMetadata: columnMetaData, columns: columns, onRowClick: this.showPopup, tableClassName: "table", enableInfiniteScroll: false, resultsPerPage: 9, useFixedHeader: true, initialSort: "Organization Name", nextClassName: "griddle-nextcustom"}),
 						React.createElement("div", {id: "popup-area", className: "table-company-popup"},
 							React.createElement("span", {className: "close-popup", onClick: this.hidePopup}, "X"),
 							React.createElement("div", {id: "company-popup"})
