@@ -88,7 +88,8 @@
 			                  '#bcc64d';*/
 			return d > 100 ? '#c55441': //'#ca6554' :
 				   d > 10 ? '#d6877a' :
-			                  '#e7bab3';
+				   d > 0 ?  '#e7bab3':
+			                '#a4a8a9';
 		}
 
 		function style(feature) 
