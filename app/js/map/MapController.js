@@ -217,7 +217,7 @@ define([/*"esri/map",*/
         var lng = 15.03990936279297;
         var zoom = 2;
 
-        brmap = new L.Map(mapDiv, {zoomControl:false, maxZoom: 5, minZoom: 2
+        brmap = new L.Map(mapDiv, {zoomControl:false, maxZoom: 6, minZoom: 2
 
         ,
         //Added by Vinayak 07.08.16

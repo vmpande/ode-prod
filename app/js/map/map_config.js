@@ -42,12 +42,12 @@ define([],function(){
 
           panels: [
           {
-              selected: true,
+              selected: true, //vinTab
               value: 'map',
               label: 'Map View'
           },
           {
-              selected: false,
+              selected: false, //vinTab
               value: 'Table',
               label: 'Data View'
           }

@@ -21,12 +21,12 @@ define([],function(){
 
        map_panels: [
           {
-              selected: true,
+              selected: true, //Vintab
               value: 'map',
               label: 'Map'
           },
           {
-              selected: false,
+              selected: false, //Vintab
               value: 'Table',
               label: 'Table'
           }

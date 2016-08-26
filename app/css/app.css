@@ -260,7 +260,32 @@ body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2
 /* line 411 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .table{max-height:80%}
 /* line 414 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.description-column{width:30%}
+.description-column{width:25%}
+
+.table-count{font-family: Palanquin, sans-serif !important;
+    text-align: left;
+/*    padding-right: 33px;*/
+    padding-left: 919px;
+    font-weight: bold;}
+
+ .ColWidth{
+ 	   width: 75px;
+ }
+  .ColWidth2{
+ 	   width: 130px;
+ }
+   .ColWidth3{
+ 	   width: 100px;
+ }
+    .ColWidth4{
+ 	   width: 100px;
+ }
+
+ .griddle .griddle-nextcustom{
+
+ 	float: left;
+ }
+
 /* line 417 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .export-button{background:url("../images/clear_filter2.png") no-repeat 15px #eaeaea;
 margin-top:0;margin-bottom:0;background-color:#eaeaea;width:100%;padding-left:2.3rem;text-align:left;padding-right:0;

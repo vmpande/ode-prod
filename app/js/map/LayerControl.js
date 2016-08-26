@@ -210,12 +210,16 @@ function(
 			var popupObj = popups.marker;
 			var props = getCompanyPopupProps(marker,false,true);
 
-			console.log('marker',marker);
+			//console.log('marker',marker);
+
+			console.log('marker.getLatLng()',marker.getLatLng());
 			
 			openPopup(popupObj,marker.getLatLng(),{constructor:WidgetFactory.CompanyPopup,props:props});
 		}
 
 		clusterLayer.on('clusterclick', function (a) {
+
+				console.log('isnide clusterclick');
 				var markers = a.layer.getAllChildMarkers();
 				// var cluster_stats = MapConfig.clusterStatFields.map(function(stat){
 				// 	return { fieldName: stat, count: getClusterStats(markers,stat) }
