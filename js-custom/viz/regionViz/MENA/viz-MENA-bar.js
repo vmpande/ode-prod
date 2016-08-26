@@ -36,7 +36,8 @@ var svgBar = d3.select("#bar").append("svg")
     .append("g")
     .attr("transform", "translate(" + marginBar.left + "," + marginBar.top + ")");
 
-d3.csv("viz-data/data-sample-regionBar.csv", type, function(error, data) {
+// d3.csv("viz-data/data-sample-regionBar.csv", type, function(error, data) {
+d3.json("js-custom/viz/regionViz/MENA/MENABarData.php", function(error, data) {
   if (error) throw error;
 
   data.sort(function(a, b) { return b.orgs - a.orgs; });
@@ -102,10 +103,10 @@ d3.csv("viz-data/data-sample-regionBar.csv", type, function(error, data) {
 });
 
 // for csv - ensures the value you get is actually integers not strings...
-function type(d) {
-  d.orgs = +d.orgs;
-  return d;
-}
+// function type(d) {
+//   d.orgs = +d.orgs;
+//   return d;
+// }
 
 function wrap(text, width) {
         text.each(function() {
