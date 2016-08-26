@@ -36,7 +36,8 @@ var svg1 = d3.select(".regionvizlanding").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("viz-data/data-regionLanding.csv", type, function(error, data) {
+// d3.csv("viz-data/data-regionLanding.csv", type, function(error, data) {
+d3.json("js-custom/viz/regionViz/LandingBarData.php", function(error, data) {
   if (error) throw error;
   // console.log(data[0]);
   data.sort(function(a, b) { return b.orgs - a.orgs; });
@@ -103,10 +104,10 @@ d3.csv("viz-data/data-regionLanding.csv", type, function(error, data) {
 
 // ensures the value you get is actually integers not strings...
 // used with csv file, json file does not need this
-function type(d) {
-  d.orgs = +d.orgs;
-  return d;
-}
+// function type(d) {
+//   d.orgs = +d.orgs;
+//   return d;
+// }
 
 function wrap(text, width) {
         text.each(function() {

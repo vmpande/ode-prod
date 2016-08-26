@@ -28,12 +28,16 @@ var svg = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie1.csv", type, function(error, data) {
+// d3.csv("viz-data/data-sample-pie1.csv", type, function(error, data) {
+  d3.json("js-custom/viz/regionViz/MENA/MENATypePieData.php", function(error, data) {
   if (error) throw error;
 
-  total = 0;
+  total1 = 0;
+  // console.log(data.length);
   for (i=0; i<data.length; i++) {
-    total = total + data[i].number;
+    total1 = total1 + data[i].number;
+    // console.log(i);
+    // console.log(total1);
   }
 
   var formatPercent = d3.format(",.0%");
@@ -49,7 +53,9 @@ d3.csv("viz-data/data-sample-pie1.csv", type, function(error, data) {
         var yPosition = d3.mouse(d3.select('#byType').node())[1] - 20;
         tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_type for org type name
-        tooltip.select("text").text(formatPercent(d.value/total));
+        tooltip.select("text").text(formatPercent(d.value/total1));
+        // console.log(d.value);
+        // console.log(total1);
       });
 
   g.append("path")
@@ -92,10 +98,10 @@ d3.csv("viz-data/data-sample-pie1.csv", type, function(error, data) {
 
 });
 
-function type(d) {
-  d.number = +d.number;
-  return d;
-}
+// function type(d) {
+//   d.number = +d.number;
+//   return d;
+// }
 
 // pie two --- breakdown by org size
 var color2 = d3.scale.ordinal()
@@ -109,9 +115,10 @@ var svg2 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie2.csv", type, function(error, data) {
+// d3.csv("viz-data/data-sample-pie2.csv", type, function(error, data) {
+d3.json("js-custom/viz/regionViz/MENA/MENASizePieData.php", function(error, data) {
   if (error) throw error;
-
+  // console.log(data);
   total = 0;
     for (i=0; i<data.length; i++) {
       total = total + data[i].number;
@@ -131,6 +138,8 @@ d3.csv("viz-data/data-sample-pie2.csv", type, function(error, data) {
         tooltip2.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip2.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_size for org size label
         tooltip2.select("text").text(formatPercent(d.value/total));
+        // console.log(total);
+        // console.log(d.value);
       });
 
   g.append("path")
@@ -173,10 +182,10 @@ d3.csv("viz-data/data-sample-pie2.csv", type, function(error, data) {
 
 });
 
-function type(d) {
-  d.number = +d.number;
-  return d;
-}
+// function type(d) {
+//   d.number = +d.number;
+//   return d;
+// }
 
 // pie three --- breakdown by org age
 var color3 = d3.scale.ordinal()
@@ -190,12 +199,13 @@ var svg3 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/data-sample-pie3.csv", type, function(error, data) {
+// d3.csv("viz-data/data-sample-pie3.csv", type, function(error, data) {
+  d3.json("js-custom/viz/regionViz/MENA/MENAAgePieData.php", function(error, data) {
   if (error) throw error;
 
-  total = 0;
+  total2 = 0;
     for (i=0; i<data.length; i++) {
-      total = total + data[i].number;
+      total2 = total2 + data[i].number;
     }
 
   var formatPercent = d3.format(",.0%");
@@ -211,7 +221,7 @@ d3.csv("viz-data/data-sample-pie3.csv", type, function(error, data) {
         var yPosition = d3.mouse(d3.select('#byAge').node())[1] - 20;
         tooltip3.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip3.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_age for org age label
-        tooltip3.select("text").text(formatPercent(d.value/total));
+        tooltip3.select("text").text(formatPercent(d.value/total2));
       });
 
   g.append("path")
@@ -254,10 +264,10 @@ d3.csv("viz-data/data-sample-pie3.csv", type, function(error, data) {
 
 });
 
-function type(d) {
-  d.number = +d.number;
-  return d;
-}
+// function type(d) {
+//   d.number = +d.number;
+//   return d;
+// }
 
 // Prep the tooltips, initial display is hidden
       var tooltip = d3.select("#byType").append("g")
