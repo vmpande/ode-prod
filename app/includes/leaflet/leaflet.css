@@ -184,7 +184,7 @@
 .leaflet-container {
 	/*Change by Vinayak 07.28.16*/
 	/*background: #ddd;*/
-	background: #000;
+	background: transparent;
 	outline: 0;
 	}
 .leaflet-container a {
