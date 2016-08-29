@@ -28,12 +28,13 @@ var svg = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/sectorViz/BRC/data-BRC-pie1.csv", type, function(error, data) {
+// d3.csv("js-custom/viz/sectorViz/BRC/BRCTypePieData.php", type, function(error, data) {
+d3.json("js-custom/viz/sectorViz/BRC/BRCTypePieData.php", function(error, data) {
   if (error) throw error;
 
-  total = 0;
+  total1 = 0;
   for (i=0; i<data.length; i++) {
-    total = total + data[i].number;
+    total1= total1 + data[i].number;
   }
 
   var formatPercent = d3.format(",.0%");
@@ -49,7 +50,7 @@ d3.csv("viz-data/sectorViz/BRC/data-BRC-pie1.csv", type, function(error, data) {
         var yPosition = d3.mouse(d3.select('#byType').node())[1] - 20;
         tooltip.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_type for org type name
-        tooltip.select("text").text(formatPercent(d.value/total));
+        tooltip.select("text").text(formatPercent(d.value/total1));
       });
 
   g.append("path")
@@ -109,12 +110,13 @@ var svg2 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/sectorViz/BRC/data-BRC-pie2.csv", type, function(error, data) {
+// d3.csv("js-custom/viz/sectorViz/BRC/SizeTypePieData.php", type, function(error, data) {
+d3.json("js-custom/viz/sectorViz/BRC/BRCSizePieData.php", function(error, data) {
   if (error) throw error;
 
-  total = 0;
+  total2 = 0;
     for (i=0; i<data.length; i++) {
-      total = total + data[i].number;
+      total2 = total2 + data[i].number;
     }
 
   var formatPercent = d3.format(",.0%");
@@ -130,7 +132,7 @@ d3.csv("viz-data/sectorViz/BRC/data-BRC-pie2.csv", type, function(error, data) {
         var yPosition = d3.mouse(d3.select('#bySize').node())[1] - 20;
         tooltip2.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip2.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_size for org size label
-        tooltip2.select("text").text(formatPercent(d.value/total));
+        tooltip2.select("text").text(formatPercent(d.value/total2));
       });
 
   g.append("path")
@@ -190,12 +192,14 @@ var svg3 = d3.select("#threePie").append("svg")
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("viz-data/sectorViz/BRC/data-BRC-pie3.csv", type, function(error, data) {
+// d3.csv("js-custom/viz/sectorViz/BRC/BRCAgePieData.php", type, function(error, data) {
+d3.json("js-custom/viz/sectorViz/BRC/BRCAgePieData.php", function(error, data) {
+
   if (error) throw error;
 
-  total = 0;
+  total3 = 0;
     for (i=0; i<data.length; i++) {
-      total = total + data[i].number;
+      total3 = total3 + data[i].number;
     }
 
   var formatPercent = d3.format(",.0%");
@@ -211,7 +215,7 @@ d3.csv("viz-data/sectorViz/BRC/data-BRC-pie3.csv", type, function(error, data) {
         var yPosition = d3.mouse(d3.select('#byAge').node())[1] - 20;
         tooltip3.attr("transform", "translate(" + xPosition + "," + yPosition + ")");
         // tooltip3.select("text").text(d.value + " (" + formatPercent(d.value/total) + ")"); // d.data.org_age for org age label
-        tooltip3.select("text").text(formatPercent(d.value/total));
+        tooltip3.select("text").text(formatPercent(d.value/total3));
       });
 
   g.append("path")
