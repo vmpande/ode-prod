@@ -228,7 +228,7 @@ li {
 }
 
 .callout-text {
-  margin: 48px 8% -29px;
+  margin: 48px 8% 27px;
   font-family: Palanquin, sans-serif;
   color: #2b3d51;
   font-size: 24px;
@@ -238,6 +238,12 @@ li {
 
 .callout-text.contact-text {
   text-align: center;
+}
+
+.callout-text.usecasecallout {
+  margin-top: 50px;
+  margin-bottom: -10px;
+  padding-top: 20px;
 }
 
 .body-copy {
