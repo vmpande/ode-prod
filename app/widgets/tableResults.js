@@ -131,7 +131,7 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			}
 			var today = dd+'_'+mm+'_'+yyyy;
 			var blob = new Blob([jsonString], {type: "text/plain;charset=utf-8"});
-			fileSaveAs(blob, "Open Data Impact Map _ Data Export _ "+today+".txt");
+			fileSaveAs(blob, "Open Data Impact Map _ Data Export _ "+today+".json");
 
 
 		},
