@@ -212,6 +212,10 @@ li {
   text-shadow: 3px 3px 0 #1e2c3b;
 }
 
+.sector-landing.usecaselanding {
+  padding-top: 20px;
+}
+
 .sector-landing-content-well {
   max-width: 1400px;
   min-height: 80px;
@@ -241,9 +245,8 @@ li {
 }
 
 .callout-text.usecasecallout {
-  margin-top: 50px;
-  margin-bottom: -10px;
-  padding-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .body-copy {
@@ -550,9 +553,9 @@ li {
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  background-image: url('../images/healthcare-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
+  background-image: url('../images/agriculture-icon-detail@2x.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
   background-position: 50% 50%, 50% 0px, 50% 0px;
-  background-size: 84px, 100%, 100% 225px;
+  background-size: 188px, 100%, 100% 225px;
   background-repeat: no-repeat, no-repeat, repeat;
 }
 
@@ -622,6 +625,13 @@ li {
 .sector-detail-header-background.education-header {
   background-image: url('../images/education-title.png'), url('../images/sector-detail-dots@2x.png'), url('../images/sector-detail-gradient.jpg');
   background-size: 188px, 100%, 100% 225px;
+}
+
+.sector-detail-header-background.usecaseheader {
+  background-image: url('../images/sector-detail-gradient.jpg');
+  background-position: 50% 0px;
+  background-size: 100% 225px;
+  background-repeat: repeat;
 }
 
 .sector-detail-header {
