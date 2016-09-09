@@ -499,15 +499,21 @@ li {
 
 .footer {
   position: absolute;
+  display: block;
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
   padding: 30px 16%;
   background-color: #1e2c3b;
   text-align: center;
 }
 
 .footer-text {
+  display: block;
   max-width: 1200px;
+  margin-right: auto;
   margin-bottom: 30px;
+  margin-left: auto;
   font-family: Palanquin, sans-serif;
   color: #fff;
   font-size: 12px;
