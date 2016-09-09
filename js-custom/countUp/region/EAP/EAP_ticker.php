@@ -7,9 +7,9 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "East Asia & Pacific"
 			and org_profile_status = "publish";';
 

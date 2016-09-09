@@ -105,7 +105,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Mining/manufacturing"
-			and org_type = "For-profit";';
+			and org_type = "Developer group";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -119,7 +119,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Weather"
-			and org_type = "For-profit";';
+			and org_type = "Developer group";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -169,7 +169,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Mining/manufacturing"
-			and org_type = "For-profit";';
+			and org_type = "Nonprofit";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -183,7 +183,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Weather"
-			and org_type = "For-profit";';
+			and org_type = "Nonprofit";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -233,7 +233,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Mining/manufacturing"
-			and org_type = "For-profit";';
+			and org_type = "Other";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -247,7 +247,7 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Weather"
-			and org_type = "For-profit";';
+			and org_type = "Other";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');

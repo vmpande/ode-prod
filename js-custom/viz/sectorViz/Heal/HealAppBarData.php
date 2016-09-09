@@ -7,12 +7,13 @@
     	die('Unable to connect to database [' . $db->connect_error . ']');
 	}
 
-// 1-10 query
+// Research
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Healthcare"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Healthcare"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.research = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -23,10 +24,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Water and sanitation"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Water and sanitation"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.research = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -37,10 +39,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Scientific research"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Scientific research"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.research = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -50,20 +53,24 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$num = $string1 + $string2 +$string3;
 
-	$obj = new stdClass();
-		$obj->org_size = "1-10";
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Research";
 		$obj->number = $num;
 		$data[] = $obj;
+	}
+	
 
-
-// 11-50 query
+// Product and services
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Healthcare"
-			and org_size_id ="11-50";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Healthcare"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.prod_srvc = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -74,10 +81,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Water and sanitation"
-			and org_size_id ="11-50";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Water and sanitation"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.prod_srvc = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -88,10 +96,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Scientific research"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Scientific research"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.prod_srvc = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -101,19 +110,24 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$num = $string1 + $string2 +$string3;
 
-	$obj = new stdClass();
-		$obj->org_size = "11-50";
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "New Product/Service";
 		$obj->number = $num;
 		$data[] = $obj;
+	}
+	
 
-// 51-200 query
+// Organizational Optimization
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Healthcare"
-			and org_size_id ="51-200";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Healthcare"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.org_opt = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -124,10 +138,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Water and sanitation"
-			and org_size_id ="51-200";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Water and sanitation"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.org_opt = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -138,10 +153,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Scientific research"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Scientific research"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.org_opt = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -151,19 +167,24 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$num = $string1 + $string2 +$string3;
 
-	$obj = new stdClass();
-		$obj->org_size = "51-200";
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Organizational Optimization";
 		$obj->number = $num;
 		$data[] = $obj;
+	}
+	
 
-// 201-1000 query
+// Advocacy
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Healthcare"
-			and org_size_id ="201-1000";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Healthcare"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.Advocacy = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -174,10 +195,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Water and sanitation"
-			and org_size_id ="201-1000";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Water and sanitation"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.Advocacy = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -188,10 +210,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Scientific research"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Scientific research"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.Advocacy = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -201,38 +224,24 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$num = $string1 + $string2 +$string3;
 
-	$obj = new stdClass();
-		$obj->org_size = "201-1000";
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Advocacy";
 		$obj->number = $num;
 		$data[] = $obj;
+	}
+	
 
-// 1000 query
-	// $sql = 'SELECT count(distinct(org_name)) as "East Asia & Pacific" from org_profiles, org_locations_info, org_country_info
-	// 		where org_loc_id = org_locations_info.object_id
-	// 		and org_locations_info.country_id = org_country_info.country_id
-	// 		and org_hq_country_region = "East Asia & Pacific"
-	// 		and org_size_id = "1000"
-	// 		and org_profile_status = "publish";';
-
-	// if(!$result = $db->query($sql)){
-	//     die('There was an error running the query [' . $db->error . ']');
-	// }
-
-	// while($row = $result->fetch_assoc()){
-	// 	// $string = $row["count(distinct(org_name))"];
-	// 	$data[] = $row;
-	// }
-
-	// echo $string;
-
-// 1000+ query
+// Other
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Healthcare"
-			and org_size_id ="1000+";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Healthcare"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.use_other = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -243,10 +252,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Water and sanitation"
-			and org_size_id ="1000+";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Water and sanitation"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.use_other = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -257,10 +267,11 @@
 	}
 
 	$sql = 'SELECT count(distinct(org_name))
-			from org_profiles
-			where org_profile_status = "publish"
-			and industry_id = "Scientific research"
-			and org_size_id ="1-10";';
+		from org_profiles, data_applications
+		where org_profile_status = "publish"
+		and industry_id = "Scientific research"
+		and org_profiles.profile_id = data_applications.profile_id
+		and data_applications.use_other = 1;';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -270,16 +281,16 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$num = $string1 + $string2 +$string3;
 
-	$obj = new stdClass();
-		$obj->org_size = "1000+";
+	$num = $string1 + $string2 + $string3;
+
+	if ($num != 0) {
+		$obj = new stdClass();
+		$obj->app_type = "Other";
 		$obj->number = $num;
 		$data[] = $obj;
+	}
 
-	// $result = 
-	// echo $string;
-	// var_dump($data);
-	// var_dump(json_encode($data));
+
 	echo json_encode($data);
-?>	
+?>

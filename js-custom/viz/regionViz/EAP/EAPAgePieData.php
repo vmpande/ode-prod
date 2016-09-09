@@ -8,9 +8,9 @@
 	}
 
 // 1-3 years query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_locations.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "East Asia & Pacific"
 			and org_year_founded > 2012
 			-- and org_year_founded > 2005
@@ -37,9 +37,9 @@
 	// echo $string;
 
 // 4-10 years query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_locations.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "East Asia & Pacific"
 			-- and org_year_founded > 2012
 			and org_year_founded > 2005
@@ -66,9 +66,9 @@
 	// echo $string;
 
 	// 10 years query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_locations.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "East Asia & Pacific"
 			and org_year_founded > 2012
 			-- and org_year_founded > 2005

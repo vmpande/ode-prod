@@ -63,7 +63,7 @@ var svg = d3.select("#threePie").append("svg")
       .style("fill", function(d) { return color(d.data.org_type); });
 
   var legend = svg.selectAll(".legend")
-      .data(color.domain().slice().reverse())
+      .data(color.domain().slice())
       .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
@@ -147,7 +147,7 @@ d3.json("js-custom/viz/regionViz/SA/SASizePieData.php", function(error, data) {
       .style("fill", function(d) { return color2(d.data.org_size); });
 
   var legend2 = svg2.selectAll(".legend")
-      .data(color2.domain().slice().reverse())
+      .data(color2.domain().slice())
       .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
@@ -229,7 +229,7 @@ var svg3 = d3.select("#threePie").append("svg")
       .style("fill", function(d) { return color3(d.data.org_age); });
 
   var legend3 = svg3.selectAll(".legend")
-      .data(color3.domain().slice().reverse())
+      .data(color3.domain().slice())
       .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });

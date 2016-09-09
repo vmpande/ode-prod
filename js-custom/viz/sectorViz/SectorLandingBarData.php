@@ -8,9 +8,9 @@
 	}
 
 //  1 IT and Geospatial
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Data/information technology"
 			and org_profile_status = "publish";';
 
@@ -22,9 +22,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Geospatial/mapping"
 			and org_profile_status = "publish";';
 
@@ -46,9 +46,9 @@
 	// echo $string;
 
 // 2 agriculture
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Agriculture"
 			and org_profile_status = "publish";';
 
@@ -71,9 +71,9 @@
 	// echo $string;
 
 // 3 Business research and consulting
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Business and legal services"
 			and org_profile_status = "publish";';
 
@@ -85,9 +85,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Research and consulting"
 			and org_profile_status = "publish";';
 
@@ -109,9 +109,9 @@
 	// echo $string;
 
 // 4 Energy and Climate
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Energy"
 			and org_profile_status = "publish";';
 
@@ -123,9 +123,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Environment"
 			and org_profile_status = "publish";';
 
@@ -137,9 +137,9 @@
 		$string2 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Mining/manufacturing"
 			and org_profile_status = "publish";';
 
@@ -151,9 +151,9 @@
 		$string3 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Weather"
 			and org_profile_status = "publish";';
 
@@ -175,9 +175,9 @@
 	// echo $string;
 
 // 5 Finance investment and insurance
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Finance and investment"
 			and org_profile_status = "publish";';
 
@@ -189,9 +189,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Insurance"
 			and org_profile_status = "publish";';
 
@@ -213,9 +213,9 @@
 	// echo $string;
 
 // 6 Governance
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Governance"
 			and org_profile_status = "publish";';
 
@@ -227,9 +227,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Security and public safety"
 			and org_profile_status = "publish";';
 
@@ -251,9 +251,9 @@
 	// echo $string;
 
 // 7 Health
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Healthcare"
 			and org_profile_status = "publish";';
 
@@ -265,9 +265,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Water and sanitation"
 			and org_profile_status = "publish";';
 
@@ -279,9 +279,9 @@
 		$string2 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Scientific research"
 			and org_profile_status = "publish";';
 
@@ -303,9 +303,9 @@
 	// echo $string;
 
 // 8 Housing construction and real estate
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Housing/real estate"
 			and org_profile_status = "publish";';
 
@@ -328,9 +328,9 @@
 	// echo $string;
 
 	// 9 media and communications
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Media and communications"
 			and org_profile_status = "publish";';
 
@@ -342,9 +342,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Telecommunications/internet service providers"
 			and org_profile_status = "publish";';
 
@@ -366,9 +366,9 @@
 	// echo $string;
 
 	// 10 Housing construction and real estate
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Transportation and logistics"
 			and org_profile_status = "publish";';
 
@@ -391,9 +391,9 @@
 	// echo $string;
 
 	// 11 media and communications
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Arts and culture"
 			and org_profile_status = "publish";';
 
@@ -405,9 +405,9 @@
 		$string1 = $row["count(distinct(org_name))"];
 	}
 
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Tourism"
 			and org_profile_status = "publish";';
 
@@ -429,9 +429,9 @@
 	// echo $string;
 
 	// 12 consumer
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Consumer services"
 			and org_profile_status = "publish";';
 
@@ -454,9 +454,9 @@
 	// echo $string;
 
 	// 13 Education
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and industry_id = "Education"
 			and org_profile_status = "publish";';
 

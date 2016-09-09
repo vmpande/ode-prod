@@ -8,9 +8,9 @@
 	}
 
 // for profit query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
 			and org_type = "For-profit"
 			and org_profile_status = "publish";';
@@ -34,9 +34,9 @@
 	// echo $string;
 
 // nonprofit query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
 			and org_type = "Nonprofit"
 			and org_profile_status = "publish";';
@@ -60,9 +60,9 @@
 	// echo $string;
 
 	// developer group query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
 			and org_type = "Developer group"
 			and org_profile_status = "publish";';
@@ -86,9 +86,9 @@
 	// echo $string;
 
 	// other query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
 			and org_type = "Other"
 			and org_profile_status = "publish";';

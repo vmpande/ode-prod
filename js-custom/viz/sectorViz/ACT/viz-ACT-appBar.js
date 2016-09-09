@@ -1,8 +1,8 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
 var marginAppBar = {top: 15, right: 0, bottom: 45, left: 40},
-    widthAppBar = 500 - marginAppBar.left - marginAppBar.right,
-    heightAppBar = 350 - marginAppBar.top - marginAppBar.bottom;
+    widthAppBar = 400 - marginAppBar.left - marginAppBar.right,
+    heightAppBar = 300 - marginAppBar.top - marginAppBar.bottom;
 // Define scale for x axis
 var xAppBar = d3.scale.ordinal()
     .rangeRoundBands([0, widthAppBar], .1);
@@ -37,7 +37,8 @@ var svgAppBar = d3.select("#appBar").append("svg")
     .append("g")
     .attr("transform", "translate(" + marginAppBar.left + "," + marginAppBar.top + ")");
 
-d3.csv("viz-data/data-sample-sectorAppBar.csv", type, function(error, dataAppBar) {
+// d3.csv("viz-data/data-sample-sectorAppBar.csv", type, function(error, dataAppBar) {
+d3.json("js-custom/viz/sectorViz/ACT/ACTAppBarData.php", function(error, dataAppBar) {
   if (error) throw error;
 
   dataAppBar.sort(function(a, b) { return b.number - a.number; });
@@ -103,10 +104,10 @@ d3.csv("viz-data/data-sample-sectorAppBar.csv", type, function(error, dataAppBar
 });
 
 // for csv - ensures the value you get is actually integers not strings...
-function type(d) {
-  d.number = +d.number;
-  return d;
-}
+// function type(d) {
+//   d.number = +d.number;
+//   return d;
+// }
 
 function wrap(text, width) {
         text.each(function() {

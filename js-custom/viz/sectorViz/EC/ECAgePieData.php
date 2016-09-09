@@ -130,9 +130,9 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Mining/manufacturing"
-			and org_year_founded > 2012
-			-- and org_year_founded > 2005
-			-- and org_year_founded < 2013
+			-- and org_year_founded > 2012
+			and org_year_founded > 2005
+			and org_year_founded < 2013
 			-- and org_year_founded < 2006
 			and org_profile_status = "publish";';
 
@@ -148,9 +148,9 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Weather"
-			and org_year_founded > 2012
-			-- and org_year_founded > 2005
-			-- and org_year_founded < 2013
+			-- and org_year_founded > 2012
+			and org_year_founded > 2005
+			and org_year_founded < 2013
 			-- and org_year_founded < 2006
 			and org_profile_status = "publish";';
 
@@ -210,10 +210,10 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Mining/manufacturing"
-			and org_year_founded > 2012
+			-- and org_year_founded > 2012
 			-- and org_year_founded > 2005
 			-- and org_year_founded < 2013
-			-- and org_year_founded < 2006
+			and org_year_founded < 2006
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -228,10 +228,10 @@
 			from org_profiles
 			where org_profile_status = "publish"
 			and industry_id = "Weather"
-			and org_year_founded > 2012
+			-- and org_year_founded > 2012
 			-- and org_year_founded > 2005
 			-- and org_year_founded < 2013
-			-- and org_year_founded < 2006
+			and org_year_founded < 2006
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){

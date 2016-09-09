@@ -8,17 +8,22 @@
 	}
 
 // North america
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "North America"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
 			and org_profile_status = "publish";';
 
-	if(!$result = $db->query($sql)){
+	if (!$result = $db->query($sql)) {
 	    die('There was an error running the query [' . $db->error . ']');
 	}
 
-	while($row = $result->fetch_assoc()){
+	while ($row = $result->fetch_assoc()) {
 		$obj = new stdClass();
 		$obj->region = "North America";
 		$obj->orgs = (int)$row["count(distinct(org_name))"];
@@ -26,9 +31,14 @@
 	}
 
 // South Asia
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "South Asia"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "South Asia"
 			and org_profile_status = "publish";';
 
@@ -44,9 +54,14 @@
 	}
 
 // Europe & Central Asia
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "Europe & Central Asia"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "Europe & Central Asia"
 			and org_profile_status = "publish";';
 
@@ -62,9 +77,14 @@
 	}
 
 // Middle East & North Africa
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "Middle East & North Africa"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "Middle East & North Africa"
 			and org_profile_status = "publish";';
 
@@ -80,9 +100,14 @@
 	}
 	
 // East Asia & Pacific
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "East Asia & Pacific"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "East Asia & Pacific"
 			and org_profile_status = "publish";';
 
@@ -98,11 +123,17 @@
 	}
 
 // Sub-Saharan Africa
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "Sub-Saharan Africa"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "Sub-Saharan Africa"
 			and org_profile_status = "publish";';
+
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -115,10 +146,15 @@
 		$data[] = $obj;
 	}
 
-// Sub-Saharan Africa
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+// Latin America & Caribbean
+	// $sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
+	// 		where org_loc_id = org_locations_info.object_id
+	// 		and org_locations_info.country_id = org_country_info.country_id
+	// 		and org_hq_country_region = "Latin America & Caribbean"
+	// 		and org_profile_status = "publish";';
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "Latin America & Caribbean"
 			and org_profile_status = "publish";';
 

@@ -8,9 +8,8 @@
 	}
 
 	$sql = 'SELECT count(distinct(country_id))
-			from org_locations_info, org_profiles
-			where org_loc_id = org_locations_info.object_id
-			and org_profile_status = "publish";';
+            from org_profiles
+			where org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');

@@ -1,7 +1,7 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
 var marginBar = {top: 15, right: 0, bottom: 45, left: 40},
-    widthBar = 900 - marginBar.left - marginBar.right,
+    widthBar = 1000 - marginBar.left - marginBar.right,
     heightBar = 350 - marginBar.top - marginBar.bottom;
 // Define scale for x axis
 var x = d3.scale.ordinal()
@@ -36,7 +36,8 @@ var svgBar = d3.select("#dataTypeBar").append("svg")
     .append("g")
     .attr("transform", "translate(" + marginBar.left + "," + marginBar.top + ")");
 
-d3.csv("viz-data/data-sample-sectorDataTypeBar.csv", type, function(error, data) {
+// d3.csv("viz-data/data-sample-sectorDataTypeBar.csv", type, function(error, data) {
+d3.json("js-custom/viz/sectorViz/ACT/ACTDataTypeBarData.php", function(error, data) {
   if (error) throw error;
 
   data.sort(function(a, b) { return b.number - a.number; });
@@ -54,7 +55,8 @@ d3.csv("viz-data/data-sample-sectorDataTypeBar.csv", type, function(error, data)
       // .attr("transform", "rotate(-60)")
       // .style("text-anchor", "end");
       .selectAll(".tick text")
-      .call(wrap, x.rangeBand());
+      .call(wrap, x.rangeBand())
+      .style("font-size","9px");
 
 
   svgBar.append("g")
@@ -102,26 +104,26 @@ d3.csv("viz-data/data-sample-sectorDataTypeBar.csv", type, function(error, data)
 });
 
 // for csv - ensures the value you get is actually integers not strings...
-function type(d) {
-  d.number = +d.number;
-  return d;
-}
+// function type(d) {
+//   d.number = +d.number;
+//   return d;
+// }
 
 function wrap(text, width) {
         text.each(function() {
           var text = d3.select(this),
           words = text.text().split(/\s+/).reverse(),
-          word,
+          // word,
           line = [],
           lineNumber = 0,
-          lineHeight = 1.1, // ems
+          lineHeight = 1, // ems
           y = text.attr("y"),
           dy = parseFloat(text.attr("dy")),
           tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
       while (word = words.pop()) {
         line.push(word);
         tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > width) {
+        if (tspan.node().getComputedTextLength() > (width+20)) {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];

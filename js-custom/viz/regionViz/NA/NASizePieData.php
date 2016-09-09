@@ -8,11 +8,11 @@
 	}
 
 // 1-10 query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
-			and org_size_id = "1-10"
+			and org_size = "1-10"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -34,11 +34,11 @@
 	// echo $string;
 
 // 11-50 query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
-			and org_size_id = "11-50"
+			and org_size = "11-50"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -56,11 +56,11 @@
 	// echo $string;
 
 // 51-200 query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
-			and org_size_id = "51-200"
+			and org_size = "51-200"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -78,11 +78,11 @@
 	// echo $string;
 
 // 201-1000 query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
-			and org_size_id = "201-1000"
+			and org_size = "201-1000"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
@@ -100,11 +100,11 @@
 	// echo $string;
 
 // 1000 query
-	// $sql = 'SELECT count(distinct(org_name)) as "North America" from org_profiles, org_locations_info, org_country_info
-	// 		where org_loc_id = org_locations_info.object_id
-	// 		and org_locations_info.country_id = org_country_info.country_id
+	// $sql = 'SELECT count(distinct(org_name)) as "North America" from org_profiles, org_locations, org_country_info
+	// 		where org_profiles.location_id = org_locations.location_id
+	// 		and org_locations.country_id = org_country_info.country_id
 	// 		and org_hq_country_region = "North America"
-	// 		and org_size_id = "1000"
+	// 		and org_size = "1000"
 	// 		and org_profile_status = "publish";';
 
 	// if(!$result = $db->query($sql)){
@@ -119,11 +119,11 @@
 	// echo $string;
 
 // 1000+ query
-	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations_info, org_country_info
-			where org_loc_id = org_locations_info.object_id
-			and org_locations_info.country_id = org_country_info.country_id
+	$sql = 'SELECT count(distinct(org_name)) from org_profiles, org_locations, org_country_info
+			where org_profiles.location_id = org_locations.location_id
+			and org_locations.country_id = org_country_info.country_id
 			and org_hq_country_region = "North America"
-			and org_size_id = "1000+"
+			and org_size = "1000+"
 			and org_profile_status = "publish";';
 
 	if(!$result = $db->query($sql)){
