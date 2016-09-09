@@ -331,7 +331,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	while($row = $result->fetch_assoc()){
 		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
-			$obj->app_type = "Science and Research";
+			$obj->app_type = "Science & Research";
 			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
