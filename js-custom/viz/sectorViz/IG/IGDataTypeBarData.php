@@ -527,11 +527,11 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 			$data[] = $obj;}
 			
 
-// 14 Geospatial/mapping
+// 14 Tourism
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Data/information technology'
-		and data_type = 'Geospatial/mapping'";
+		and data_type = 'Tourism'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -544,7 +544,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Geospatial/mapping'
-		and data_type = 'Geospatial/mapping'";
+		and data_type = 'Tourism'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -556,7 +556,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 
 	$num = $string1 + $string2;
 	if ($num != 0) {$obj = new stdClass();
-			$obj->app_type = "Research & consulting";
+			$obj->app_type = "Tourism";
 			$obj->number = $num;
 			$data[] = $obj;}
 			
@@ -794,11 +794,11 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 			$obj->number = $num;
 			$data[] = $obj;}
 
-// 22 'Data/information technology'
+// 22 'arts and culture'
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Data/information technology'
-		and data_type = 'Data/information technology'";
+		and data_type = 'Arts and culture'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -811,7 +811,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Geospatial/mapping'
-		and data_type = 'Data/information technology'";
+		and data_type = 'Arts and culture'";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -823,7 +823,7 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 
 	$num = $string1 + $string2;
 	if ($num != 0) {$obj = new stdClass();
-			$obj->app_type = "Business & Legal services";
+			$obj->app_type = "Art & Culture";
 			$obj->number = $num;
 			$data[] = $obj;}
 

@@ -10,7 +10,6 @@
 	}
 
 // 1 Geospatial Mapping
-	// art and culture
 	$sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_profiles
 		where org_data_use.profile_id = org_profiles.profile_id
 		and industry_id = 'Media and communications'
