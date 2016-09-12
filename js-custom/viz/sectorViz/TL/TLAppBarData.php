@@ -20,10 +20,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_name))"] != 0) {
+		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
 		$obj->app_type = "Research";
-		$obj->number = $row["count(distinct(org_name))"];
+		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
 	
@@ -41,10 +41,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_name))"] != 0) {
+		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
 		$obj->app_type = "Product & Services";
-		$obj->number = $row["count(distinct(org_name))"];
+		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
 	
@@ -62,10 +62,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_name))"] != 0) {
+		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
 		$obj->app_type = "Organizational Optimization";
-		$obj->number = $row["count(distinct(org_name))"];
+		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
 	
@@ -83,10 +83,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_name))"] != 0) {
+		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
 		$obj->app_type = "Advocacy";
-		$obj->number = $row["count(distinct(org_name))"];
+		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
 	
@@ -104,10 +104,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_name))"] != 0) {
+		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
 		$obj->app_type = "Other";
-		$obj->number = $row["count(distinct(org_name))"];
+		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
 
