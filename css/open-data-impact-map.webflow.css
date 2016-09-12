@@ -47,7 +47,7 @@ li {
 
 .navigation {
   position: fixed;
-  z-index: 5;
+  z-index: 999;
   display: block;
   width: 100%;
   height: 65px;
@@ -1382,31 +1382,37 @@ li {
 }
 
 .case-study-title {
+  display: inline-block;
   margin-top: -10px;
   margin-bottom: 0px;
   padding-top: 0px;
   font-family: Palanquin, sans-serif;
+  font-size: 20px;
   line-height: 34px;
   font-weight: 500;
+  text-align: left;
 }
 
 .case-study-subtitle {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   font-family: Palanquin, sans-serif;
   color: #2b3d51;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 24px;
   font-style: italic;
   font-weight: 300;
+  text-align: left;
 }
 
 .case-study-url {
-  margin-bottom: 18px;
+  display: block;
+  margin-bottom: 10px;
   font-family: Palanquin, sans-serif;
-  color: #376d86;
-  font-size: 18px;
+  color: #000;
+  font-size: 15px;
   line-height: 24px;
   font-weight: 300;
+  text-align: left;
 }
 
 .navigation-container {
@@ -1624,9 +1630,19 @@ li {
   background-color: #fff;
 }
 
+.case-study-intro-1.use_cases_pages_smaller {
+  display: inline-block;
+  width: 500px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 20px 15px;
+  text-align: left;
+}
+
 .case-study-thumbnail-image-1 {
   width: 200px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-left: 15px;
   padding: 3px;
   float: right;
@@ -2204,7 +2220,6 @@ li {
 }
 
 .abc-case-container {
-  position: relative;
   display: block;
   text-align: center;
 }
@@ -2315,10 +2330,11 @@ li {
 }
 
 .region-case-container-title {
+  margin-bottom: 10px;
   padding-top: 5px;
   color: #000;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -2337,12 +2353,10 @@ li {
 
 .sector-case-container-title {
   display: block;
-  margin-top: 5px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 5px auto 10px;
   color: #000;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .filter-button {
@@ -2484,11 +2498,13 @@ li {
 }
 
 .case-wrapper {
-  width: 800px;
+  display: block;
+  width: 1000px;
   max-width: 100%;
   margin: auto;
   padding: 20px;
   background-color: #fff;
+  text-align: left;
 }
 
 .close-case-modal {
@@ -2517,15 +2533,35 @@ li {
 }
 
 .cast_title_container {
-  margin-bottom: 22px;
+  margin-right: 40px;
+  margin-bottom: 0px;
+  margin-left: 40px;
+  color: #000;
+  font-size: 18px;
+  text-align: left;
+}
+
+.cast_title_container.explain-text {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.cast_title_container.title-text {
+  margin-bottom: 5px;
+  font-weight: 600;
   text-align: center;
 }
 
 .usecasedropdown {
   display: block;
-  width: 200px;
+  width: 280px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 5px;
+  float: left;
+  background-color: transparent;
+  box-shadow: 1px 1px 3px 0 #000;
+  color: #fff;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -2535,28 +2571,27 @@ li {
 }
 
 .usecasedroplist.w--open {
+  z-index: 2;
   background-color: #eaeaea;
-  box-shadow: 0 0 8px 0 #000;
+  box-shadow: 1px 1px 3px 0 #000;
 }
 
 .usecasedroplink {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  font-size: 15px;
   text-align: center;
 }
 
 .usecasedropmaintext {
-  position: static;
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
+  color: #000;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
 }
 
 .sector-case-container {
@@ -2565,9 +2600,86 @@ li {
 
 .mrability-text {
   display: block;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 10px auto 0px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.mrability-text.mrability-sub-text {
+  margin-top: -20px;
+  clear: none;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.usecasedropdownrow {
+  margin-bottom: 10px;
+}
+
+.dropdowntoggle {
+  color: #000;
+  font-weight: 300;
+  text-align: left;
+}
+
+.use-case-filter-text {
+  width: 280px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  color: #000;
+  font-weight: 300;
+  text-align: center;
+}
+
+.dropdownarrow {
+  font-weight: 100;
+}
+
+.url-font-awesome {
+  color: #000;
+}
+
+.use-case-para {
+  margin-bottom: 10px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.full-use-case-para {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: left;
+}
+
+.expand-use-case-image {
+  width: 300px;
+  margin-left: 5px;
+  float: right;
+}
+
+.use-case-page-body {
+  overflow: visible;
+}
+
+.expand-case-header {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 25px;
+  text-align: left;
+}
+
+.expand-use-case-para {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  text-align: left;
 }
 
 html.w-mod-js *[data-ix="display-none-on-load"] {
