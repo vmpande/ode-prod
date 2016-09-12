@@ -6,6 +6,7 @@ var marginAppBar = {top: 15, right: 0, bottom: 45, left: 40},
 // Define scale for x axis
 var xAppBar = d3.scale.ordinal()
     .rangeRoundBands([0, widthAppBar], .1);
+
 // Define scale for y axis
 var yAppBar = d3.scale.linear()
     .rangeRound([heightAppBar, 0]);
@@ -44,6 +45,8 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriAppBarData.php", function(error, dataA
   dataAppBar.sort(function(a, b) { return b.number - a.number; });
   xAppBar.domain(dataAppBar.map(function(d) { return d.app_type; }));
   yAppBar.domain([0, d3.max(dataAppBar, function(d) { return d.number; })]);
+  
+  // console.log(d3.max(dataAppBar, function(d) { return d.number;}));
 // console.log(data[0].number);
   // y.domain([0, d3.max([600,101,102,90,80])]);
   // console.log(data);
@@ -103,7 +106,7 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriAppBarData.php", function(error, dataA
   
 });
 
-// for csv - ensures the value you get is Consuually integers not strings...
+// for csv - ensures the value you get is actually integers not strings...
 // function type(d) {
 //   d.number = +d.number;
 //   return d;
@@ -123,7 +126,7 @@ function wrap(text, width) {
       while (word = words.pop()) {
         line.push(word);
         tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > (width+10)) {
+        if (tspan.node().getComputedTextLength() > width) {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];

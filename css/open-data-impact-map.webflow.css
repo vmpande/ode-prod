@@ -48,10 +48,12 @@ li {
 .navigation {
   position: fixed;
   z-index: 5;
+  display: block;
   width: 100%;
   height: 65px;
   padding-top: 23px;
   background-color: #1e2c3b;
+  text-align: left;
 }
 
 .submit-your-data-button {
@@ -2202,28 +2204,32 @@ li {
 }
 
 .abc-case-container {
+  position: relative;
   display: block;
   text-align: center;
 }
 
 .case-link-block {
   margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .case-outer-square {
+  position: relative;
   width: 300px;
-  height: 300px;
-  margin-bottom: 10px;
+  height: 200px;
+  margin-bottom: 0px;
+  float: right;
   border-radius: 3px;
   background-color: rgba(52, 84, 109, .4);
 }
 
 .case-inner-square {
+  position: relative;
   display: inline-block;
   width: 280px;
-  height: 280px;
+  height: 180px;
   margin-top: 10px;
   border-radius: 3px;
   background-color: #34546d;
@@ -2236,18 +2242,26 @@ li {
 }
 
 .use-case-image {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+  display: inline-block;
+  width: 100px;
+  height: 120px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float: right;
 }
 
 .use-case-icon-text {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 10px;
   color: #fff;
-  text-align: center;
+  font-size: 15px;
+  text-align: left;
 }
 
 .use-case-icon-title {
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #fff;
   font-size: 20px;
   font-weight: 400;
@@ -2260,11 +2274,9 @@ li {
 }
 
 .na-case-container {
+  display: block;
   margin-top: 0px;
   padding-bottom: 10px;
-  border-style: solid;
-  border-width: 0px 0px 1px;
-  border-color: #000 #000 #2b3d51;
 }
 
 .na-case-container.indi-region-case-container {
@@ -2316,13 +2328,18 @@ li {
 }
 
 .sector-row-container {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   padding-bottom: 10px;
-  border-bottom: 1px solid #2b3d51;
   text-align: center;
 }
 
 .sector-case-container-title {
+  display: block;
   margin-top: 5px;
+  margin-right: auto;
+  margin-left: auto;
   color: #000;
   font-size: 20px;
   font-weight: 400;
@@ -2403,7 +2420,8 @@ li {
   position: fixed;
   left: 5px;
   top: 300px;
-  display: inline-block;
+  z-index: 999;
+  display: none;
   width: 110px;
   height: 110px;
   margin-bottom: 0px;
@@ -2428,6 +2446,8 @@ li {
   position: fixed;
   left: 235px;
   top: 300px;
+  z-index: 999;
+  display: none;
   background-color: rgba(231, 160, 34, .3);
 }
 
@@ -2435,6 +2455,8 @@ li {
   position: fixed;
   left: 120px;
   top: 300px;
+  z-index: 999;
+  display: none;
   background-color: rgba(231, 160, 34, .3);
 }
 
@@ -2442,6 +2464,8 @@ li {
   position: fixed;
   left: 350px;
   top: 300px;
+  z-index: 999;
+  display: none;
   background-color: rgba(231, 160, 34, .3);
 }
 
@@ -2497,6 +2521,55 @@ li {
   text-align: center;
 }
 
+.usecasedropdown {
+  display: block;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.usecasedroplist {
+  width: 30%;
+  background-color: #eaeaea;
+}
+
+.usecasedroplist.w--open {
+  background-color: #eaeaea;
+  box-shadow: 0 0 8px 0 #000;
+}
+
+.usecasedroplink {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.usecasedropmaintext {
+  position: static;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.sector-case-container {
+  display: none;
+}
+
+.mrability-text {
+  display: block;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 html.w-mod-js *[data-ix="display-none-on-load"] {
   display: none;
 }
@@ -2517,6 +2590,10 @@ html.w-mod-js *[data-ix="case-title-filter-button-behavior"] {
 }
 
 html.w-mod-js *[data-ix="by-case-container-initial-opacity"] {
+  opacity: 0;
+}
+
+html.w-mod-js *[data-ix="by-sector-container-initial-hide"] {
   opacity: 0;
 }
 

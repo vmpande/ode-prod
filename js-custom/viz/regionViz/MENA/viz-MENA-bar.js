@@ -20,8 +20,8 @@ var xAxisBar = d3.svg.axis()
 var yAxisBar = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .ticks(5);
-    // .tickFormat(d3.format("d"));
+    .ticks(5)
+    .tickFormat(d3.format("d"));
 
 drawOrdDist();
 
