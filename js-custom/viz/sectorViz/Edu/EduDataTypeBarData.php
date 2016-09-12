@@ -95,10 +95,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Transportation";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -113,10 +113,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Government Operations";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -131,10 +131,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Demographics & Social";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -149,10 +149,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Housing";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -167,10 +167,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Economics";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -185,10 +185,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Education";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -203,10 +203,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Health";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -221,10 +221,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Finance";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -239,10 +239,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Public Safety";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -257,10 +257,10 @@
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Energy";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -275,10 +275,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Legal";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -293,10 +293,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Tourism";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}	
 
@@ -311,10 +311,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Manufacturing";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}	
 
@@ -329,10 +329,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Science & Research";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -347,10 +347,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Other";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}	
 
@@ -365,10 +365,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Consumer";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -383,10 +383,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Business";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -401,10 +401,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "International Development";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -419,10 +419,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Agriculture";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
@@ -437,10 +437,10 @@ $sql = "SELECT count(distinct(org_data_use.profile_id)) from org_data_use, org_p
 	}
 
 	while($row = $result->fetch_assoc()){
-		if ($row["count(distinct(org_data_use.profile_id))"] != 0) {
+		if ((int)$row["count(distinct(org_data_use.profile_id))"] != 0) {
 			$obj = new stdClass();
 			$obj->app_type = "Arts & Culture";
-			$obj->number = $row["count(distinct(org_data_use.profile_id))"];
+			$obj->number = (int)$row["count(distinct(org_data_use.profile_id))"];
 			$data[] = $obj;
 	}}
 
