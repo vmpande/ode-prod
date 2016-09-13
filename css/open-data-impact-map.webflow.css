@@ -1397,6 +1397,7 @@ li {
 }
 
 .case-study-subtitle {
+  display: block;
   margin-bottom: 10px;
   font-family: Palanquin, sans-serif;
   color: #2b3d51;
@@ -1645,6 +1646,7 @@ li {
 
 .case-study-thumbnail-image-1 {
   width: 200px;
+  margin-top: 35px;
   margin-bottom: 10px;
   margin-left: 15px;
   padding: 3px;
@@ -2558,6 +2560,7 @@ li {
 .usecasedropdown {
   display: block;
   width: 280px;
+  height: 40px;
   margin-right: auto;
   margin-left: 5px;
   float: left;
@@ -2589,8 +2592,7 @@ li {
 
 .usecasedropmaintext {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: -12px;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2638,6 +2640,7 @@ li {
 }
 
 .dropdownarrow {
+  margin-top: 12px;
   font-weight: 100;
 }
 
@@ -2646,6 +2649,7 @@ li {
 }
 
 .use-case-para {
+  display: block;
   margin-bottom: 10px;
   font-size: 15px;
   text-align: left;
@@ -2662,6 +2666,7 @@ li {
 
 .expand-use-case-image {
   width: 300px;
+  margin-top: 10px;
   margin-left: 5px;
   float: right;
 }
