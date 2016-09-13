@@ -2560,7 +2560,7 @@ li {
 .usecasedropdown {
   display: block;
   width: 280px;
-  height: 40px;
+  height: 25px;
   margin-right: auto;
   margin-left: 5px;
   float: left;
@@ -2592,7 +2592,7 @@ li {
 
 .usecasedropmaintext {
   display: block;
-  margin-top: -12px;
+  margin-top: -21px;
   color: #000;
   font-size: 18px;
   font-weight: 300;
@@ -2640,7 +2640,7 @@ li {
 }
 
 .dropdownarrow {
-  margin-top: 12px;
+  margin-top: 3px;
   font-weight: 100;
 }
 
