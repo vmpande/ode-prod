@@ -1217,11 +1217,12 @@ li {
 }
 
 .landing-page-overview {
+  display: block;
   max-height: 250px;
   max-width: 1200px;
-  margin-right: 16%;
+  margin-right: auto;
   margin-bottom: 30px;
-  margin-left: 16%;
+  margin-left: auto;
   color: #fff;
 }
 
