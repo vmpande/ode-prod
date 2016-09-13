@@ -1646,7 +1646,7 @@ li {
 
 .case-study-thumbnail-image-1 {
   width: 200px;
-  margin-top: 35px;
+  margin-top: 32px;
   margin-bottom: 10px;
   margin-left: 15px;
   padding: 3px;
@@ -2338,7 +2338,7 @@ li {
   margin-bottom: 10px;
   padding-top: 5px;
   color: #000;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 500;
   text-align: center;
 }
@@ -2360,8 +2360,8 @@ li {
   display: block;
   margin: 5px auto 10px;
   color: #000;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 .filter-button {
@@ -2552,8 +2552,9 @@ li {
 }
 
 .cast_title_container.title-text {
-  margin-bottom: 5px;
-  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 400;
   text-align: center;
 }
 
