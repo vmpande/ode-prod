@@ -2689,6 +2689,14 @@ li {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  text-decoration: none;
+}
+
+.home-datatab-link {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-decoration: none;
 }
 
 html.w-mod-js *[data-ix="display-none-on-load"] {
