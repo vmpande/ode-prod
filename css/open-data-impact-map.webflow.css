@@ -262,6 +262,19 @@ li {
   font-weight: 300;
 }
 
+.body-copy.explanation-text {
+  margin-right: 17%;
+  margin-left: 17%;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.body-copy.mrable-header-text {
+  margin-right: 17%;
+  margin-bottom: 15px;
+  margin-left: 17%;
+}
+
 .small-chart-container {
   width: 33%;
 }
@@ -307,6 +320,7 @@ li {
   margin-bottom: 10px;
   font-family: Palanquin, sans-serif;
   color: #2b3d51;
+  font-size: 32px;
   line-height: 42px;
   font-weight: 400;
   text-align: center;
@@ -636,10 +650,9 @@ li {
 }
 
 .sector-detail-header-background.usecaseheader {
-  background-image: url('../images/sector-detail-gradient.jpg');
-  background-position: 50% 0px;
+  background-image: url('../images/sector-landing-bg.jpg');
+  background-position: 0px 0px;
   background-size: cover;
-  background-repeat: repeat;
 }
 
 .sector-detail-header {
@@ -2297,6 +2310,8 @@ li {
   display: block;
   margin-top: 0px;
   padding-bottom: 10px;
+  padding-left: 5px;
+  text-align: center;
 }
 
 .na-case-container.indi-region-case-container {
@@ -2335,7 +2350,10 @@ li {
 }
 
 .region-case-container-title {
+  display: block;
+  margin-right: auto;
   margin-bottom: 10px;
+  margin-left: auto;
   padding-top: 5px;
   color: #000;
   font-size: 26px;
@@ -2353,15 +2371,18 @@ li {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 10px;
+  padding-left: 5px;
   text-align: center;
 }
 
 .sector-case-container-title {
   display: block;
   margin: 30px auto 10px;
+  padding-left: 5px;
   color: #000;
   font-size: 26px;
   font-weight: 400;
+  text-align: center;
 }
 
 .filter-button {
@@ -2712,13 +2733,16 @@ li {
 
 .mrable-header-img {
   display: block;
+  width: 150px;
   margin-right: auto;
   margin-left: auto;
 }
 
 .mrable-bottom-img {
   display: block;
+  width: 150px;
   margin-right: auto;
+  margin-bottom: 20px;
   margin-left: auto;
 }
 
