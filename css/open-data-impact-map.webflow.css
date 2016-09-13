@@ -2538,9 +2538,9 @@ li {
 }
 
 .cast_title_container {
-  margin-right: 40px;
+  margin-right: 100px;
   margin-bottom: 0px;
-  margin-left: 40px;
+  margin-left: 100px;
   color: #000;
   font-size: 18px;
   text-align: left;
@@ -2702,6 +2702,26 @@ li {
   display: block;
   margin-right: auto;
   margin-left: auto;
+  text-decoration: none;
+}
+
+.mrabletitlecontainer {
+  margin-bottom: 10px;
+}
+
+.mrable-header-img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mrable-bottom-img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mrable-header-url {
   text-decoration: none;
 }
 
