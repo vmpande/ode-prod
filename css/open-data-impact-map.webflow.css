@@ -638,8 +638,7 @@ li {
 .sector-detail-header-background.usecaseheader {
   background-image: url('../images/sector-detail-gradient.jpg');
   background-position: 50% 0px;
-  background-size: 100% 225px;
-  background-repeat: repeat;
+  background-size: auto;
 }
 
 .sector-detail-header {
