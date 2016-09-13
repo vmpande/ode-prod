@@ -1037,9 +1037,12 @@ li {
 }
 
 .homepage-stat-box {
+  display: block;
   width: 50%;
   height: 50%;
-  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  float: right;
 }
 
 .homepage-stat-circle {
@@ -2680,6 +2683,12 @@ li {
   margin-bottom: 10px;
   font-size: 15px;
   text-align: left;
+}
+
+.home-map-link {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 html.w-mod-js *[data-ix="display-none-on-load"] {
