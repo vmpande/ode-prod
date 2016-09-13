@@ -68,6 +68,16 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
+
+    window.onload = function () {
+      var url = window.location.href;
+      if (url = "http://54.210.82.88/ode-prod/map.html?showTable") {
+        document.getElementById("mapDiv").setAttribute("style", "display: none"); 
+        document.getElementById("tableDiv").removeAttribute("style"); 
+        document.getElementById("tabItemmap").parentElement.className = "br-tab-items"; 
+        document.getElementById("tabItemTable").parentElement.className = "br-tab-items selected";
+      }
+    }
     </script>
 </head>
 
