@@ -2566,7 +2566,7 @@ li {
   margin-left: 5px;
   float: left;
   background-color: transparent;
-  box-shadow: 1px 1px 3px 0 #000;
+  box-shadow: 1px 1px 1px 0 #000;
   color: #fff;
   font-weight: 300;
   text-align: center;
@@ -2580,7 +2580,7 @@ li {
 .usecasedroplist.w--open {
   z-index: 2;
   background-color: #eaeaea;
-  box-shadow: 1px 1px 3px 0 #000;
+  box-shadow: 1px 1px 1px 0 #000;
 }
 
 .usecasedroplink {
