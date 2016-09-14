@@ -18,7 +18,9 @@ var pie = d3.layout.pie()
 
 // pie one --- breakdown by orgtype
 var color = d3.scale.ordinal()
-    .range(["#98abc5", "#7b6888", "#a05d56", "#ff8c00"]);
+    // old sad rainbow
+    // .range(["#98abc5", "#7b6888", "#a05d56", "#ff8c00"]);
+    .range(["#50b094", "#7bc3ae", "#a7d7c9", "#d3ebe4"]);
 
 var svg = d3.select("#threePie").append("svg")
     .attr("id", "byType")
@@ -105,7 +107,9 @@ var svg = d3.select("#threePie").append("svg")
 
 // pie two --- breakdown by org size
 var color2 = d3.scale.ordinal()
-    .range(["#ffd369", "#376d86", "#926239", "#a4579e", "#50b094"]);
+  // sad rainbow color
+    // .range(["#ffd369", "#376d86", "#926239", "#a4579e", "#50b094"]);
+    .range(["#f3ddd9", "#e7bbb3", "#dc998d", "#d07767", "#c55542"]);
 
 var svg2 = d3.select("#threePie").append("svg")
     .attr("id", "bySize")
@@ -189,7 +193,9 @@ d3.json("js-custom/viz/regionViz/LAC/LACSizePieData.php", function(error, data) 
 
 // pie three --- breakdown by org age
 var color3 = d3.scale.ordinal()
-    .range(["#0055A4", "#d69f3e", "#c55542"]);
+    // sad rainbow color
+    // .range(["#0055A4", "#d69f3e", "#c55542"]); 
+    .range(["#e0c7de", "#c28fbe", "#a4579e"]);
 
 var svg3 = d3.select("#threePie").append("svg")
      .attr("id", "byAge")
