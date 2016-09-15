@@ -56,7 +56,7 @@ d3.json("js-custom/viz/sectorViz/HRE/HREDataTypeBarData.php", function(error, da
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
-      .style("font-size","8px");
+      .style("font", "Arial 8px");
 
 
   svgBar.append("g")
@@ -69,7 +69,7 @@ d3.json("js-custom/viz/sectorViz/HRE/HREDataTypeBarData.php", function(error, da
       .attr("dy", "-2.5em")
       .style("text-anchor", "end")
       .text("Number of Organizations")
-      .style("font", "sans-serif 10px");
+      .style("font", "Arial 8px");
 
 
   svgBar.selectAll("#LACbar")
@@ -98,6 +98,7 @@ d3.json("js-custom/viz/sectorViz/HRE/HREDataTypeBarData.php", function(error, da
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   

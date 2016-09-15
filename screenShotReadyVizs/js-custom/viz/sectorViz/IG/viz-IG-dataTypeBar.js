@@ -56,7 +56,7 @@ d3.json("js-custom/viz/sectorViz/IG/IGDataTypeBarData.php", function(error, data
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
-      .style("font-size","8px");
+      .style("font", "Arial 8px");
 
 
   svgBar.append("g")
@@ -98,6 +98,7 @@ d3.json("js-custom/viz/sectorViz/IG/IGDataTypeBarData.php", function(error, data
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   
