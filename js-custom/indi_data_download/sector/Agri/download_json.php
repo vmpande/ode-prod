@@ -1,7 +1,9 @@
 <?php  
+	$serverDate = date("Y_m_d");
 	// tell browser (how) to download this file
-	header('Content-disposition: attachment; filename=JsonFile.json');
 	header('Content-type: application/json');
+	header("Content-disposition: attachment; filename=Open Data Impact Map _ Data Export _ Agriculture _ $serverDate.json");
+	
 
 	// ini_set('memory_limit', '256M'); // or you could use 1G
 
@@ -146,3 +148,4 @@
 	echo json_encode($profiles, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
 // end of code
+?>

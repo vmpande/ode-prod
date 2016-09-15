@@ -668,7 +668,7 @@
 	  }
 
 	  function createVideoNode (nativeNode) {
-	    var nodeData = nativeNode.dataset;
+	    var nodeData = $(nativeNode).data();
 
 	    if (!nodeData.videoUrls) {
 	      return $('<video />');
