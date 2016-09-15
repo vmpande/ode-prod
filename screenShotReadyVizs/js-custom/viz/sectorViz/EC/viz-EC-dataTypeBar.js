@@ -56,7 +56,7 @@ d3.json("js-custom/viz/sectorViz/EC/ECDataTypeBarData.php", function(error, data
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
-      .style("font", "Arial 8px");
+      .style("font", "Arial 5px");
 
 
   svgBar.append("g")
