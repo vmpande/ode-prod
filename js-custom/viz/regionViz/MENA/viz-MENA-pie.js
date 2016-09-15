@@ -70,7 +70,7 @@ var svg = d3.select("#threePie").append("svg")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
 
-  var title = ["Organization Types"];
+  var title = ["Organization Type"];
   var legendTitle = svg.selectAll(".legendTitle")
       .data(title)
       .enter().append("g")
@@ -156,7 +156,7 @@ d3.json("js-custom/viz/regionViz/MENA/MENASizePieData.php", function(error, data
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
 
-  var title2 = ["Organization Sizes"];
+  var title2 = ["Organization Size"];
   var legendTitle2 = svg2.selectAll(".legendTitle")
       .data(title2)
       .enter().append("g")
@@ -240,14 +240,14 @@ var svg3 = d3.select("#threePie").append("svg")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
 
-  var title3 = ["Organization Ages"];
+  var title3 = ["Founding Year"];
   var legendTitle3 = svg3.selectAll(".legendTitle")
       .data(title3)
       .enter().append("g")
       .attr("class", "legendTitle")
       .attr("transform", "translate(-175,-25)")
       .append("text")
-      .attr("x", width-80)
+      .attr("x", width-90)
       .attr("y", -10)
       .style("text-anchor", "end")
       .style("font-weight", "bold")
