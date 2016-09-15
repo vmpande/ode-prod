@@ -97,6 +97,7 @@ d3.json("js-custom/viz/regionViz/SSA/SSABarData.php", function(error, data) {
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   

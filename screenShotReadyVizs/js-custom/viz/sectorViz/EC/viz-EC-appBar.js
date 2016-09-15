@@ -69,7 +69,7 @@ d3.json("js-custom/viz/sectorViz/EC/ECAppBarData.php", function(error, dataAppBa
       .attr("dy", "-2.5em")
       .style("text-anchor", "end")
       .text("Number of Organizations")
-      .style("font", "sans-serif 10px");
+      .style("font", "Arial 10px");
 
 
   svgAppBar.selectAll("#LACbar")
@@ -98,6 +98,7 @@ d3.json("js-custom/viz/sectorViz/EC/ECAppBarData.php", function(error, dataAppBa
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   

@@ -56,7 +56,7 @@ d3.json("js-custom/viz/sectorViz/Consu/ConsuDataTypeBarData.php", function(error
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
-      .style("font-size","9px");
+      .style("font", "Arial 9px");
 
 
   svgBar.append("g")
@@ -69,7 +69,7 @@ d3.json("js-custom/viz/sectorViz/Consu/ConsuDataTypeBarData.php", function(error
       .attr("dy", "-2.5em")
       .style("text-anchor", "end")
       .text("Number of Organizations")
-      .style("font", "sans-serif 10px");
+      .style("font", "Arial 10px");
 
 
   svgBar.selectAll("#LACbar")
@@ -98,6 +98,7 @@ d3.json("js-custom/viz/sectorViz/Consu/ConsuDataTypeBarData.php", function(error
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   
