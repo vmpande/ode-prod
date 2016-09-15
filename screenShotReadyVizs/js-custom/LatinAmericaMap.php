@@ -2,7 +2,7 @@
 
 		/*<?php include 'dbconnect.php';?>
 */		<?php 
-		$mapreg = 'East Asia & Pacific';
+		$mapreg = 'Latin America & Caribbean';
 		include('dbconnect.php');
 		?>
 
@@ -33,12 +33,11 @@
         //north east
         [78, 173]
         ]*/
+		}).setView([-22.0, -60.0], 2);
 
-		}).setView([4.0, 143.0], 2);
 
 		map.dragging.disable();
 		map.doubleClickZoom.disable(); 
-		//control that shows state info on hover
 		//control that shows state info on hover
 		var info = L.control({position: 'topright'});
 

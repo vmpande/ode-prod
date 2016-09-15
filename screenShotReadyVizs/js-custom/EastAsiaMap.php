@@ -40,7 +40,7 @@
 		map.doubleClickZoom.disable(); 
 		//control that shows state info on hover
 		//control that shows state info on hover
-		var info = L.control({position: 'topright'});
+		<!-- var info = L.control({position: 'topright'});
 
 		info.onAdd = function (map) {
 			this._div = L.DomUtil.create('div', 'info');
@@ -54,7 +54,7 @@
 				: '<b>Number of Organizations</b><br> Hover over a country');
 		};
 
-		info.addTo(map);
+		info.addTo(map); -->
 
         //maplayer.setOpacity(0.0);
         maplayer.setOpacity(1.0);

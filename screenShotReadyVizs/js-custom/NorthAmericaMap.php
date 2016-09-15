@@ -2,7 +2,7 @@
 
 		/*<?php include 'dbconnect.php';?>
 */		<?php 
-		$mapreg = 'East Asia & Pacific';
+		$mapreg = 'North America';
 		include('dbconnect.php');
 		?>
 
@@ -25,7 +25,7 @@
 			zoomControl:false,
 			maxZoom: 2, minZoom: 2,
           	layers: [maplayer]
-          	/*,//\, heatmapLayer]
+/*          	,//\, heatmapLayer]
         maxBounds: 
         [
         //south west
@@ -34,11 +34,10 @@
         [78, 173]
         ]*/
 
-		}).setView([4.0, 143.0], 2);
+		}).setView([55.0, -105.0], 2);
 
 		map.dragging.disable();
 		map.doubleClickZoom.disable(); 
-		//control that shows state info on hover
 		//control that shows state info on hover
 		var info = L.control({position: 'topright'});
 
