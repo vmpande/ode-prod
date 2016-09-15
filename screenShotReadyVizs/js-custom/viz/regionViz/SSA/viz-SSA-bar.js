@@ -68,7 +68,7 @@ d3.json("js-custom/viz/regionViz/SSA/SSABarData.php", function(error, data) {
       .attr("dy", "-3.5em")
       .style("text-anchor", "end")
       .text("Number of Organizations")
-      .style("font", "sans-serif 10px");
+      .style("font", "Arial 10px");
 
 
   svgBar.selectAll("#LACbar")

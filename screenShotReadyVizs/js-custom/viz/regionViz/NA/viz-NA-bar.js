@@ -68,7 +68,7 @@ d3.json("js-custom/viz/regionViz/NA/NABarData.php", function(error, data) {
       .attr("dy", "-3.5em")
       .style("text-anchor", "end")
       .text("Number of Organizations")
-      .style("font", "sans-serif 10px");
+      .style("font", "Arial 10px");
 
 
   svgBar.selectAll("#LACbar")
@@ -97,6 +97,7 @@ d3.json("js-custom/viz/regionViz/NA/NABarData.php", function(error, data) {
         .attr("x", 15)
         .attr("dy", "1.2em")
         .style("text-anchor", "middle")
+        .style("font", "Arial 10px")
         .attr("font-size", "12px")
         .attr("font-weight", "bold");
   
