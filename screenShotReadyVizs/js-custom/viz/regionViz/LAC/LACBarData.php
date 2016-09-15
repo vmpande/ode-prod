@@ -228,7 +228,7 @@
 
 	if ($num != 0) {
 		$obj = new stdClass();
-		$obj->sector = "Finance, Investment & Insurane";
+		$obj->sector = "Finance, Investment & Insurance";
 		$obj->orgs = $num;
 		$data[] = $obj;
 	}
