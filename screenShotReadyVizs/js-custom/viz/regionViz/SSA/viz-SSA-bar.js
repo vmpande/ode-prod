@@ -1,6 +1,6 @@
 // global variabls for all three charts
 // Define svg canvas dimensions
-var marginBar = {top: 15, right: 0, bottom: 45, left: 50},
+var marginBar = {top: 15, right: 0, bottom: 45, left: 55},
     widthBar = 750 - marginBar.left - marginBar.right,
     heightBar = 350 - marginBar.top - marginBar.bottom;
 // Define scale for x axis
