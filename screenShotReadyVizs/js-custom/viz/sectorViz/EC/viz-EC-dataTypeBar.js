@@ -56,7 +56,7 @@ d3.json("js-custom/viz/sectorViz/EC/ECDataTypeBarData.php", function(error, data
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
-      .style("font", "Arial 5px");
+      .style("font", "serif 5px");
 
 
   svgBar.append("g")
@@ -124,7 +124,7 @@ function wrap(text, width) {
       while (word = words.pop()) {
         line.push(word);
         tspan.text(line.join(" "));
-        if (tspan.node().getComputedTextLength() > (width+30)) {
+        if (tspan.node().getComputedTextLength() > (width+10)) {
           line.pop();
           tspan.text(line.join(" "));
           line = [word];
