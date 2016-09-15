@@ -69,16 +69,16 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
-    // window.onload = function () {
-    //   var url = window.location.href + "stringify";
-    //   console.log(url);
-    //   if (url = "http://54.210.82.88/ode-prod/map.html?showTablestringify") {
-    //     document.getElementById("mapDiv").setAttribute("style", "display: none"); 
-    //     document.getElementById("tableDiv").removeAttribute("style"); 
-    //     document.getElementById("tabItemmap").parentElement.className = "br-tab-items"; 
-    //     document.getElementById("tabItemTable").parentElement.className = "br-tab-items selected";
-    //   }
-    // }
+    window.onload = function () {
+      var url = window.location.href + "Stringify";
+      // console.log(url);
+      if (url.includes("?showTableStringify")) {
+        document.getElementById("mapDiv").setAttribute("style", "display: none"); 
+        document.getElementById("tableDiv").removeAttribute("style"); 
+        document.getElementById("tabItemmap").parentElement.className = "br-tab-items"; 
+        document.getElementById("tabItemTable").parentElement.className = "br-tab-items selected";
+      }
+    }
     </script>
 </head>
 
