@@ -80,7 +80,7 @@ d3.json("js-custom/viz/sectorViz/HRE/HREAppBarData.php", function(error, dataApp
       .attr("width", xAppBar.rangeBand())
       .attr("y", function(d) { return yAppBar(d.number); })
       .attr("height", function(d) { return heightAppBar - yAppBar(d.number); })
-      .style("fill", "#a1af00")
+      .style("fill", "#375f7a")
       .on("mouseover", function() { tooltipAppBar.style("display", null); })
       .on("mouseout", function() { tooltipAppBar.style("display", "none"); })
       .on("mousemove", function(d) {
