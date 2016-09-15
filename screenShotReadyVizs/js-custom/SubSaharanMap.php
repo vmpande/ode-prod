@@ -53,7 +53,7 @@
 				: '<b>Number of Organizations</b><br> Hover over a country');
 		};
 
-		info.addTo(map);
+		<!-- info.addTo(map); -->
 
         //maplayer.setOpacity(0.0);
         maplayer.setOpacity(1.0);
