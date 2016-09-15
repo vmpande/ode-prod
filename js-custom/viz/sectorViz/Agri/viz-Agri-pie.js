@@ -65,7 +65,7 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriTypePieData.php", function(error, data
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
 
-  var title = ["Organization Types"];
+  var title = ["Organization Type"];
   var legendTitle = svg.selectAll(".legendTitle")
       .data(title)
       .enter().append("g")
@@ -149,7 +149,7 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriSizePieData.php", function(error, data
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(-245," + (i-1) * 20 + ")"; });
 
-  var title2 = ["Organization Sizes"];
+  var title2 = ["Organization Size"];
   var legendTitle2 = svg2.selectAll(".legendTitle")
       .data(title2)
       .enter().append("g")
@@ -241,7 +241,7 @@ d3.json("js-custom/viz/sectorViz/Agri/AgriAgePieData.php", function(error, data)
       .attr("class", "legendTitle")
       .attr("transform", "translate(-175,-25)")
       .append("text")
-      .attr("x", width-85)
+      .attr("x", width-90)
       .attr("y", -20)
       .style("text-anchor", "end")
       .style("font-weight", "bold")
