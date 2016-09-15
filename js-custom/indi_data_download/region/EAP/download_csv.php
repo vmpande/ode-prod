@@ -1,12 +1,14 @@
 <?php  
+	$serverDate = date("Y_m_d");
 	// tell browser (how) to download this file
-	header('Content-disposition: attachment; filename=CsvFile.csv');
 	header('Content-Type: text/csv; charset=utf-8');
+	header("Content-Disposition: attachment; filename=Open Data Impact Map _ Data Export _ East Asia and Pacific _ $serverDate.csv");
+	
 
 	// ini_set('memory_limit', '256M'); // or you could use 1G
 
 	include_once("../../../db_config.php");
-	
+
 	$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 
 	if($db->connect_errno > 0){
@@ -146,8 +148,10 @@
 	// var_dump($profiles);
 
 	$delimiter = ',';
-    // prepare the file
-    $fp = fopen('CsvFile.csv', 'w');
+    // prepare the file in local
+    // $fp = fopen('CsvFile.csv', 'w');
+    // pointer to the php output stream
+    $fp = fopen('php://output', 'w');
 
     // Save header
     $header = array_keys((array)$profiles[0]);
@@ -158,4 +162,7 @@
         fputcsv($fp, (array)$element, $delimiter);
     }
 
+    // echo $fp;
+
 // end of code
+?>

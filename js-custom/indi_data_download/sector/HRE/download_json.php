@@ -2,7 +2,7 @@
 	$serverDate = date("Y_m_d");
 	// tell browser (how) to download this file
 	header('Content-type: application/json');
-	header("Content-disposition: attachment; filename=Open Data Impact Map _ Data Export _ East Asia and Pacific _ $serverDate.json");
+	header("Content-disposition: attachment; filename=Open Data Impact Map _ Data Export _ Housing Construction Real Estate _ $serverDate.json");
 	
 
 	// ini_set('memory_limit', '256M'); // or you could use 1G
@@ -48,7 +48,19 @@
 		where org_profiles.profile_id = data_applications.profile_id 
 		and org_profiles.country_id = org_country_info.country_id 
 		and org_profiles.location_id = org_locations.location_id 
-		and org_hq_country_region = 'East Asia & Pacific';";
+		and industry_id = 'Housing/real estate';
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Water and sanitation'
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Scientific research';
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Weather';";
 
 
 	if(!$result = $db->query($sql)){

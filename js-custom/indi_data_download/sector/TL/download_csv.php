@@ -1,14 +1,14 @@
 <?php  
 	$serverDate = date("Y_m_d");
 	// tell browser (how) to download this file
-	header('Content-type: application/json');
-	header("Content-disposition: attachment; filename=Open Data Impact Map _ Data Export _ East Asia and Pacific _ $serverDate.json");
+	header('Content-Type: text/csv; charset=utf-8');
+	header("Content-Disposition: attachment; filename=Open Data Impact Map _ Data Export _ Transportation Logistics _ $serverDate.csv");
 	
 
 	// ini_set('memory_limit', '256M'); // or you could use 1G
 
 	include_once("../../../db_config.php");
-	
+
 	$db = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 
 	if($db->connect_errno > 0){
@@ -48,8 +48,19 @@
 		where org_profiles.profile_id = data_applications.profile_id 
 		and org_profiles.country_id = org_country_info.country_id 
 		and org_profiles.location_id = org_locations.location_id 
-		and org_hq_country_region = 'East Asia & Pacific';";
-
+		and industry_id = 'Transportation and logistics';
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Telecommunications/internet service providers';
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Scientific research';
+  --       or org_profiles.profile_id = data_applications.profile_id 
+		-- and org_profiles.country_id = org_country_info.country_id 
+		-- and org_profiles.location_id = org_locations.location_id 
+  --       and industry_id = 'Weather';";
 
 	if(!$result = $db->query($sql)){
 	    die('There was an error running the query [' . $db->error . ']');
@@ -144,8 +155,26 @@
 	
 	}
 
+
+
 	// var_dump($profiles);
-	echo json_encode($profiles, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
+	$delimiter = ',';
+    // prepare the file in local
+    // $fp = fopen('CsvFile.csv', 'w');
+    // pointer to the php output stream
+    $fp = fopen('php://output', 'w');
+
+    // Save header
+    $header = array_keys((array)$profiles[0]);
+    fputcsv($fp, $header, $delimiter);
+
+    // Save data
+    foreach ($profiles as $element) {
+        fputcsv($fp, (array)$element, $delimiter);
+    }
+
+    // echo $fp;
 
 // end of code
 ?>
