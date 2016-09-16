@@ -256,7 +256,7 @@ li {
   margin-bottom: 27px;
   margin-left: 8%;
   font-family: Palanquin, sans-serif;
-  color: #2b3d51;
+  color: #51512b;
   font-size: 18px;
   line-height: 27px;
   font-weight: 300;
@@ -273,6 +273,11 @@ li {
   margin-right: 17%;
   margin-bottom: 15px;
   margin-left: 17%;
+}
+
+.body-copy.contribute-exaples {
+  margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 .small-chart-container {
@@ -727,9 +732,12 @@ li {
 
 .button {
   display: block;
-  width: 120px;
+  width: 159px;
   margin-right: auto;
+  margin-bottom: 0px;
   margin-left: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
   float: none;
   background-color: #376d86;
   box-shadow: 3px 3px 0 0 #2b3d51;
@@ -1220,10 +1228,19 @@ li {
   display: block;
   max-height: 250px;
   max-width: 1200px;
-  margin-right: auto;
+  margin-right: 35px;
   margin-bottom: 30px;
-  margin-left: auto;
+  margin-left: 35px;
   color: #fff;
+}
+
+.landing-page-overview.asterisk-text {
+  font-size: 13px;
+  text-align: right;
+}
+
+.landing-page-overview.with-asterisk-text {
+  margin-bottom: 5px;
 }
 
 .landing-page-small-charts-row {
@@ -2749,6 +2766,14 @@ li {
 
 .mrable-header-url {
   text-decoration: none;
+}
+
+.email-us-column {
+  padding-left: 0px;
+}
+
+.take-survey-column {
+  padding-right: 0px;
 }
 
 html.w-mod-js *[data-ix="display-none-on-load"] {
