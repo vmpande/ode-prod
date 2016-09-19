@@ -424,34 +424,36 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			columnMetaData = [
 			{
 				"columnName": "Organization Name",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth11p"
 			},{
 				"columnName": "Region",
 				"visible": true,
-				"cssClassName": "ColWidth"
+				"cssClassName": "ColWidth11p"
 			}, {
 				"columnName": "Country",
 				"visible": true,
-				"cssClassName": "ColWidth"
+				"cssClassName": "ColWidth11p"
 			},{
 				"columnName": "Country Income Level",
 				"visible": true,
-				"cssClassName": "ColWidth4"
+				"cssClassName": "ColWidth11p"
 			},{
 				"columnName": "Organization Type",
 				"visible": true,
-				"cssClassName": "ColWidth3"
+				"cssClassName": "ColWidth11p"
 			},{
 				"columnName": "Sectors",
 				"visible": true,
-				"cssClassName": "ColWidth2"
+				"cssClassName": "ColWidth11p"
 			},{
 				"columnName": "Description",
 				"visible": true,
 				"cssClassName": 'description-column'
 			},{
 				"columnName": "Type of Data Used",
-				"visible": true
+				"visible": true,
+				"cssClassName": "ColWidth11p"
 			}
 			]
 

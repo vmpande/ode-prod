@@ -143,14 +143,15 @@ function(
 			}
 
 			//console.log(marker.attributes.machine_read);
-			if(marker.attributes.machine_read == "NA" || marker.attributes.machine_read == null)
-			{
-				marker.attributes.machine_read = "Information not available";
-			}
-			items.push({
-				label: "Evidence of machine-readable data use",
-				value: marker.attributes.machine_read
-			})
+			// Controls whether to show machine readability info or not
+			// if(marker.attributes.machine_read == "NA" || marker.attributes.machine_read == null)
+			// {
+			// 	marker.attributes.machine_read = "Information not available";
+			// }
+			// items.push({
+			// 	label: "Evidence of machine-readable data use",
+			// 	value: marker.attributes.machine_read
+			// })
 
 			//End of Addition
 

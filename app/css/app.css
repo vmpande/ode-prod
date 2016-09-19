@@ -260,31 +260,31 @@ body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2
 /* line 411 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .table{max-height:80%}
 /* line 414 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.description-column{width:25%}
+.description-column{width:23%}
+.ColWidth11p{width: 11%;}
 
 .table-count{font-family: Palanquin, sans-serif !important;
-    text-align: left;
-/*    padding-right: 33px;*/
-    padding-left: 919px;
+    text-align: right;
+    padding-right: 10px;
+    /*padding-left: 919px;*/
     font-weight: bold;}
 
- .ColWidth{
- 	   width: 75px;
- }
-  .ColWidth2{
- 	   width: 130px;
- }
-   .ColWidth3{
- 	   width: 100px;
- }
-    .ColWidth4{
- 	   width: 100px;
- }
-
  .griddle .griddle-nextcustom{
-
  	float: left;
  }
+
+.griddle-nextcustom{
+ 	width: 43% !important;
+	text-align: left !important;
+}
+.griddle-previous{
+ 	width: 42% !important;
+	text-align: right !important;
+}
+.griddle-page{
+ 	width: 15% !important; 
+}
+
 
 /* line 417 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .export-button{background:url("../images/clear_filter2.png") no-repeat 15px #eaeaea;
@@ -317,7 +317,9 @@ font-family: Palanquin, sans-serif; font-size: 13px; font-weight: 600;
     padding-top: 0.5rem;
     padding-right: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 0.5rem;}
+    padding-left: 0.5rem;
+	color: white;
+	}
 /* line 442 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .gin-control-zoom-home{background:url("../images/home.svg") no-repeat !important;background-position:center !important;background-color:#fff !important}
 /* line 447 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
