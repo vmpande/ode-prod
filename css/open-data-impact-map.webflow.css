@@ -177,6 +177,10 @@ li {
   font-weight: 400;
 }
 
+.fontawesome-icon.use-case-url-icon {
+  color: #000;
+}
+
 .sector-landing-header-background {
   display: block;
   width: 100%;
@@ -2158,7 +2162,7 @@ li {
   bottom: 280px;
   width: auto;
   height: 100px;
-  margin: auto -3px auto -15px;
+  margin: auto -3px auto 5px;
   padding-right: 0px;
   border-left: 10px none #34546d;
   color: #34546d;
@@ -3349,6 +3353,7 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     color: #fff;
   }
   .mobile-navigation-title {
+    margin-top: -10px;
     color: #fff;
     font-size: 18px;
     text-shadow: 1px 1px 0 #376d86;
