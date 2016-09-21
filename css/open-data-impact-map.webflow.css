@@ -2162,8 +2162,9 @@ li {
   bottom: 280px;
   width: auto;
   height: 100px;
-  margin: auto -3px auto -15px;
-  padding-right: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -15px;
   border-left: 10px none #34546d;
   color: #34546d;
   font-size: 14px;
