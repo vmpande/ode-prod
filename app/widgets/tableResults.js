@@ -29,25 +29,33 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 
 			var itemData = rowProps.props.data;
 
-			console.log('itemData',itemData);
+			
 
 			companyData.name = itemData['Company Name'];
 			companyData.country = itemData['Country'];
 			companyData.profileID = itemData['profileID'];
+			console.log('itemData',itemData);
 
 			var dataArray = [
-				{value: itemData['Country'],label:'Country'},
+				// {value: itemData['Country'],label:'Country'},
 				{value: itemData['City'], label: 'City'},
-				{value: itemData['Founding Year'], label: 'Founding Year'},
-				{value: itemData['Size'], label: 'Size'},
-				{value: itemData['Organization Type'], label: 'Organization Type'},
+				// {value: itemData['Founding Year'], label: 'Founding Year'},
+				// {value: itemData['Size'], label: 'Size'},
+				// {value: itemData['Organization Type'], label: 'Organization Type'},
 				{value: itemData['URL'], label: 'URL'},
 				{value: itemData['Description'], label: 'Description'},
-				{value: itemData['Industry Category'], label: 'Category'},
-				{value: itemData['Entry Based On'], label: "Entry Based On"},
-				{value: itemData['Data Use'], label: 'Data Use'}
+				// {value: itemData['Industry Category'], label: 'Category'},
+				// {value: itemData['Entry Based On'], label: "Entry Based On"},
+				// {value: itemData['Type of Data Used'], label: 'Type of Data Used'}
 
-			]
+			];
+			// show type of data used only when there is an entry
+			if(itemData['Type of Data Used']){
+				dataArray.push({
+					label: "Type of Data Used",
+					value: itemData['Type of Data Used']
+				})
+			}
 
 			if(itemData['use_advocacy'] == '1'){
 				dataArray.push({
@@ -82,9 +90,9 @@ define(['table/TableController', 'widgets/CompanyPopup', 'react'],function(Table
 			}
 
 
-			console.log("itemData['profileID']",itemData); //Vinayak
+			// console.log("itemData['profileID']",itemData); //Vinayak
 
-			React.render(React.createElement(CompanyPopup, {keys: {profileID: {value: itemData['profileID']}, items: dataArray, showContent: true, title: {label: itemData['Company Name'], selected: true, toggle: false}}}), document.getElementById('company-popup'));
+			React.render(React.createElement(CompanyPopup, {keys: {profileID: {value: itemData['profileID']}, items: dataArray, showContent: true, title: {label: itemData['Organization Name'], selected: true, toggle: false}}}), document.getElementById('company-popup'));
 
 		},
 

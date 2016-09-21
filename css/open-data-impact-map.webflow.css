@@ -1015,8 +1015,8 @@ li {
 
 .homepage-hero {
   background-color: #2b3d51;
-  background-image: -webkit-linear-gradient(90deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/homepage-dots@2x-compressed-170kb.png');
-  background-image: linear-gradient(0deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/homepage-dots@2x-compressed-170kb.png');
+  background-image: -webkit-linear-gradient(90deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots@2x-compressed-170kb.png');
+  background-image: linear-gradient(0deg, #1e2c3b 10%, rgba(30, 44, 59, 0) 45%), url('../images/57a0b5abf100384b354b217b_homepage-dots@2x-compressed-170kb.png');
   background-position: 0px 0px, 50% 0px;
   background-size: auto, 100%;
   background-repeat: repeat, no-repeat;
@@ -1232,6 +1232,7 @@ li {
   margin-bottom: 30px;
   margin-left: 35px;
   color: #fff;
+  text-align: center;
 }
 
 .landing-page-overview.asterisk-text {
@@ -2776,6 +2777,17 @@ li {
   padding-right: 0px;
 }
 
+.link-box-row-1 {
+  text-align: center;
+}
+
+.regional-supporter-row {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 html.w-mod-js *[data-ix="display-none-on-load"] {
   display: none;
 }
@@ -2977,7 +2989,7 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     margin-left: 0%;
   }
   .mobile-menu {
-    position: absolute;
+    position: fixed;
     z-index: 15;
     display: none;
     width: 100%;
@@ -3038,14 +3050,14 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     margin-bottom: 12px;
   }
   .navigation {
-    position: static;
+    position: fixed;
     height: 63px;
   }
   .sector-landing-header-background {
     background-size: auto, 110%, 100% 500px;
   }
   .navigation-space-fix {
-    display: none;
+    display: block;
     height: 63px;
   }
   .sector-landing {
@@ -3321,7 +3333,6 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     margin-left: 20px;
   }
   .mobile-menu-button {
-    padding-bottom: 17px;
     float: right;
     color: #fff;
     font-size: 12px;
@@ -3338,7 +3349,6 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     color: #fff;
   }
   .mobile-navigation-title {
-    margin-top: -7px;
     color: #fff;
     font-size: 18px;
     text-shadow: 1px 1px 0 #376d86;
@@ -3452,7 +3462,7 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     font-size: 10px;
   }
   .mobile-menu {
-    position: absolute;
+    position: fixed;
     z-index: 15;
     display: none;
     width: 100%;
@@ -3674,7 +3684,7 @@ html.w-mod-js *[data-ix="modal-wrapper"] {
     width: 100%;
   }
   .mobile-navigation-title {
-    margin-top: -5px;
+    margin-top: -1px;
     font-size: 14px;
   }
   .region-detail-header-background {

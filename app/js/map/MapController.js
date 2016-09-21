@@ -225,9 +225,9 @@ define([/*"esri/map",*/
         maxBounds: 
         [
         //south west
-        [-47, 200],
+        [-100, 200],
         //north east
-        [68, -169]
+        [100, -169]
         ]
         })
                     .setView([lat, lng], zoom);

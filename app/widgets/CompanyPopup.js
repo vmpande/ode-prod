@@ -60,7 +60,7 @@ define([
 			props.title.changed = this.changedTitle;
 			props.title.classNames = ['company-popup-title'];
 
-			var contentDisplay = state.visibleContent ? {}:{'display':this.changedTitle};
+			var contentDisplay = state.visibleContent ? {}:{'display':'none'};
 			return (
 				React.createElement("div", {className: 'company-popup'}, 
 					React.createElement(SelectableItem, {keys: props.title}), 

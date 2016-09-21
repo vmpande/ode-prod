@@ -41,7 +41,23 @@ html{-webkit-tap-highlight-color:transparent}
 /*Change by Vinayak Styling 08.03.2016*/
 /*body{background:#020b4f;font-family:Lato !important;overflow:hidden}*/
 body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2b3d51; overflow:hidden}
+a {
+	/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
 
 /* line 45 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 /*Vinayak Styling 08.03.16*/
@@ -167,8 +183,10 @@ body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2
 
 /* line 252 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br .company-popup .company-popup-title{font-family: Palanquin, sans-serif;font-size:16px;font-weight:bold;margin-bottom:5px;border-bottom:solid 1px #d3d3d3;cursor:pointer; height}
+.company-popup-title {margin-bottom: 0 !important;}
 /* line 258 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br .company-popup .company-popup-content{list-style-type:none; font-family: Palanquin, sans-serif;}
+.company-popup-content li {margin-bottom: 0; line-height: 1.4;}
 /* line 262 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .br #clusterPopup{width:300px;max-height:380px;overflow-y:auto;}
 /* line 267 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
@@ -246,11 +264,11 @@ body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2
 /* line 365 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .fake-link{color:#00f;text-decoration:underline;cursor:pointer}
 /* line 371 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.table-company-popup{position:absolute;width:300px;display:none;background-color:#fff;border:solid 1px #000;z-index:50;font-size:12px;}
+.table-company-popup{position:absolute;width:300px;display:none;background-color:#fff;border:solid 1px #000;z-index:50;font-size:12px; padding: 20px;}
 /* line 380 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.table-company-popup .company-popup-title{font-size:16px;font-weight:bold;border-bottom:solid 1px #d3d3d3;cursor:pointer;padding:10px;font-size:13px}
+.table-company-popup .company-popup-title{font-size:16px;font-weight:bold;border-bottom:solid 1px #d3d3d3;cursor:pointer;font-size:13px}
 /* line 388 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.table-company-popup .company-popup-content{list-style-type:none;padding:10px;overflow:auto;max-height:250px;box-sizing:border-box;margin-bottom:10px}
+.table-company-popup .company-popup-content{list-style-type:none;overflow:auto;max-height:250px;box-sizing:border-box;margin-bottom:10px}
 /* line 396 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .table-company-popup .close-popup{float:right;font-size:14px;margin-right:10px;margin-top:6px;cursor:pointer}
 /* line 403 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
@@ -260,8 +278,41 @@ body{background:#eaeaea;font-family: Palanquin, sans-serif !important; color: #2
 /* line 411 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
 .table{max-height:80%}
 /* line 414 : /Users/myeong/git/odesurvey/viz-src/src/app/css/app.styl */
-.description-column{width:23%}
-.ColWidth11p{width: 11%;}
+.description-column{
+	width:23%;
+/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;}
+
+.ColWidth11p{
+	width: 11%;
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto; }
 
 .table-count{font-family: Palanquin, sans-serif !important;
     text-align: right;
