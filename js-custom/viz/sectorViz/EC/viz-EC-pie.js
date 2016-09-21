@@ -20,7 +20,7 @@ var pie = d3.layout.pie()
 var color = d3.scale.ordinal()
     // old sad rainbow
     // .range(["#98abc5", "#7b6888", "#a05d56", "#ff8c00"]);
-    .range(["#50b094", "#7bc3ae", "#a7d7c9", "#d3ebe4"]);
+    .range(["#d69f3e", "#e0b76e", "#eacf9e", "#f4e7ce"]);
 
 var svg = d3.select("#threePie").append("svg")
     .attr("id", "byType")
