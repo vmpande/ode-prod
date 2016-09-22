@@ -43,7 +43,7 @@
 	while($row = $result->fetch_assoc()){
 		if ((int)$row["count(distinct(org_name))"] != 0) {
 		$obj = new stdClass();
-		$obj->app_type = "Product & Services";
+		$obj->app_type = "New Product/Service";
 		$obj->number = (int)$row["count(distinct(org_name))"];
 		$data[] = $obj;
 	}}
