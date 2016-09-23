@@ -220,7 +220,7 @@ function(
 
 		clusterLayer.on('clusterclick', function (a) {
 
-				console.log('isnide clusterclick');
+				// console.log('isnide clusterclick');
 				var markers = a.layer.getAllChildMarkers();
 				// var cluster_stats = MapConfig.clusterStatFields.map(function(stat){
 				// 	return { fieldName: stat, count: getClusterStats(markers,stat) }
