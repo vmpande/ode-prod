@@ -2793,6 +2793,12 @@ li {
   padding-bottom: 0px;
 }
 
+.sectorbarexplains {
+  margin-top: -15px;
+  font-size: 12px;
+  font-style: italic;
+}
+
 html.w-mod-js *[data-ix="display-none-on-load"] {
   display: none;
 }
