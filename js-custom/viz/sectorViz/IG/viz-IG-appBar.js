@@ -22,7 +22,14 @@ var yAxisAppBar = d3.svg.axis()
     .orient("left")
     .ticks(5);
     // .tickFormat(d3.format("d"));
-
+// Explanation for data type tick labels 
+var appLabelExplainations = {
+    'Organizational Optimization':"I am an explanation for <br> Organizational Optimization",
+    'New Product/Service':"I am an explanation for <br> New Product and Service",
+    'Advocacy':"I am an explanation for <br> Advocacy",
+    'Research':"I am an explanation for <br> Research",
+    'Other':"I am an explanation for <br> Other"
+  }
 drawDataTypeBar();
 
 // draw org dist global chart
@@ -50,6 +57,7 @@ d3.json("js-custom/viz/sectorViz/IG/IGAppBarData.php", function(error, dataAppBa
 
   svgAppBar.append("g")
       .attr("class", "x baraxis")
+       .attr("id", "appbarxaxis")
       .attr("transform", "translate(0," + heightAppBar + ")")
       .call(xAxisAppBar)
       // .selectAll("text")
@@ -57,6 +65,20 @@ d3.json("js-custom/viz/sectorViz/IG/IGAppBarData.php", function(error, dataAppBa
       // .style("text-anchor", "end");
       .selectAll(".tick text")
       .call(wrap, xAppBar.rangeBand());
+
+   // initiate tips
+   var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return appLabelExplainations[d];
+    })
+  svgAppBar.call(tip);
+  // show tip for ticks
+  d3.select('#appbarxaxis')
+    .selectAll('.tick')
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
 
 
   svgAppBar.append("g")

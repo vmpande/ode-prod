@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Sep 23 2016 13:26:52 GMT+0000 (UTC) -->
+<!-- Last Published: Fri Sep 23 2016 14:35:41 GMT+0000 (UTC) -->
 <html data-wf-page="57b757d1186c098b38c00130" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
-  <title>Agriculture</title>
-  <meta content="Agriculture" property="og:title">
+  <title>Consumer</title>
+  <meta content="Consumer" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -30,6 +30,7 @@
   <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
   <!-- added by Noah - load D3 -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
   <!-- Noah - code for getting stat number -->
   <script type="text/javascript" src="js-custom/countUp/sector/Consu/getConsuStat.js"></script>
 </head>
@@ -38,7 +39,7 @@
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="use-cases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -59,7 +60,7 @@
     </li>
   </ol>
   <div class="navigation-space-fix"></div>
-  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="use-cases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
   <div class="consumer-header sector-detail-header-background" id="findings">
     <h1 class="sector-detail-header">Consumer</h1>
@@ -80,12 +81,14 @@
     <p class="body-copy">A number of organizations are also integrating demographic and social data such as census studies for internal market intelligence, to get deeper insights into their current and potential customers and to tailor marketing to their target segments. In another vein, supermarkets and retailers use weather and demographic data to predict sales of different items, manage their inventory, and keep their supply chains functioning.</p>
     <div class="large-chart" id="dataTypeBar">
       <h1 class="viztitle" id="visualizations">Types of Data Most Used</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
     </div>
     <div class="large-chart" id="threePie">
       <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
     </div>
     <div class="large-chart" id="appBar">
       <h1 class="viztitle">How Organizations Use Open Data</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
     </div><img class="section-heading-topper" id="caseStudies" src="images/section-header-topper-2@2x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
     <div class="case-study-1">

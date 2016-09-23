@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Fri Sep 23 2016 13:26:52 GMT+0000 (UTC) -->
-<html data-wf-page="579777304590c30648a0aff1" data-wf-site="577440f9dee5efd30ed38e59">
+<!-- Last Published: Fri Sep 23 2016 14:35:41 GMT+0000 (UTC) -->
+<html data-wf-page="57b5da1c078103fe49d9f64d" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
-  <title>Middle East &amp; North Africa</title>
-  <meta content="Middle East &amp; North Africa" property="og:title">
+  <title>Health</title>
+  <meta content="Health" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -26,27 +26,20 @@
     li { display: list-item; }
   </style>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <!-- Added for map -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-  <link rel="stylesheet" href="http://54.210.82.88/ode-prod/css-custom/mapstyle.css" />
-  <style>
-    * {z-index: 1;}
-  </style>
-  <!-- added by Noah - stylesheet for viz and pageNav-->
+  <!-- added by Noah - stylesheet for viz -->
   <link href="css-custom/viz-style.css" rel="stylesheet" type="text/css">
   <!-- added by Noah - load D3 -->
   <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
   <!-- Noah - code for getting stat number -->
-  <script type="text/javascript" src="js-custom/countUp/region/MENA/getMENAStat.js"></script>
+  <script type="text/javascript" src="js-custom/countUp/sector/Heal/getHealStat.js"></script>
 </head>
 <body>
   <div class="navigation">
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="current-navigation navigation-link" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="use-cases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -67,32 +60,35 @@
     </li>
   </ol>
   <div class="navigation-space-fix"></div>
-  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-region.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="high-level-findings-by-sector.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="use-cases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
   </div>
-  <div class="middle-east-header region-detail-header-background" id="findings">
-    <h1 class="region-detail-header">Middle East &amp; North Africa</h1>
+  <div class="sector-detail-header-background" id="findings">
+    <h1 class="sector-detail-header">Health</h1>
   </div>
   <div class="text-container w-clearfix">
     <div class="sidebar-container">
       <div class="stat-circle">
         <div class="stat-inner-circle">
           <div class="stat" id="stattss"></div>
-          <div class="stat-description">Organizations in this Region</div>
+          <div class="stat-description">Organizations in this Sector</div>
         </div>
       </div><a class="button download w-button" href="#">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="data_buttons w-clearfix" data-ix="display-none-on-load"><a class="button data-format-button download left_data w-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/region/MENA/download_json.php">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/region/MENA/download_csv.php">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix" data-ix="display-none-on-load"><a class="button data-format-button download left_data w-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_json.php">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_csv.php">CSV &nbsp;<span class="fontawesome-icon"></span></a>
       </div>
     </div>
-    <p class="callout-text">There are few organizations using open data in the Middle East and North Africa. The organizations that use open data do so primarily to improve governance.</p>
-    <p class="body-copy">Organizations in the <a href="http://www.worldbank.org/en/region/mena" target="_blank">Middle East and North Africa </a>are using open data to work on issues such as election monitoring, social justice, and local economic development. Several others use open data for geospatial mapping and analysis. They primarily use geospatial and topographic data, as well as data on government operations. However, across the region organizations are limited by the amount of open government data available.</p>
-    <div class="large-chart" id="visualizations">
-      <div class="mideast" id="map"></div>
+    <p class="callout-text">Open data has fueled major advances for improved health outcomes, ranging from increased access to care to informing medical research. Organizations in this sector rely on open health, environment, geospatial, demographic and social, as well as scientific research data.</p>
+    <p class="body-copy">Internationally, organizations are using open data to help consumers find local healthcare services and providers to meet their needs. Many draw on government data to provide citizens with information on doctors, specialists, and hospitals via web and mobile applications. It is also being applied to help make medication more accessible and affordable. For instance, organizations use geospatial data and government data on pharmacy locations and prices to help consumers find the medicines they need and compare prices.</p>
+    <p class="body-copy">Open data is used also to evaluate health outcomes, develop more effective treatments, and predict disease outbreaks. For instance, researchers use health data, demographic and social statistics, environmental and geospatial data, and more, to conduct epidemiological studies, predict and monitor disease outbreaks, and target responses.</p>
+    <div class="large-chart" id="dataTypeBar">
+      <h1 class="viztitle" id="visualizations">Types of Data Most Used</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
     </div>
     <div class="large-chart" id="threePie">
       <h1 class="viztitle">Size, Type &amp; Founding Year</h1>
     </div>
-    <div class="large-chart last-large-chart" id="bar">
-      <h3 class="viztitle">Sectors Using Open Data</h3>
+    <div class="large-chart" id="appBar">
+      <h1 class="viztitle">How Organizations Use Open Data</h1>
+      <div class="sectorbarexplains">Hover over the bars and labels to show more information</div>
     </div><img class="section-heading-topper" id="caseStudies" src="images/section-header-topper-2@2x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
     <div class="case-study-1">
@@ -191,11 +187,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-  <script type="text/javascript" src="http://54.210.82.88/ode-prod/js-custom/MidEast.js"></script>
-  <script type="text/javascript" src="http://54.210.82.88/ode-prod/js-custom/MidEastMap.php"></script>
-  <!-- Noah - two pieces of code for two charts-->
-  <script type="text/javascript" src="js-custom/viz/regionViz/MENA/viz-MENA-pie.js"></script>
-  <script type="text/javascript" src="js-custom/viz/regionViz/MENA/viz-MENA-bar.js"></script>
+  <!-- Noah - code for two charts -->
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Heal/viz-Heal-appBar.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Heal/viz-Heal-pie.js"></script>
+  <script type="text/javascript" src="js-custom/viz/sectorViz/Heal/viz-Heal-dataTypeBar.js"></script>
   <!-- Noah - code for stat number counting up animation -->
   <script type="text/javascript" src="js-custom/countUp/countIndiNumber.js"></script>
 </body>

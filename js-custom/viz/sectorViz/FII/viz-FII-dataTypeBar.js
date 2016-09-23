@@ -22,7 +22,31 @@ var yAxisBar = d3.svg.axis()
     .orient("left")
     .ticks(5);
     // .tickFormat(d3.format("d"));
-
+// Explanation for data type tick labels 
+var typeLabelExplainations = {
+    'Geospatial & Mapping':"I am an explanation for <br> Geospatial & Mapping",
+    'Environment':"I am an explanation for <br> Environment",
+    'Transportation':"I am an explanation for <br> Transportation",
+    'Demographics & Social':"I am an explanation for <br> Government Operations",
+    'Housing':"I am an explanation for <br> Housing",
+    'Economics':"I am an explanation for <br> Economics",
+    'Education':"I am an explanation for <br> Education",
+    'Health':"I am an explanation for <br> Health",
+    'Finance':"I am an explanation for <br> Finance",
+    'Public Safety':"I am an explanation for <br> Public Safety",
+    'Energy':"I am an explanation for <br> Energy",
+    'Legal':"I am an explanation for <br> Legal",
+    'Tourism':"I am an explanation for <br> Tourism",
+    'Manufacturing':"I am an explanation for <br> Manufacturing",
+    'Science & Research':"I am an explanation for <br> Science & Research",
+    'Other':"I am an explanation for <br> Other",
+    'Consumer':"I am an explanation for <br> Consumer",
+    'Business':"I am an explanation for <br> Business",
+    'International Development':"I am an explanation for <br> International Development",
+    'Agriculture':"I am an explanation for <br> Agriculture",
+    'Arts & Culture':"I am an explanation for <br> Arts & Culture",
+    'Government Operations':"I am an explanation for <br> Government Operations"
+};
 drawDataTypeBar();
 
 // draw org dist global chart
@@ -49,6 +73,7 @@ d3.json("js-custom/viz/sectorViz/FII/FIIDataTypeBarData.php", function(error, da
 
   svgBar.append("g")
       .attr("class", "x baraxis")
+      .attr("id", "typebarxaxis")
       .attr("transform", "translate(0," + heightBar + ")")
       .call(xAxisBar)
       // .selectAll("text")
@@ -57,6 +82,20 @@ d3.json("js-custom/viz/sectorViz/FII/FIIDataTypeBarData.php", function(error, da
       .selectAll(".tick text")
       .call(wrap, x.rangeBand())
       .style("font-size","8px");
+
+   // initiate tips
+   var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return typeLabelExplainations[d];
+    })
+  svgBar.call(tip);
+  // show tip for ticks
+  d3.select('#typebarxaxis')
+    .selectAll('.tick')
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
 
 
   svgBar.append("g")
