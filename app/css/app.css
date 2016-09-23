@@ -28,6 +28,7 @@ nav.top-bar .title-area{display:none}
 /* line 21 : /Users/myeong/git/odesurvey/viz-src/src/app/css/header.styl */
 section.top-bar-section{display:inline-block}
 /* line 28 : /Users/myeong/git/odesurvey/viz-src/src/app/css/header.styl */
+.br {overflow: scroll;}
 .br .item{display:inline-block;margin-right:16px;margin-bottom:0;margin-left:16px;padding:13px 17px;float:none;background-position:52% 0%;background-size:25px;background-attachment:scroll;-webkit-transition-property:color,background-color;transition-property:color,background-color;-webkit-transition-duration:300ms,300ms;transition-duration:300ms,300ms;font-family:'Lato',sans-serif;color:#fff;font-size:18px;line-height:18px;font-weight:300;letter-spacing:2px;text-decoration:none;text-transform:uppercase;}
 /* line 53 : /Users/myeong/git/odesurvey/viz-src/src/app/css/header.styl */
 .br .item.current{background-color:#4caeea;color:#fff}
