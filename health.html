@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Mon Sep 26 2016 06:51:52 GMT+0000 (UTC) -->
+<!-- Last Published: Mon Sep 26 2016 18:03:15 GMT+0000 (UTC) -->
 <html data-wf-page="57b5da1c078103fe49d9f64d" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
   <meta charset="utf-8">
@@ -39,7 +39,7 @@
     <div class="mobile-navigation-container w-clearfix"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
       <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
+    <div class="navigation-container w-clearfix"><a class="navigation-link" href="index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="current-navigation navigation-link" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="/map/survey"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
   </div>
   <ol class="leftnav w-hidden-medium w-hidden-small w-hidden-tiny">
@@ -73,7 +73,7 @@
           <div class="stat-description">Organizations in this Sector</div>
         </div>
       </div><a class="button download w-button" href="#">Download fact sheet &nbsp;<span class="fontawesome-icon"></span></a><a class="button download w-button" data-ix="showhide-json-csv-button" href="#">Download DATA &nbsp;<span class="fontawesome-icon"></span></a>
-      <div class="data_buttons w-clearfix" data-ix="display-none-on-load"><a class="button data-format-button download left_data w-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_json.php">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_csv.php">CSV &nbsp;<span class="fontawesome-icon"></span></a>
+      <div class="data_buttons w-clearfix"><a class="button data-format-button download left_data w-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_json.php">&nbsp;JSON &nbsp;<span class="fontawesome-icon"></span></a><a class="button data-format-button download right_data w-button" data-ix="showhide-json-csv-button" href="http://54.210.82.88/ode-prod/js-custom/indi_data_download/sector/Heal/download_csv.php">CSV &nbsp;<span class="fontawesome-icon"></span></a>
       </div>
     </div>
     <p class="callout-text">Open data has fueled major advances for improved health outcomes, ranging from increased access to care to informing medical research. Organizations in this sector rely on open health, environment, geospatial, demographic and social, as well as scientific research data.</p>
@@ -92,43 +92,38 @@
     </div><img class="section-heading-topper" id="caseStudies" src="images/section-header-topper-2@2x.png">
     <h2 class="section-header">Use Cases</h2><img class="section-heading-bottom" src="images/section-header-bottom-2@2x.png">
     <div class="case-study-1">
-      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" src="images/nestfinder-nz-thumbnail@2x.png">
-        <h3 class="case-study-title">Nestfinder NZ</h3>
-        <div class="case-study-subtitle">An app which provides comprehensive information for travelers and tourists traveling around New Zealand</div>
-        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a href="http://www.bit.ly/nestfinder">bit.ly/nestfinder</a>
+      <div class="case-study-intro-1 w-clearfix"><img class="case-study-thumbnail-image-1" sizes="(max-width: 479px) 75vw, 200px" src="images/MedicatIO_hea_eca.jpeg" srcset="images/MedicatIO_hea_eca-p-500x304.jpeg 500w, images/MedicatIO_hea_eca.jpeg 600w">
+        <h3 class="case-study-title">Medicat.io</h3>
+        <div class="case-study-subtitle">A website that provides information on medication, as well as other useful information such as where to find out-of-hours pharmacies, for the general public</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a href="http://www.bit.ly/nestfinder">http://medicat.io</a>
         </div>
-        <p><strong>Impact:</strong> Providing maps and accommodation information with or without internet connection</p>
-        <p><strong>Data:</strong> OC Geoportal &amp; DOC website.&nbsp;</p>
+        <p><strong>Country: </strong>France</p>
+        <p><strong>Impact:</strong>&nbsp;Helps consumers be better informed about drugs before discussing it with their pharmacist or doctor.</p>
+        <p><strong>Data Used:</strong> Public database of medicines and National file of Health and Social Institutions (FINESS) from the Ministry of Social Affairs, Health and Women's Rights; National repository drug interactions and Official list of medication drugs in allopathy, homeopathy and herbal from the National Agency for the Safety of Health Products (ANSM); Drugstores on duty and emergency in Paris for 2015 from Ile de France - Regional Health Agency</p>
       </div><a class="read-more-button-1 w-button" data-ix="show-case-study-1" href="#">Read More &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-1">
-        <p>When tourists or travelers are traveling around New Zealand, there is a vast amount of information they need to access including where to stay and what to see. This is usually needed when they’re already on the road.This is where the Nest Finder tapp comes in. Developed by Wellingtonian Oliver Seiler, this information is easily available simply by installing the app on a phone. Comprehensive information is immediately available using GPS capability about tramping huts, campsites and visitor centres, as well as Information Centres, and booking for hostels, holiday parks and lodges across New Zealand.</p><img class="case-study-image" sizes="100vw" src="images/Screen Shot 2016-07-12 at 8.58.49 PM.png" srcset="images/Screen%20Shot%202016-07-12%20at%208.58.49%20PM-p-500x213.png 500w, images/Screen%20Shot%202016-07-12%20at%208.58.49%20PM-p-800x341.png 800w, images/Screen%20Shot%202016-07-12%20at%208.58.49%20PM-p-1080x460.png 1080w, images/Screen Shot 2016-07-12 at 8.58.49 PM.png 1194w">
-        <p>The app contains detailed information for most locations,including facilities, how to get there, pricing and so on. It’s designed for offline use so no internet connection is required to access the information which suits its travelers’ market. The Android app has over 14,000 downloads.</p>
-        <p>Impacts include allowing travelers and tourists direct access to essential information while on the road, including accommodation and booking choices. Access to the professional paid version provides Land Information New Zealand’s topographic maps which significantly increase safety for the user, particularly while traveling in remote areas. This is particularly important when internet connection is unavailable.</p>
+        <p>The goal of Medicat.io is to make information about medication in France more accessible to teh public, and allow people to be better informed when they discuss medications with doctors or pharmacists. Where there there is higher medication consumption in France than in its neighbouring countries, Medicat.io aims to raise awareness about the risks of taking multiple medications simultaneously. By analyzing crossing and comparing the components of different medications, and highlighting relevant information using reliable sources, the website allows users to explore the different treatment options available, and discuss the best options with pharmacists.</p><img class="case-study-image" sizes="100vw" src="images/MedicatIO_hea_eca.jpeg" srcset="images/MedicatIO_hea_eca-p-500x304.jpeg 500w, images/MedicatIO_hea_eca.jpeg 600w">
+        <p>The service provided by Medicat.io is built on publicly available data. It uses data from France’s public database of medicines (Ministry of Social Affairs, Health and Women's Rights), the its National repository drug interactions (Agence française de sécurité sanitaire des produits de santé), which is updated every month. Similarly, the directory of pharmacies integrates public data from the Regional Health Agency, and the National file of Health and Social Institutions.</p>
       </div><a class="show-less-button-1 w-button" data-ix="hide-case-study-1" href="#">Show Less &nbsp;<span class="fontawesome-icon"></span></a>
     </div>
     <div class="case-study-2">
-      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" src="images/dumpark-thumbnail@2x.png">
-        <h3 class="case-study-title">DumPark</h3>
-        <div class="case-study-subtitle">A data science and data visualization agency</div>
-        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a href="http://dumpark.com">dumpark.com</a>
+      <div class="case-study-intro-2 w-clearfix"><img class="case-study-thumbnail-image-2" src="images/Aidin_hea_na.png">
+        <h3 class="case-study-title">Aidin</h3>
+        <div class="case-study-subtitle">A website that improves the patient-placement process in choosing a post-acute provider.</div>
+        <div class="case-study-url"><span class="fontawesome-icon use-case-url-icon"></span> &nbsp;<a target="_blank" href="http://www.myaidin.com/">http://www.myaidin.com/</a>
         </div>
-        <p><strong>Impact:</strong> Turning data into visual narratives to share and help people understand complex information</p>
-        <p><strong>Data:</strong> New Zealand Household Labour Force Survey, Statistics NZ</p>
+        <p><strong>Country: </strong>United States</p>
+        <p><strong>Impact:</strong> Reduces asymmetric information between patients and post-acute care providers</p>
+        <p><strong>Data Used:</strong> Health data including Nursing Home Compare, Home Health Compare, and Patient Outreach and Hospital Integration from the U.S. Department of Health and Human Services</p>
       </div><a class="read-more-button-2 w-button" data-ix="show-case-study-2" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-2">
-        <p>When the Human Rights Commission wanted to track equality at work and provide an evidential basis for monitoring fairness in the workplace, it was no easy task. Instead of a manual and time-consuming process, they engaged Dumpark to access open data, open up other data, and build a web-based tool.</p><img class="case-study-image" sizes="100vw" src="images/Screen Shot 2016-07-12 at 8.58.55 PM.png" srcset="images/Screen%20Shot%202016-07-12%20at%208.58.55%20PM-p-500x301.png 500w, images/Screen%20Shot%202016-07-12%20at%208.58.55%20PM-p-800x482.png 800w, images/Screen%20Shot%202016-07-12%20at%208.58.55%20PM-p-1080x651.png 1080w, images/Screen Shot 2016-07-12 at 8.58.55 PM.png 1442w">
-        <p>Tracking Equality at Work’ brings together a suite of employment data so that fairness and equality of outcomes at work can be compared. Dumpark helped the Human Rights Commission organise and open up relevant data to supply the tool. Further indicators and datasets will be added over time. The disaggregated data uses four key aspects of work and the interactive tool allows analysis of equality by sex, ethnicity, age, disability, and over time. The web-tool makes it possible to track the persistence of inequality over time, and whether or not progress towards equality is being made. It also makes it possible to track the outcomes of a particular group across multiple indicators. The tool can also be used to disaggregate groups across several demographic characteristics.</p>
+        <p>In the current post-care provider environment in the US, patients have little to no information on whether a provider matches their needs, other than word-of-mouth or the occasional internet review; most patients end up choosing the provider nearest to their house. Aidin aims to stop this practice, and instead create choice based on the quality of service and care, generating business for high-quality providers and moving patients away from low performers. &nbsp;The website that gives detailed information on different nursing homes and other post-acute care providers to patients who are in the process of choosing between a multitude of options.</p><img class="case-study-image" src="images/Aidin_hea_na.png">
+        <p>Aidin presents patients with a 1-page profile for every PAC that offers admission. These profiles are created by combining the diagnosis and demographics of a patient with open datasets such as “Nursing Home Compare,” from the Center for Medicare &amp; Medicaid Services. Additional information on the profile is formed from Aidin’s own tracking of readmission rates for PACs, patient reviews, and photos of each PAC.
+          <br>
+          <br>Out of the patients presented with Aidin’s profiles of providers in their area, 80% will choose a high-performing PAC. By reducing the amount of asymmetric information between patients and providers, Aidin is making an impact on readmission rates to PACs, as well as directing PAC focus to quality of care instead of advertisements and airtime.</p>
       </div><a class="show-less-button-2 w-button" data-ix="hide-case-study-2" href="#">Show Less&nbsp;<span class="fontawesome-icon"></span></a>
     </div>
     <div class="case-study-3">
-      <div class="case-study-intro-3">
-        <h3 class="case-study-title">Case Study Title</h3>
-        <div class="case-study-subtitle">Subtitle</div>
-        <div class="case-study-url"><span class="fontawesome-icon"></span> &nbsp;<a href="#">url.com</a>
-        </div>
-        <p><strong>Data:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p><strong>Impact:</strong> Praesent eget risus vitae massa semper aliquam quis mattis quam.</p>
-      </div><a class="read-more-button-3 w-button" data-ix="show-case-study-3" href="#">READ MORE &nbsp;<span class="fontawesome-icon"></span></a>
       <div class="case-study-body-3">
         <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. Curabitur elit tellus, dictum non sem sit amet, viverra lobortis velit. Quisque facilisis, neque cursus ullamcorper ornare, dolor metus aliquam lacus, pharetra porttitor massa neque ut ligula. Vivamus laoreet nulla diam, eget adipiscing felis scelerisque sit amet. Mauris egestas, nisi vitae cursus tincidunt, urna ipsum facilisis eros, ut venenatis dui tellus sit amet orci. Nullam a rhoncus diam, eget tristique felis. Nulla egestas adipiscing fermentum. Aenean sagittis libero at eros ornare molestie. Morbi convallis ornare imperdiet. Mauris convallis tristique erat ac eleifend.</p>
         <ul>

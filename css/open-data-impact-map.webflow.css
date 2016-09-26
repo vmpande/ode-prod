@@ -1432,6 +1432,10 @@ li {
   text-align: left;
 }
 
+.case-study-title.small-case-study-title {
+  font-size: 17px;
+}
+
 .case-study-subtitle {
   display: block;
   margin-bottom: 10px;
@@ -2547,6 +2551,26 @@ li {
   background-color: rgba(0, 0, 0, .5);
   text-align: center;
   cursor: default;
+}
+
+.modal-wrapper.bre-modal {
+  display: block;
+}
+
+.modal-wrapper.adin-modal {
+  display: block;
+}
+
+.modal-wrapper.aidin-modal {
+  display: none;
+}
+
+.modal-wrapper.budgetstories-modal {
+  display: block;
+}
+
+.modal-wrapper.kadadata-modal {
+  display: block;
 }
 
 .case-wrapper {

@@ -1,6 +1,6 @@
 <?php
-	define("DBHOST", "localhost");
-	define("DBNAME", "ode_survey");
+	define("DBHOST", "localhost:8889");
+	define("DBNAME", "opendata_db");
 	define("DBUSER", "root");
-	define("DBPASS", "Sep@2016");
+	define("DBPASS", "19880518");
 ?>
