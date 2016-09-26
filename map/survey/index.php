@@ -1708,250 +1708,171 @@ $app->get('/survey/opendata/data/org/:profile_id', function ($profile_id) use ($
 	echo $request;
 	exit;
 });
-// **************
+
+$app->get('/showdata', function() use($app) {
+
+	$db = connect_db(); 
+	$org_profile_query="SELECT * FROM org_profiles as p LEFT JOIN org_locations as l ON p.location_id = l.location_id
+														LEFT JOIN org_country_info as c ON p.country_id = c.country_id
+														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id
+														ORDER BY p.profile_id DESC";
+	$stmt = $db->prepare($org_profile_query); 
+	$stmt->bindParam("pid", $profile_id);
+	$stmt->execute();
+	$org_profile = $stmt->fetchAll();
+
+	foreach ($org_profile as $item){
+		echo strval($item["profile_id"]) . ": " . $item["org_name"] . ", inserted on " . strval($item["createdAt"]);
+		echo "<br>";
+	}
+});
+
+// ************** on development.. by Myeong .. .
 $app->get('/data/flatfile.json', function () use ($app) {
 
-	$db = connect_db();
-	$sql="select * from org_surveys where object_id!=1";
-    
-	$stmt = $db->query($sql); 
-	$query_result1 = $stmt->fetchAll();
-
-	//var_dump($users);
-	//fetch all object id first																		
-	$object_id = array();
-	foreach ($query_result1 as $row ) {
-		array_push($object_id, $row['object_id'] );
-	}
+	$db = connect_db(); 
+	$org_profile_query="SELECT * FROM org_profiles as p LEFT JOIN org_locations as l ON p.location_id = l.location_id
+														LEFT JOIN org_country_info as c ON p.country_id = c.country_id
+														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id
+														RIGHT JOIN org_data_use as o ON p.profile_id = o.profile_id
+														JOIN org_country_info as src ON o.src_country_id= src.country_id
+														where p.profile_id = 1745";
+	$stmt = $db->prepare($org_profile_query); 
+	$stmt->bindParam("pid", $profile_id);
+	$stmt->execute();
+	$org_profile = $stmt->fetchAll();
 	
-    $createdAt = array();
-	$data_use_type = array();	
-	$data_use_type_other = array();
-	$industry_id = array();
-	$industry_other = array();
-	$latitude = array();
-	$longitude = array();
-	$no_org_url = array();
-	$org_additional = array();
-	$org_description = array();
-	$org_greatest_impact = array();
-	$org_greatest_impact_detail = array();
-	$org_name = array();
-	$org_open_corporates_id = array();
-	$org_profile_category = array();
-	$org_profile_src = array();
-	$org_profile_status = array();
-	$org_profile_year = array();
-	$org_size_id = array();
-	$org_type = array();
-	$org_type_other = array();
-	$org_url = array();
-	$org_year_founded = array();
-	$profile_id = array();
-	$updatedAt = array();
+	echo "<pre>";
+	print_r($org_profile);
+	echo "</pre>";
+	exit;
+	$final_array = array();
+	
+	// Data Use
+	foreach ($org_profile as $item){
+		$temp = array();
 
+		$createdAt = explode(" ",  $item["createdAt"]);
+		$updatedAt = explode(" ",  $item["updatedAt"]);
+		$temp["createdAt"]  =  $createdAt[0];
+		$temp["data_use_type_other"] = $item["data_use_type_other"];
+		$temp["industry_id"] = $item["industry_id"];
+		$temp["industry_other"] = $item["industry_other"];
+		$temp["latitude"] = floatval($item["latitude"]);
+		$temp["longitude"] = floatval($item["longitude"]);
+		$temp["no_org_url"] = intval($item["no_org_url"]);
+		$temp["org_description"] = $item["org_description"];
+		$temp["org_greatest_impact"] = $item["org_greatest_impact"];
+		$temp["org_greatest_impact_detail"] = $item["org_greatest_impact_detail"];
+		$temp["org_hq_city"] = $item["org_hq_city"];
+		$temp["org_hq_city_locode"] = null;
+		$temp["org_hq_country"] = $item["org_hq_country"];
+		$temp["org_hq_country_income"] = $item["org_hq_country_income"];
+		$temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
+		$temp["org_hq_country_locode"] = $item["org_hq_country_locode"];
+		$temp["org_hq_country_region"] = $item["org_hq_country_region"];
+		$temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
+		$temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
+		$temp["org_name"] = $item["org_name"];
+		$temp["org_open_corporates_id"] = null;
+		$temp["org_profile_category"] = $item["org_profile_category"];
+		$temp["org_profile_src"] = $item["org_profile_src"];
+		$temp["org_profile_status"] = $item["org_profile_status"];
+		$temp["org_profile_year"] = intval($item["org_profile_year"]);
+		$temp["org_size_id"] = $item["org_size"];
+		$temp["org_type"] = $item["org_type"];
+		$temp["org_type_other"] = $item["org_type_other"];
+		$temp["org_url"] = $item["org_url"];
+		$temp["org_year_founded"] = intval($item["org_year_founded"]);
+		$temp["profile_id"] = $item["profile_id"];
+		$temp["row_type"] = "org_profile";
+		$temp["updatedAt"] = $updatedAt[0];
+		$temp["use_advocacy"] = intval($item["advocacy"]);
+		$temp["use_advocacy_desc"] = $item["advocacy_desc"];
+		$temp["use_org_opt"] = intval($item["org_opt"]);
+		$temp["use_org_opt_desc"] = $item["org_opt_desc"];
+		$temp["use_other"] = intval($item["use_other"]);
+		$temp["use_other_desc"] = $item["use_other_desc"];
+		$temp["use_prod_srvc"] = intval($item["prod_srvc"]);
+		$temp["use_prod_srvc_desc"] = $item["prod_srvc_desc"];
+		$temp["use_research"] = intval($item["research"]);
+		$temp["use_research_desc"] = $item["research_desc"];
+		$temp["date_created"] = $createdAt[0];
+		$temp["date_modified"] = $updatedAt[0];
+		$temp["eligibility"] = "YY";
+		$temp["org_additional"] = $item["org_additional"];
+		$temp["org_confidence"] = intval($item["org_confidence"]);
+		$temp["data_country_count"] = intval($item["data_country_count"]);
+		$temp["machine_read"] = $item["machine_read"];
+		array_push($final_array, $temp);
 
-	$org_hq_city = array();
-	$org_hq_city_locode = array();
-	$org_hq_st_prov = array();
+		for ($i=0; $i<3; $i++){
+			$temp = array();
+			$createdAt = explode(" ",  $item["createdAt"]);
+			$updatedAt = explode(" ",  $item["updatedAt"]);
 
-	$org_hq_country = array();
-	$org_hq_country_income = array();
-	$org_hq_country_income_code = array();
-	$org_hq_country_locode = array();
-	$org_hq_country_region = array();
-	$org_hq_country_region_code = array();
-
-	$advocacy = array();
-	$advocacy_desc = array();
-	$org_opt = array();
-	$org_opt_desc = array();
-	$other = array();
-	$other_desc = array();
-	$prod_srvc = array();
-	$prod_srvc_desc = array();
-    $research = array();
-    $research_desc = array();
-
-    $data_country_count = array();
-	//calculate total number of objects, this will total number of objects in json as well.
-	$totalObjects = count($object_id)-1;
-	//echo $totalObjects;
-	//run for loop those many times.
-	$count = 0;
-	for($i = 0;$i < $totalObjects;$i++){
-		//echo $object_id[$i];
-		$sql="select * from org_profiles where profile_id=?";
-    
-		$stmt = $db->prepare($sql); 
-		$stmt->bindParam(1, $object_id[$i]);
-		$stmt->execute();
-		$query_result1 = $stmt->fetchAll();
-		$loc_id = "";
-	 	foreach ($query_result1 as $row ) {
-	 		//echo $row['object_id'];
-	 		array_push($createdAt, $row['createdAt'] );
-			array_push($data_use_type, $row['data_use_type']);
-			array_push($object_id, $row['object_id'] );
-			array_push($data_use_type_other, $row['data_use_type_other'] );
-			array_push($industry_id, $row['industry_id'] );
-			array_push($industry_other, $row['industry_other'] );
-
-			array_push($no_org_url, $row['no_org_url'] );
-			array_push($org_additional, $row['org_additional'] );
-			array_push($org_description, $row['org_description'] );
-			array_push($org_greatest_impact, $row['org_greatest_impact'] );
-			array_push($org_greatest_impact_detail, $row['org_greatest_impact_detail'] );
-			array_push($org_name, $row['org_name'] );
-			array_push($org_open_corporates_id , $row['org_open_corporates_id'] );
-			array_push($org_profile_category, $row['org_profile_category'] );
-			array_push($org_profile_src , $row['org_profile_src'] );
-            array_push($org_profile_status , $row['org_profile_status'] );
-            array_push($org_profile_year, $row['org_profile_year'] );
-            array_push($org_size_id , $row['org_size_id'] );
-            array_push($org_type , $row['org_type'] );
-            array_push($org_type_other , $row['org_type_other'] );
-            array_push($org_url , $row['org_url'] );
-            array_push($org_year_founded, $row['org_year_founded'] );
-            array_push($profile_id, $row['profile_id'] );
-            array_push($updatedAt, $row['updatedAt'] );
-            $loc_id = $row['org_loc_id']; 
-			//write all columns in similar way.
-		}
-        $sql1="select * from org_locations_info where object_id=?";
-		$stmt = $db->prepare($sql1);
-		$stmt->bindParam(1, $loc_id);
-		$stmt->execute();
-
-		$query_result2 = $stmt->fetchAll();
-		//var_dump($users);
-		$countryId = "";
-		foreach ($query_result2 as $row ) {
-			array_push($org_hq_city, $row['org_hq_city']);
-			array_push($org_hq_city_locode, $row['org_hq_city_locode'] );
-			array_push($org_hq_st_prov, $row['org_hq_st_prov'] );
-			array_push($latitude, $row['latitude'] );
-			array_push($longitude, $row['longitude'] );
-			$countryId = $row['country_id'];
-		}
-		if($countryId == NULL) {
-			$count = $count + 1;
-			//echo "null value";
-			array_push($org_hq_country, null);
-			array_push($org_hq_country_income, null);
-			array_push($org_hq_country_income_code, null);
-			array_push($org_hq_country_locode, null);
-			array_push($org_hq_country_region, null);
-			array_push($org_hq_country_region_code, null);
-		} else {
-			$sql2="select * from org_country_info where country_id=?";
-			$stmt = $db->prepare($sql2); 
-			$stmt->bindParam(1, $countryId);
-			$stmt->execute();
-
-			$query_result3 = $stmt->fetchAll();
-			//var_dump($users);
-
-			foreach ($query_result3 as $row ) {
-				array_push($org_hq_country, $row['org_hq_country']);
-				array_push($org_hq_country_income, $row['org_hq_country_income'] );
-				array_push($org_hq_country_income_code, $row['org_hq_country_income_code'] );
-				array_push($org_hq_country_locode, $row['org_hq_country_locode'] );
-				array_push($org_hq_country_region, $row['org_hq_country_region'] );
-				array_push($org_hq_country_region_code, $row['org_hq_country_region_code'] );
-			}
-		}
-
-		$sql3="select * from data_app_info where profile_id=?";
-		$stmt = $db->prepare($sql3); 
-		$stmt->bindParam(1, $object_id[$i]);
-		$stmt->execute();
-
-		$query_result4 = $stmt->fetchAll();
-		foreach ($query_result4 as $row ) {
-			array_push($advocacy, $row['advocacy']);
-			array_push($advocacy_desc, $row['advocacy_desc'] );
-			array_push($org_opt, $row['org_opt'] );
-			array_push($org_opt_desc, $row['org_opt_desc'] );
-			array_push($other, $row['other'] );
-			array_push($other_desc, $row['other_desc'] );
-			array_push($prod_srvc, $row['prod_srvc'] );
-			array_push($prod_srvc_desc, $row['prod_srvc_desc'] );
-			array_push($research, $row['research'] );
-			array_push($research_desc, $row['research_desc'] );
-		}
-
-		$sql4="select * from org_data_sources where profile_id=? limit 1";
-		$stmt = $db->prepare($sql4); 
-		$stmt->bindParam(1, $object_id[$i]);
-		$stmt->execute();
-
-		$query_result5 = $stmt->fetchAll();
-		//var_dump($users);
-
-		foreach ($query_result5 as $row ) {
-			array_push($data_country_count, $row['data_country_count']);
-		}
+			$temp["createdAt"]  =  $createdAt[0];
+			$temp["data_use_type_other"] = $item["data_use_type_other"];
+			$temp["industry_id"] = $item["industry_id"];
+			$temp["industry_other"] = $item["industry_other"];
+			$temp["latitude"] = floatval($item["latitude"]);
+			$temp["longitude"] = floatval($item["longitude"]);
+			$temp["no_org_url"] = intval($item["no_org_url"]);
+			$temp["org_description"] = $item["org_description"];
+			$temp["org_greatest_impact"] = $item["org_greatest_impact"];
+			$temp["org_greatest_impact_detail"] = $item["org_greatest_impact_detail"];
+			$temp["org_hq_city"] = $item["org_hq_city"];
+			$temp["org_hq_city_locode"] = null;
+			$temp["org_hq_country"] = $item["org_hq_country"];
+			$temp["org_hq_country_income"] = $item["org_hq_country_income"];
+			$temp["org_hq_country_income_code"] = $item["org_hq_country_income_code"];
+			$temp["org_hq_country_locode"] = $item["org_hq_country_locode"];
+			$temp["org_hq_country_region"] = $item["org_hq_country_region"];
+			$temp["org_hq_country_region_code"] = $item["org_hq_country_region_code"];
+			$temp["org_hq_st_prov"] = $item["org_hq_st_prov"];
+			$temp["org_name"] = $item["org_name"];
+			$temp["org_open_corporates_id"] = null;
+			$temp["org_profile_category"] = $item["org_profile_category"];
+			$temp["org_profile_src"] = $item["org_profile_src"];
+			$temp["org_profile_status"] = $item["org_profile_status"];
+			$temp["org_profile_year"] = intval($item["org_profile_year"]);
+			$temp["org_size_id"] = $item["org_size"];
+			$temp["org_type"] = $item["org_type"];
+			$temp["org_type_other"] = $item["org_type_other"];
+			$temp["org_url"] = $item["org_url"];
+			$temp["org_year_founded"] = intval($item["org_year_founded"]);
+			$temp["profile_id"] = $item["profile_id"];
+			$temp["row_type"] = "data_use";
+			$temp["updatedAt"] = $updatedAt[0];
+			$temp["use_advocacy"] = intval($item["advocacy"]);
+			$temp["use_advocacy_desc"] = $item["advocacy_desc"];
+			$temp["use_org_opt"] = intval($item["org_opt"]);
+			$temp["use_org_opt_desc"] = $item["org_opt_desc"];
+			$temp["use_other"] = intval($item["use_other"]);
+			$temp["use_other_desc"] = $item["use_other_desc"];
+			$temp["use_prod_srvc"] = intval($item["prod_srvc"]);
+			$temp["use_prod_srvc_desc"] = $item["prod_srvc_desc"];
+			$temp["use_research"] = intval($item["research"]);
+			$temp["use_research_desc"] = $item["research_desc"];
+			$temp["date_created"] = $createdAt[0];
+			$temp["date_modified"] = $updatedAt[0];
+			$temp["eligibility"] = "YY";
+			$temp["org_additional"] = $item["org_additional"];
+			$temp["org_confidence"] = intval($item["org_confidence"]);
+			$temp["data_country_count"] = intval($item["data_country_count"]);
+			$temp["machine_read"] = $item["machine_read"];
+			$temp["data_src_country_locode"] = "FI";
+	      	$temp["data_src_country_name"] = "Finland";
+	      	$temp["data_src_gov_level"]= "Local";
+	      	$temp["data_type"]= "Transportation";
+	      	array_push($final_array, $temp);
+	      }
 	}
-	echo "count....:";
-	echo $count;
 
-	$allArrays = array();
-	$finalArray = array();
 
-	for ($i = 0; $i < $totalObjects; $i++) {
-
-		$allArrays['createdAt'] = $createdAt[$i];
-		$allArrays['data_country_count'] = $data_country_count[$i];
-		$allArrays['data_use_type'] = $data_use_type[$i];
-		$allArrays['data_use_type_other'] = $data_use_type_other[$i];
-		$allArrays['industry_id']= $industry_id[$i];
-		$allArrays['industry_other'] = $industry_other[$i];
-		$allArrays['latitude'] = $latitude[$i];
-		$allArrays['longitude'] = $longitude[$i];
-		$allArrays['no_org_url']= $no_org_url[$i];
-		$allArrays['object_id']= $object_id[$i];
-		$allArrays['org_additional'] = $org_additional[$i];
-		$allArrays['org_description'] = $org_description[$i];
-		$allArrays['org_greatest_impact'] = $org_greatest_impact[$i];
-		$allArrays['org_greatest_impact_detail'] = $org_greatest_impact_detail[$i];
-		$allArrays['org_hq_city'] = $org_hq_city[$i];
-		$allArrays['org_hq_city_locode'] = $org_hq_city_locode[$i];
-		$allArrays['org_hq_country'] = $org_hq_country[$i];
-		$allArrays['org_hq_country_income'] = $org_hq_country_income[$i];
-		$allArrays['org_hq_country_income_code'] = $org_hq_country_income_code[$i];
-		$allArrays['org_hq_country_locode'] = $org_hq_country_locode[$i];
-		$allArrays['org_hq_country_region'] = $org_hq_country_region[$i];
-		$allArrays['org_hq_country_region_code'] = $org_hq_country_region_code[$i];
-		$allArrays['org_hq_st_prov'] = $org_hq_st_prov[$i];
-		$allArrays['org_name'] = $org_name[$i];
-		$allArrays['org_open_corporates_id'] = $org_open_corporates_id[$i];
-		$allArrays['org_profile_category'] = $org_profile_category[$i];
-		$allArrays['org_profile_src'] = $org_profile_src[$i];
-		$allArrays['org_profile_status'] = $org_profile_status[$i];
-		$allArrays['org_profile_year'] = $org_profile_year[$i];
-		$allArrays['org_size_id'] = $org_size_id[$i];
-		$allArrays['org_type'] = $org_type[$i];
-		$allArrays['org_type_other'] = $org_type_other[$i];
-		$allArrays['org_url'] = $org_url[$i];
-		$allArrays['org_year_founded'] = $org_year_founded[$i];
-		$allArrays['profile_id'] = $profile_id[$i];
-		$allArrays['updatedAt'] = $updatedAt[$i];
-		$allArrays['advocacy'] = $advocacy[$i];
-		$allArrays['advocacy_desc'] = $advocacy_desc[$i];
-		$allArrays['org_opt'] = $org_opt[$i];
-		$allArrays['org_opt_desc'] = $org_opt_desc[$i];
-		$allArrays['other'] = $other[$i];
-		$allArrays['other_desc'] = $other_desc[$i];
-		$allArrays['prod_srvc'] = $prod_srvc[$i];
-		$allArrays['prod_srvc_desc'] = $prod_srvc_desc[$i];
-		$allArrays['research'] = $research[$i];
-		$allArrays['research_desc'] = $research_desc[$i];
-		array_push($finalArray, $allArrays);
-	}
-	//var_dump($finalArray);
-	$jsonArray = array("results" => $finalArray);
+	$jsonArray = array("results" => $final_array);
 	echo json_encode($jsonArray);
+
 	return true;
 });
 /*
