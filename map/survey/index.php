@@ -984,25 +984,24 @@ $app->post('/2du/:surveyId/', function ($lastsurvey_id) use ($app) {
 			// Instantiate the client.
 		$mgClient = new Mailgun(MAILGUN_APIKEY);
 		$domain = MAILGUN_SERVER;
-		$objectid = $allPostVars['objectId'];
 		$org_name = $allPostVars['org_name'];
-		$old_id = $allPostVars['oldId'];
-		$new_id = $allPostVars['profile_id'];
+		$old_id = $allPostVars['old_profile_id'];
+		$new_id = $allPostVars['new_profile_id'];
 		$emailtext = <<<EOL
 An EDIT was filled out for Org Profile.
 The organization name in the new survey: ${org_name}
 The old profile ID is: ${old_id} 
 The new profile ID is: ${new_id}
-The old objectID in Parse.com's org_profile: ${objectid}
-View the new profile here: http://${_SERVER['HTTP_HOST']}/map/survey/edit/${lastsurvey_id}
+View the new profile here: http://${_SERVER['HTTP_HOST']}/map/survey/edit/${new_id}
 EOL;
 		// Send email with mailgun
 		$result = $mgClient->sendMessage($domain, array(
 			'from'    => 'Center for Open Data Enterprise <mailgun@sandboxc1675fc5cc30472ca9bd4af8028cbcdf.mailgun.org>',
-			'to'      => '<'.'audrey@odenterprise.org'.'>',
-			'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${lastsurvey_id}",
+			'to'      => '<'.'myeong@odenterprise.org'.'>',
+			'subject' => "Open Data Impact Map: EDIT FOR PROFILE ${new_id}",
 			'text'    => $emailtext
 		));
+		$app->redirect("/map/survey/".$new_id."/thankyou/");
 	} else {
 		$mgClient = new Mailgun(MAILGUN_APIKEY);
 		$domain = MAILGUN_SERVER;
@@ -1023,8 +1022,8 @@ EOL;
 			));
 			// echo "<pre>";print_r($result); echo "</pre>";exit;
 	    }
+	    $app->redirect("/map/survey/".$lastsurvey_id."/thankyou/");
 	}
-	$app->redirect("/map/survey/".$lastsurvey_id."/thankyou/");
 });
 // end du new post here
 // ************
@@ -1076,10 +1075,11 @@ $app->get('/:profile_id/edit', function ($profile_id) use ($app) {
 // ************
 $app->get('/edit/:profile_id', function ($profile_id) use ($app) {
 	$db = connect_db();
-	$org_profile_query="select * from org_profiles where profile_id=?";
+	$org_profile_query="select org_name from org_profiles where profile_id=:pid";
 	$stmt = $db->prepare($org_profile_query); 
-	$stmt->bindParam(1, $profile_id);
+	$stmt->bindParam("pid", $profile_id);
 	$stmt->execute();
+
 	$org_profile = $stmt->fetchAll();
 	if (count($org_profile) > 0) {
 		$org_name = $org_profile[0]['org_name'];
@@ -1096,83 +1096,113 @@ $app->get('/edit/:profile_id', function ($profile_id) use ($app) {
 	$app->view()->setData(array('content' => $content, 'org_name' => $org_name ));
 	$app->render('survey/tp_profile_edit_msg.php');
 });
-// ************
+
+/*
+* Editing an existing survey
+*/
 $app->get('/edit/:profile_id/form', function ($profile_id) use ($app) {
-		$db = connect_db(); // get all the org_profiles info
-		$org_profile_query="select * from org_profiles where profile_id=?";
-		$stmt = $db->prepare($org_profile_query); 
-		$stmt->bindParam(1, $profile_id);
-		$stmt->execute();
-		$org_profile = $stmt->fetchAll();
+	// loading a profile 
+	$db = connect_db(); 
+	$org_profile_query="SELECT * FROM org_profiles as p LEFT JOIN org_locations as l ON p.location_id = l.location_id
+														LEFT JOIN org_country_info as c ON p.country_id = c.country_id
+														LEFT JOIN data_applications as a ON p.profile_id = a.profile_id
+														WHERE p.profile_id=:pid";
+	$stmt = $db->prepare($org_profile_query); 
+	$stmt->bindParam("pid", $profile_id);
+	$stmt->execute();
+	$org_profile = $stmt->fetchAll();
+
 		
-	if (count($org_profile) > 0) {
-	} else {
+	if (!isset($org_profile[0]['profile_id'])) {
 		$app->redirect("/map/survey/".$profile_id."/notfound/");
 	}
-	$org_profile_query="select * from org_data_sources where profile_id=?"; 
-	$stmt = $db->prepare($org_profile_query); 
-	$stmt->bindParam(1, $profile_id);
+
+	// loading a data_use
+	$org_data_use_query="SELECT * from org_data_use where profile_id=:pid"; 
+	$stmt = $db->prepare($org_data_use_query); 
+	$stmt->bindParam("pid", $profile_id);
 	$stmt->execute();
 	$org_data_use = $stmt->fetchAll();
 	$org_data_use1 = array();
+
+	foreach ($org_data_use as $use){
+		array_push($org_data_use1, $use['data_type']);
+	}
+	$org_data_use1 = array_unique($org_data_use1);
+
+	// echo "<pre>";
+	// print_r($org_data_use1);
+	// echo "</pre>";
+	// exit;
+
+    // creating a new Profile ID 
+	$survey_name = "opendata";
+	$notes = "";
     
-    for($i=0; $i<count($org_data_use); $i++)
-    {
-         array_push($org_data_use1, $org_data_use[$i]['data_type']);
-    }
- 
-  $loc_id = $org_profile[0]['org_loc_id'];
-		$sql1="select * from org_locations_info where object_id=?";
-		$stmt = $db->prepare($sql1);
-		$stmt->bindParam(1, $loc_id);
-		$stmt->execute();
-		$org_loc = $stmt->fetchAll();
-		
-  $countryId = $org_loc[0]['country_id'];
-        $sql2="select * from org_country_info where country_id=?";
-		$stmt = $db->prepare($sql2); 
-		$stmt->bindParam(1, $countryId);
-		$stmt->execute();
-		$org_country = $stmt->fetchAll();
-		
-		$sql3="select * from data_app_info where profile_id=?";
-		$stmt = $db->prepare($sql3); 
-		$stmt->bindParam(1, $profile_id);
-		$stmt->execute();
-        $data_app = $stmt->fetchAll();
-    
-    $survey_name = "opendata";
-    $survey_query="INSERT INTO org_surveys(
-    'survey_name')VALUES (:survey_name)";
+	$id_query = "SELECT max(profile_id) as max FROM org_profiles";
+   	
 	try {
-        $db = connect_db();
-        $stmt = $db->prepare($survey_query);
-        $stmt->bindParam("survey_name",$survey_name);
-        $stmt->execute();
-    	$lastsurvey_id=$db->lastInsertId();
-    } catch(PDOException $e) {
+        $conn = connect_db();
+        $stmt = $conn->query($id_query);
+        $row = $stmt->fetchObject();        
+    } 
+    catch(PDOException $e) {
         echo '{"error":{"text":'. $e->getMessage() .'}}'; 
-    }   
-	if(isset($lastsurvey_id)) { 
-    	// Success
-    	$content['old_survey_id'] = $profile_id;
-    	$profile_id = $lastsurvey_id;
-    	$org_profile['profile_id'] = $profile_id;
+    }     
+
+   	$next_id = isset($row->max) ? intval($row->max) + 1 : null;
+
+    if(isset($next_id)) {    	
+    	// Success    	
+    	$new_id = $next_id;
+
+    	// Check the next ID if it is already taken.
+    	while (1) {
+	    	$check_query="SELECT profile_id FROM org_surveys WHERE profile_id=:next_id";
+	    	try {
+		    	$stmt = $conn->prepare($check_query);
+		    	$stmt->bindParam("next_id", $new_id);
+		    	$stmt->execute();
+		    	$row = $stmt->fetchObject(); 	    	
+		    } catch(PDOException $e) {
+		        echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+		    }
+
+		    if (isset($row->profile_id)){
+		    	$new_id =  intval($row->profile_id) + 1;
+		    } else {
+		    	break;
+		    }
+	    } 
+
+    	$survey_query="INSERT INTO org_surveys (profile_id, survey_name) 
+			  VALUES (:new_id, :survey_name)";
+
+		try {	        
+	        $stmt = $conn->prepare($survey_query);
+	        $stmt->bindParam("new_id", $new_id);
+	        $stmt->bindParam("survey_name", $survey_name);
+	        $stmt->execute();
+	    } 
+	    catch(PDOException $e) {
+	        echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+	    }  
+	    
     } else {
     	// Failure
-    	echo "Problem. Prolem with record creation not yet handled.";
+    	echo "Problem. Promlem with record creation not yet handled.";
     	exit;
-    	$app->redirect("/error".$response['objectId']);
+    	$app->redirect("/error" . $new_id);
     }
-    # store new information as new record 
-	
-	$content['surveyId'] = $lastsurvey_id;
+
+    // store new information as new record 	
+	$content['surveyId'] = $new_id;
 	$content['HTTP_HOST'] = $_SERVER['HTTP_HOST'];
 	$content['surveyName'] = "opendata";
 	$content['title'] = "Open Data Enterprise Survey - Edit";
 	$content['language'] = "en_US";
 	
-	$app->view()->setData(array('content' => $content, 'org_profile' => $org_profile, 'org_data_use' => $org_data_use, 'org_data_use1'=> $org_data_use1,'org_loc' => $org_loc, 'org_country'=> $org_country , 'data_app'=> $data_app));
+	$app->view()->setData(array('content' => $content, 'org_profile' => $org_profile, 'org_data_use' => $org_data_use, 'org_data_use1' => $org_data_use1));
 	$app->render('survey/tp_profile_edit.php');  
 });
 // ************

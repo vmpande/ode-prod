@@ -31,15 +31,13 @@ textdomain($domain);
       <div class="section-title"><h3>SUBMISSION RECEIVED</h3></div>
     </div>
  
-    <div class="col-md-12" role="orgInfo"  id="role-orgInfo" style="font-size:14pt;height:460px; margin-top">
+    <div class="col-md-12" role="orgInfo"  id="role-orgInfo" style="font-size:14pt;height:330px; margin-top">
     
     <div class="row col-md-12">
         <div>
-          Thank you for participating in the Open Data Impact Map. <b>All submissions will be reviewed before public display.</b>  
+          Thank you contributing to the Open Data Impact Map. All submissions will be reviewed before public display.  
         </div>
         <br />
-        <b>Take me to the Map</b>: <a href ="http://<?php echo $content['HTTP_HOST']; ?>/map.html">http://<?php echo $content['HTTP_HOST']; ?>/map.html</a>
-        <br /><br />
         <b>View my submission</b>:  <a href ="http://<?php echo $content['HTTP_HOST']; ?>/map/survey/edit/<?php echo $content['surveyId'] ?>">http://<?php echo $content['HTTP_HOST']; ?>/map/survey/edit/<?php echo $content['surveyId'] ?></a>
         <br />Use this unique URL to make changes.
 
@@ -67,10 +65,7 @@ textdomain($domain);
           <br /><br />
 
         If you have any questions, email us at map@odenterprise.org.
-        <br /><br />
-        Best, 
-        <br /><br />
-        The Center for Open Data Enterprise
+        <br />
     </div>
 
   </div><!--/Intro-->

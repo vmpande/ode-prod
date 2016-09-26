@@ -67,7 +67,7 @@ div.od-purpose {
 	background-color: rgb(255, 255, 255);
 	font-size: 16px;
 	color: #333;
-	padding: 12px 64px 24px 64px;
+	padding: 12px 64px 0 64px;
 	line-height: 1.8em;
 }
 
@@ -77,12 +77,17 @@ div.od-purpose {
 	font-size: 1.5em;
 }
 
+#role-intro .col-md-6{
+	padding-right: 5px;
+}
+
 #role-eligibility {
 	background-color: rgb(244, 245, 246);
 	color: rgb(120, 120, 120);
 	border: 1px solid rgb(217, 217, 218);
 	padding: 12px 32px 32px 40px;
 	margin-bottom: 2.0em;
+	margin-top: 20px;
 	font-size: 14px;
 }
 
@@ -96,10 +101,13 @@ div.od-purpose {
 	font-size: 14px;
 }
 
+#role-eligibility li{
+	margin-bottom: 0;
+}
+
 
 #role-eligibility ul {
 	margin: .5em 0 .5em 0 !important;
-	line-height: 2.5em;
 }
 
 #org_description, #org_additional {
@@ -115,7 +123,7 @@ div.od-purpose {
 #role-orgInfo-titlebar {
 	background-color: #020b4f;
 	color: rgb(255, 255, 255);
-	padding: 0.0em 0.85em 0.70em 24px;
+	padding: 1px 0.85em 0.70em 24px;
 	margin-bottom: 0px;
 	border-top-left-radius: 10px 10px;
 	border-top-right-radius: 10px 10px;
@@ -124,13 +132,20 @@ div.od-purpose {
 #role-orgInfo-titlebar .section-title h3 {
 	color: rgb(255, 255, 255);
 	font-size: 27px;
+	font-weight: 200;
 }
+
+#role-orgInfo .share-row{
+	display: inline-block;
+}
+
 
 #role-orgInfo {
 	/*background-color: rgb(253,228,156);*/
 	padding: 1.5em 0 8px 24px;
 	border: 1px solid rgb(217, 217, 218);
-	margin-top: 0px;
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
 	border-bottom-left-radius: 10px 10px;
 	border-bottom-right-radius: 10px 10px;
 }
@@ -138,7 +153,7 @@ div.od-purpose {
 #role-dataUse-titlebar {
 	background-color: #f8b401;
 	color: rgb(255, 255, 255);
-	padding: 0.0em 0.85em 0.70em 24px;
+	padding: 1px 0.85em 0.70em 24px;
 	margin-bottom: 0px;
 	border-top-left-radius: 10px 10px;
 	border-top-right-radius: 10px 10px;
@@ -146,13 +161,15 @@ div.od-purpose {
 
 #role-dataUse-titlebar .section-title h3 {
 	color: rgb(255, 255, 255);
-	font-size: 0.85em;
+	font-size: 27px;
+	font-weight: 200;
 }
 
 #role-dataUse {
 	padding: 1.5em 0 8px 24px;
-	background-color: rgb(255, 255, 255);
 	border: 1px solid rgb(217, 217, 218);
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
 	border-bottom-left-radius: 10px 10px;
 	border-bottom-right-radius: 10px 10px;
 }
@@ -160,7 +177,7 @@ div.od-purpose {
 #role-contact-titlebar {
 	background-color: #2fa767;
 	color: rgb(255, 255, 255);
-	padding: 0.0em 0.85em 0.70em 24px;
+	padding: 1px 0.85em 0.70em 24px;
 	margin-bottom: 0px;
 	border-top-left-radius: 10px 10px;
 	border-top-right-radius: 10px 10px;
@@ -168,7 +185,8 @@ div.od-purpose {
 
 #role-contact-titlebar .section-title h3 {
 	color: rgb(255, 255, 255);
-	font-size: 0.85em;
+	font-size: 27px;
+	font-weight: 200;
 }
 
 #role-contact-titlebar small {
@@ -178,11 +196,11 @@ div.od-purpose {
 
 #role-contact {
 	padding: 1.5em 0 8px 24px;
-	background-color: rgb(255, 255, 255);
 	border: 1px solid rgb(217, 217, 218);
+	padding: 1.5em 0 8px 24px;
+	margin-bottom: 0px;
 	border-bottom-left-radius: 10px 10px;
 	border-bottom-right-radius: 10px 10px;
-	font-size: 16px;
 }
 
 .data_detail_row {
@@ -228,5 +246,19 @@ label.btn.active {
 }
 
 label {
+	display: block;
 	font-size: 16px;
+}
+
+.navigation a:hover{
+  text-decoration: none;
+}
+
+#survey_intro{
+	text-align: center;
+	font-weight: bold;
+}
+
+.footer {
+	margin-top: 10px;
 }

@@ -20,8 +20,9 @@ textdomain($domain);
  <form id="survey_form" class="form-horizontal" style="border:0px dotted black;" action="/map/survey/2du/<?php echo $content['surveyId']; ?>" method="post">
 
     <div class="col-md-12" role="Intro" id="role-intro">
-      <div style="text-align:center;font-size:1.1em;margin-top:20px;">
-        <div class="col-md-6 small">&nbsp;</div><div class="col-md-6 pull-right small" style="font-size:14px;">
+      <div style="font-size:1.1em;margin-top:20px;">
+        <div class="col-md-6 small">&nbsp;</div>
+        <div class="col-md-6 small" style="font-size:14px;">
         English&nbsp;&nbsp;
           <?php
             $langs = array('es_MX' => 'Español', 'fr_FR' => 'Français', 'de_DE' => 'Deutsch', 'ko_KR' => '한국어 조선말', 'ru_RU' => 'русский', 'pt_BR' => 'Português');
@@ -34,28 +35,28 @@ textdomain($domain);
             }
           ?>         
         </div>
-        Thank you for participating in the Open Data Impact Map, a searchable, centralized database of open data use cases from around the world. 
-        Your contribution makes it possible to better understand the value of open data and encourage its use globally.
-        Information collected will be displayed on the <a href="/map.html">Map</a> and will be made available as open data.
+         
       </div>
       <br />
     </div>
      
     <div class="col-md-12" role="eligibility" id="role-eligibility">
       <div class="row col-md-12">
-        <h4>ELIGIBILITY</h4>
       </div>
       <div>
-        <b>The Open Data Impact Map includes organizations that:</b>
+          <h4>The Open Data Impact Map includes organizations that:</h4>
           <ul>
-              <li>are companies, non-profits, or developer groups; and</li>
-              <li>use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.</li>
-            </ul>
-        We define open government data as publicly available data that is produced or commissioned by governments 
-        and that can be accessed and reused by anyone, free of charge. 
+            <li>are companies, non-profits, or developer groups; and</li>
+            <li>use open government data for advocacy, to develop products and services, improve operations, inform strategy and/or conduct research.</li>
+            
+          </ul>
+          We define open government data as publicly available data that is produced or commissioned by governments and that can be accessed and reused by anyone, free of charge. 
       </div>
+      
     </div>
-
+    <div id="survey_intro">
+        Information collected will be reviewed before it is displayed on the Map and made available as open data.
+    </div>
 <br />
 
     <div class="col-md-12" role="orgInfo-titlebar"  id="role-orgInfo-titlebar">

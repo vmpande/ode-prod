@@ -1,83 +1,46 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html data-wf-page="57c4799cb87e96b7323f52bd" data-wf-site="577440f9dee5efd30ed38e59">
 <head>
- 
-
-<!--     <link rel="stylesheet" href="/map/survey/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/map/survey/css/bootstrap-theme.min.css">        
-    <link rel="stylesheet" type="text/css" href="https://daks2k3a4ib2z.cloudfront.net/54c24a0650f1708e4c8232a0/css/opendataenterprise.webflow.02ce61403.css">
- -->    
-
-    <!--script src="/map/survey/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script-->
-
-<!-- synched -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?php echo $content['title'] ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Manual">
-    <meta name="description" content="Open Data Impact Map Survey 2015">
-    <meta name="viewport" content="width=device-width">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="/map/survey/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Open Impact Map Survey</title>
+  <meta content="Open Impact Map Survey" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="/css/open-data-impact-map.webflow.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/map/survey/css/bootstrap.min.css">
     <link rel="stylesheet" href="/map/survey/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css"><!--from webflow-->
-    <link rel="stylesheet" type="text/css" href="/css/webflow.css"><!--from webflow-->
-    <link rel="stylesheet" type="text/css" href="/css/opendataenterprise.webflow.css"><!--from webflow-->
-    <link rel="stylesheet" href="/map/survey/css/main.css"><!--from webflow-->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><!--from webflow-->
-    <script>
-        WebFont.load({
-            google: {
-                families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Montserrat:400,700","Varela:400"]
-            }
-        });
-    </script>
-    <script type="text/javascript" src="/js/modernizr.js"></script><!--from webflow-->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/05_favicon.png">
-    <link rel="apple-touch-icon" href="/images/Rectangle 11111 copy 15.png">
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-59933587-1'], ['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script');
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <link rel="stylesheet" href="/map/survey/css/main.css">
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Palanquin:100,200,300,regular,500,600,700"]
+      }
+    });
+  </script>
+  <script src="/js/modernizr.js" type="text/javascript"></script>
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+  <style>
+    li { display: list-item; }
+  </style>
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
 </head>
-<body>
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-    <header class="w-section nav-bar">
-    <div class="w-container" style="text-align:center;">
-        <a class="w-inline-block brand-container" href="/"><img class="logo" src="/images/Logo-Mark.png" width="60"><img class="logo" src="/images/Logo-Text.png" width="400">
-        </a>
+<body class="use-case-page-body">
+  
+  <div class="navigation">
+    <div class="navigation-container w-clearfix w-hidden-medium w-hidden-small w-hidden-tiny"><a class="navigation-link" href="/index.html"><span class="fontawesome-icon"></span>&nbsp;Home</a><a class="navigation-link" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP | DATA</a><a class="navigation-link" href="/regions.html"><span class="fontawesome-icon"></span>&nbsp;Findings by Region</a><a class="navigation-link" href="/sectors.html"><span class="fontawesome-icon"></span>&nbsp;Findings by SEctor</a><a class="last-left navigation-link" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;Use Cases</a><a class="navigation-link secondary-navigation-link" href="/contact.html"><span class="fontawesome-icon"></span>&nbsp;Contact</a><a class="navigation-link secondary-navigation-link" href="/survey.html"><span class="fontawesome-icon"></span>&nbsp;Submit Survey</a>
     </div>
-    <div class="w-nav primary-nav-bar" data-collapse="none" data-animation="default" data-duration="400" data-contain="1">
-      <div class="w-container">
-        <nav class="w-nav-menu nav-menu-container" role="navigation">
-          <div class="w-dropdown nav-link" data-delay="0"><a class="nav-link-text" href="/about.html">About Us</a>
-            <div class="w-dropdown-toggle dropdown-toggle">
-              <div class="w-icon-dropdown-toggle icon-arrow"></div>
-            </div>
-            <nav class="w-dropdown-list dropdown-list"><a class="w-dropdown-link dropdown-link" href="/about#Our-Mission">Mission</a><a class="w-dropdown-link dropdown-link" href="/about#What-We-Do">What we do</a><a class="w-dropdown-link dropdown-link" href="/about#Our-Team">Who we are</a><a class="w-dropdown-link dropdown-link" href="/about#Our-Partners">Partners</a><a class="w-dropdown-link dropdown-link" href="/about#Our-Advisors">Advisors</a>
-            </nav>
-          </div><a class="w-nav-link nav-link" href="/map.html">Map</a><a class="w-nav-link nav-link" href="/convene.html">CONVENE</a><a class="w-nav-link nav-link" href="/implement.html">Implement</a><a class="w-nav-link nav-link" href="http://blog.opendataenterprise.org/">Blog</a><a class="w-nav-link nav-link" href="/contact.html">Contact</a><!--<a class="w-inline-block nav-link twitter-nav" href="http://www.twitter.com/odenterprise" target="_blank"><img src="/images/Twitter_logo_white_1.png" width="27"></a>-->
-        </nav>
-        <div class="w-nav-button">
-          <div class="w-icon-nav-menu"></div>
-        </div>
-      </div>
+    <div class="mobile-navigation-container w-clearfix w-hidden-main"><a class="mobile-menu-button" data-ix="open-mobile-menu" href="#"><span class="fontawesome-icon"></span> Menu</a><a class="close-menu-button" data-ix="close-mobile-menu" href="#"><span class="fontawesome-icon"></span> Close</a>
+      <div class="mobile-navigation-title">Open Data Impact Map</div>
     </div>
-</header>
-<div class="w-section section hero interior option-5 what-we-do-pic">
-    <h1 class="hero-heading contact-us what-we-do-text">
-        Open Data Impact Map <strong>Survey</strong>
-    </h1>
-</div>
+  </div>
+  <div class="navigation-space-fix"></div>
+  <div class="mobile-menu w-clearfix"><a class="mobile-navigation-item w-clearfix" href="/index.html"><span class="fontawesome-icon"></span>&nbsp;HOME</a><a class="mobile-navigation-item w-clearfix" href="http://54.210.82.88/ode-prod/map.html"><span class="fontawesome-icon"></span>&nbsp;MAP</a><a class="mobile-navigation-item w-clearfix" href="regions.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY REGION</a><a class="mobile-navigation-item w-clearfix" href="sectors.html"><span class="fontawesome-icon"></span>&nbsp;FINDINGS BY SECTOR</a><a class="mobile-navigation-item" href="/usecases.html"><span class="fontawesome-icon"></span>&nbsp;USE CASES</a><a class="mobile-navigation-item secondary w-clearfix" href="#"><span class="fontawesome-icon"></span>&nbsp;SUBMIT SURVEY</a><a class="mobile-navigation-item secondary w-clearfix" href="/contact.html"><span class="fontawesome-icon"></span>&nbsp;CONTACT</a>
+  </div>
+  <div class="sector-detail-header-background usecaseheader" id="findings">
+    <h1 class="sector-landing usecaselanding">Open Data Impact Map</h1>
+    <p class="landing-page-overview">The Open Data Impact Map is a public database of organizations using open government data from around the world.</p>
+  </div>
 
